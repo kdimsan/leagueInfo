@@ -1,9 +1,10 @@
 "use client";
 import { api } from "./utils/api/api";
 import { useState } from "react";
-import { SummonerProps } from "./utils/summonerInfo";
+import { SummonerProps, SummonerRankedProps } from "./utils/summonerInfo";
 import UserData from "@/components/userData";
 import UserRank from "@/components/userRank";
+import ChampionMaestry from "@/components/championMaestry";
 
 export default function Home() {
   const [data, setData] = useState<SummonerProps>();
@@ -17,13 +18,11 @@ export default function Home() {
       .catch((error) => console.log(error));
   };
 
-  console.log(data);
-
   return (
     <main className=" flex flex-col flex-1 mt-8">
       <div className="flex flex-col items-center justify-center w-full">
         <input
-          className="bg-neutral-500 px-3 py-2 rounded-md text-white placeholder-neutral-400 mb-4"
+          className="bg-slate-100 px-3 py-2 rounded-md text-white placeholder-neutral-400 mb-4"
           type="text"
           placeholder="Nickname"
         />
@@ -37,7 +36,12 @@ export default function Home() {
       {data && (
         <div>
           <UserData data={data.SUMMONER_DATA_RES} />
-          <UserRank data={data.SUMMONER_RANKED_RES} />
+          <div className="flex flex-col items-center gap-4 justify-center mt-8 w-full ">
+            {data.SUMMONER_RANKED_RES.map((item, index) => (
+              <UserRank data={item} key={index} />
+            ))}
+          </div>
+          <ChampionMaestry />
         </div>
       )}
     </main>

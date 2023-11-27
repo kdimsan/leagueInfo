@@ -1,3 +1,5 @@
+import { ChampionsProps } from "./champions";
+
 export interface SummonerAccountProps {
   name: string;
   profileIconId: number;
@@ -17,7 +19,18 @@ export interface SummonerRankedProps {
   hotStreak?: boolean;
 }
 
+export interface SummonerMaestryChampionsProps {
+  championId: number;
+  championName: string;
+  championLevel: number;
+  championPoints: number;
+  lastPlayTime: number;
+  chestGranted: boolean;
+}
+
 export interface SummonerProps {
   SUMMONER_DATA_RES: SummonerAccountProps;
-  SUMMONER_RANKED_RES: SummonerRankedProps;
+  SUMMONER_RANKED_RES: SummonerRankedProps[];
+  TOP_MAESTRY_CHAMPION: SummonerMaestryChampionsProps[];
+  FOUND_CHAMPIONS: ChampionsProps[];
 }

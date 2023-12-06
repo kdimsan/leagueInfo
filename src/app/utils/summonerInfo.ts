@@ -32,5 +32,4 @@ export interface SummonerProps {
   SUMMONER_DATA_RES: SummonerAccountProps;
   SUMMONER_RANKED_RES: SummonerRankedProps[];
   TOP_MAESTRY_CHAMPION: SummonerMaestryChampionsProps[];
-  FOUND_CHAMPIONS: ChampionsProps[];
 }

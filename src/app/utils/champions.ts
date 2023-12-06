@@ -12,11 +12,38 @@ export interface ChampionsProps {
   stats: ChampionStats;
 }
 
+export interface ChampionFullDetail {
+  id: string;
+  key: string;
+  name: string;
+  title: string;
+  skins: SkinsProps[];
+  lore: string;
+  blurb: string;
+  tags: string[];
+  info: ChampionInfo;
+  stats: ChampionStats;
+  spells: SpellsProps;
+}
+
 export interface ChampionInfo {
   attack: number;
   defense: number;
   magic: number;
   difficulty: number;
+}
+
+export interface SpellsProps {
+  id: string;
+  name: string;
+  description: string;
+}
+
+export interface SkinsProps {
+  id: string;
+  num: number;
+  name: string;
+  chromas: boolean;
 }
 
 export interface ChampionImages {

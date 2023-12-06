@@ -1,5 +1,6 @@
 import { lastTimePlayedConverter } from "@/app/utils/formatters/lastTimeConverter";
 import { formatMaestryValue } from "@/app/utils/formatters/maestryValue";
+import { patch } from "@/app/utils/patch";
 import { SummonerMaestryChampionsProps } from "@/app/utils/summonerInfo";
 import React from "react";
 
@@ -8,7 +9,6 @@ interface ChampionMaestryData {
 }
 
 export default function ChampionMaestry({ maestryData }: ChampionMaestryData) {
-  const patch = "13.23.1";
   return (
     <div className="w-full flex flex-col items-center mt-4">
       <div className="w-full max-w-xs flex gap-3 bg-neutral-600 rounded-md py-2 px-3">

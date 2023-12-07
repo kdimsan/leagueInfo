@@ -18,14 +18,17 @@ export default function FreeWeekRotation({ freeweek }: FreeWeekRotationProps) {
   };
 
   return (
-    <div className="grid grid-cols-2 items-center justify-center gap-x-20 gap-y-7">
+    <div className="grid grid-cols-2  justify-center  gap-y-7 md:grid-cols-6 xl:gap-x-5 xl:grid-cols-4">
       {freeweek.freeChampions.map((champions, index) => (
-        <div key={index} onClick={() => handleModal(champions.id)}>
+        <div
+          className="flex flex-col items-center"
+          key={index}
+          onClick={() => handleModal(champions.id)}
+        >
           <img
-            className="rounded-md"
+            className="rounded-md w-24 xl:w-24"
             src={`https://ddragon.leagueoflegends.com/cdn/${patch}/img/champion/${champions.id}.png`}
             alt="Free week champion image"
-            width={100}
           />
           <span>{champions.name}</span>
         </div>

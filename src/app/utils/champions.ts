@@ -12,7 +12,14 @@ export interface ChampionsProps {
   stats: ChampionStats;
 }
 
-export interface ChampionFullDetail {
+export interface ApiResponse<T> {
+  type: string;
+  format: string;
+  version: string;
+  data: T;
+}
+
+export interface ChampionData {
   id: string;
   key: string;
   name: string;

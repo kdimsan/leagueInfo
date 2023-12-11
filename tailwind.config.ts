@@ -11,6 +11,9 @@ const config: Config = {
       padding: {
         "costum-icon-padding": "2px 6px",
       },
+      boxShadow: {
+        "costum-box-shadow-1": "6px 7px 20px 1px rgba(0,0,0,1)",
+      },
       keyframes: {
         appearing: {
           "0%": { transform: "translateY(-60px)", opacity: "0" },

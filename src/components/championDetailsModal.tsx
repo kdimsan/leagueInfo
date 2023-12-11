@@ -47,8 +47,8 @@ export default function ChampionDetailsModal({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden bg-black bg-opacity-60 overflow-y-hidden">
       <div
-        className="relative w-11/12 h-screen overflow-y-auto
-       max-w-lg mx-auto my-6 bg-black bg-opacity-80 rounded-md p-7 animate-appearing-down
+        className="relative h-4/5 overflow-y-auto
+       max-w-lg mx-auto my-6 bg-black bg-opacity-90 rounded-md p-7 animate-appearing-down
        md:max-w-xl"
       >
         <img

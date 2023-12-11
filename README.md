@@ -9,3 +9,4 @@ to get your best champions by maestry and your ranked elo.
 
 The project is made with Next using typescript and tailwind. Also includes the server
 that makes the API calls, please check it out at: 
+#### https://github.com/kdimsan/League-Info-Server/tree/main

@@ -21,7 +21,7 @@ export default function FreeWeekRotation({ freeweek }: FreeWeekRotationProps) {
     <div className="grid grid-cols-2  justify-center  gap-y-7 md:grid-cols-6 xl:gap-x-5 xl:grid-cols-4">
       {freeweek.freeChampions.map((champions, index) => (
         <div
-          className="flex flex-col items-center"
+          className="flex flex-col items-center cursor-pointer"
           key={index}
           onClick={() => handleModal(champions.id)}
         >

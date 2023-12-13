@@ -1,12 +1,13 @@
 "use client";
 import { api } from "./utils/api/api";
 import { useEffect, useState } from "react";
+
 import { SummonerProps } from "./utils/summonerInfo";
-import UserData from "@/components/userData";
-import UserRank from "@/components/userRank";
-import ChampionMaestry from "@/components/championMaestry";
-import FreeWeekRotation from "@/components/freeWeekRotation";
 import { FreeWeekData } from "./utils/freeWeek";
+
+import FindSummonerInput from "@/components/partials/findSummonerInput";
+import FreeWeekSection from "@/components/partials/freeWeekSection";
+import UserInfo from "@/components/userInfo";
 
 export default function Home() {
   const [data, setData] = useState<SummonerProps>();
@@ -34,45 +35,13 @@ export default function Home() {
   return (
     <main className=" flex flex-col flex-1 mt-8 xl:flex-row xl:justify-around">
       <div className="">
-        <div className="flex flex-col items-center justify-center w-full">
-          <input
-            className="bg-slate-100 px-3 py-2 rounded-md text-white placeholder-neutral-400 mb-4"
-            type="text"
-            placeholder="Nickname"
-          />
-          <button
-            className="px-12 py-2 border rounded-md bg-green-700"
-            onClick={handleUserName}
-          >
-            Find
-          </button>
+        <div>
+          <FindSummonerInput onClick={handleUserName} />
         </div>
-
-        {data && (
-          <div className="flex flex-col items-center">
-            <UserData data={data.SUMMONER_DATA_RES} />
-
-            <div className="flex flex-col items-center  gap-4 justify-center mt-8 w-full lg:flex-row">
-              {data.SUMMONER_RANKED_RES.map((item, index) => (
-                <UserRank data={item} key={index} />
-              ))}
-            </div>
-            <h3 className="mt-10 font-semibold w-fit mx-auto text-lg">
-              Top 10 Maestry Champions
-            </h3>
-            <div className=" lg:grid lg:grid-cols-2 lg:gap-x-4">
-              {data.TOP_MAESTRY_CHAMPION.map((champ, index) => (
-                <ChampionMaestry maestryData={champ} key={index} />
-              ))}
-            </div>
-          </div>
-        )}
+        {data && <UserInfo userData={data} />}
       </div>
       <div className="">
-        <h3 className="mt-14 mb-3 text-lg font-bold">Free Week Rotation</h3>
-        <div className="flex flex-col">
-          {freeWeekData && <FreeWeekRotation freeweek={freeWeekData} />}
-        </div>
+        {freeWeekData && <FreeWeekSection data={freeWeekData} />}
       </div>
     </main>
   );

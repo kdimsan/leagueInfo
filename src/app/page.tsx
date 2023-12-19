@@ -35,14 +35,10 @@ export default function Home() {
   return (
     <main className=" flex flex-col flex-1 mt-8 xl:flex-row xl:justify-around">
       <div className="">
-        <div>
-          <FindSummonerInput onClick={handleUserName} />
-        </div>
+        <FindSummonerInput onClick={handleUserName} />
         {data && <UserInfo userData={data} />}
       </div>
-      <div className="">
-        {freeWeekData && <FreeWeekSection data={freeWeekData} />}
-      </div>
+      {freeWeekData && <FreeWeekSection data={freeWeekData} />}
     </main>
   );
 }

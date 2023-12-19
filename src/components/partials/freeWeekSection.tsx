@@ -9,7 +9,7 @@ interface FreeWeekSectionProps {
 
 export default function FreeWeekSection({ data }: FreeWeekSectionProps) {
   return (
-    <div>
+    <div className="">
       <TitleConfig title={"Free Week Rotation"} />
       <div className="flex flex-col">
         <FreeWeekRotation freeweek={data} />

@@ -11,7 +11,7 @@ interface UserInfoProps {
 
 export default function UserInfo({ userData }: UserInfoProps) {
   return (
-    <div>
+    <div className="w-1/2">
       <div className="flex flex-col items-center">
         <UserData data={userData.SUMMONER_DATA_RES} />
 

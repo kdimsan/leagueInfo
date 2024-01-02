@@ -1,7 +1,8 @@
 import { api } from "@/app/utils/api/api";
 import { ApiResponse, ChampionData } from "@/app/utils/champions";
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import Close from "../close";
+import useOutsideClick from "@/hooks/useOutsideClick";
 
 interface ChampionDetailsProps {
   isOpen: boolean;
@@ -19,13 +20,11 @@ export default function ChampionDetailsModal({
   }>({});
 
   const [loreDescription, setLoreDescription] = useState(false);
+  const modalRef = useRef<HTMLDivElement>(null);
 
   const handleClose = () => {
     onClose();
   };
-
-  const firsKey = Object.keys(championData);
-  console.log("First key", firsKey);
 
   useEffect(() => {
     const fetchChampionData = async () => {
@@ -42,14 +41,17 @@ export default function ChampionDetailsModal({
     }
   }, [isOpen, champion]);
 
+  useOutsideClick(modalRef, handleClose);
+
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden bg-black bg-opacity-60 overflow-y-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden bg-black bg-opacity-80 overflow-y-hidden">
       <div
         className="relative h-4/5 overflow-y-auto
        max-w-lg mx-auto my-6 bg-black bg-opacity-90 rounded-md p-7 animate-appearing-down
-       md:max-w-xl"
+       md:max-w-xl lg:w-2/4 lg:max-w-none lg:h-5/6"
+        ref={modalRef}
       >
         <img
           className="rounded-md mt-2"
@@ -58,12 +60,14 @@ export default function ChampionDetailsModal({
         />
         {Object.keys(championData).map((championName) => (
           <div key={championName} className="flex flex-col mt-4">
-            <h3 className="w-full flex items-center justify-center text-xl font-semibold">
+            <h3 className="w-full flex items-center justify-center text-xl font-semibold lg:text-3xl">
               {championData[championName].name},{" "}
               {championData[championName].title}
             </h3>
 
-            <span className="mt-3 font-semibold text-lg">Lore:</span>
+            <span className="mt-3 font-semibold text-lg lg:text-2xl">
+              Lore:
+            </span>
 
             <div className="">
               <p className="text-base">
@@ -72,7 +76,7 @@ export default function ChampionDetailsModal({
                   : championData[championName].blurb}{" "}
               </p>
               <button
-                className="font-semibold mt-1 mb-3"
+                className="font-semibold mt-1 mb-3 lg:text-lg lg:hover:brightness-50 transition-all"
                 onClick={() => setLoreDescription(!loreDescription)}
               >
                 {loreDescription ? "Hide lore" : "Full lore"}
@@ -97,8 +101,8 @@ export default function ChampionDetailsModal({
           </div>
         ))}
 
-        <button className="absolute top-2 right-3" onClick={handleClose}>
-          X
+        <button className="absolute top-4 right-2" onClick={handleClose}>
+          {<Close />}
         </button>
       </div>
     </div>

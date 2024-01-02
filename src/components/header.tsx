@@ -6,17 +6,6 @@ import { api } from "@/app/utils/api/api";
 import useUserData from "@/hooks/useUserData";
 
 export default function Header() {
-  const { userData, setUserData } = useUserData();
-
-  const handleUserName = async () => {
-    await api
-      .get("/summoner")
-      .then(function (response) {
-        setUserData(response.data);
-      })
-      .catch((error) => console.log(error));
-  };
-
   return (
     <header className="flex items-center justify-between w-full gap-2 h-16 border-b border-y-stone-700 xl:h-20">
       <div className="flex justify-center items-center w-fit">
@@ -25,7 +14,7 @@ export default function Header() {
           League Finder
         </h1>
       </div>
-      <FindSummonerInput onClick={handleUserName} />
+      <FindSummonerInput />
     </header>
   );
 }

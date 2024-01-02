@@ -9,13 +9,17 @@ interface ChampionMaestryData {
 }
 
 export default function ChampionMaestry({ maestryData }: ChampionMaestryData) {
+  const ChampionName = maestryData.championName
+    .replace(/(?<=')[A-Z]/g, (match) => match.toLowerCase())
+    .replace(/[ -']/g, "");
+
   return (
     <div className="w-full flex flex-col items-center mt-4">
       <div className="w-full max-w-xs flex gap-3 bg-neutral-600 rounded-md py-2 px-3">
         <div className="flex  items-center">
           <img
             className="h-20 rounded-md"
-            src={`https://ddragon.leagueoflegends.com/cdn/${patch}/img/champion/${maestryData.championName}.png`}
+            src={`https://ddragon.leagueoflegends.com/cdn/${patch}/img/champion/${ChampionName}.png`}
             alt="Champion image"
             width={100}
           />

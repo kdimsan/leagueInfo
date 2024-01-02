@@ -7,7 +7,7 @@ interface UserDataProps {
 
 export default function UserData({ data }: UserDataProps) {
   return (
-    <div className="flex items-center  justify-center w-full mt-16 gap-3">
+    <div className="flex items-center  justify-center w-full gap-3">
       <div className="relative">
         <img
           className="border border-yellow-400 rounded"

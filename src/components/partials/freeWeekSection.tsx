@@ -1,5 +1,5 @@
 import React from "react";
-import FreeWeekRotation from "./freeWeekRotation";
+import FreeWeekContent from "./freeWeekContent";
 import { FreeWeekData } from "@/app/utils/freeWeek";
 import TitleConfig from "../titleConfig";
 
@@ -12,7 +12,7 @@ export default function FreeWeekSection({ data }: FreeWeekSectionProps) {
     <div className="">
       <TitleConfig title={"Free Week Rotation"} />
       <div className="flex flex-col">
-        <FreeWeekRotation freeweek={data} />
+        <FreeWeekContent freeweek={data} />
       </div>
     </div>
   );

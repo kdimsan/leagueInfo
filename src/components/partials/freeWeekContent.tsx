@@ -8,7 +8,7 @@ interface FreeWeekRotationProps {
   freeweek: FreeWeekData;
 }
 
-export default function FreeWeekRotation({ freeweek }: FreeWeekRotationProps) {
+export default function FreeWeekContent({ freeweek }: FreeWeekRotationProps) {
   const [modalOpen, setModalOpen] = useState(false);
   const [selctedChampion, setSelctedChampion] = useState("");
 

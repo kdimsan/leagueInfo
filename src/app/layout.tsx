@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
+import { UserContextProvider } from "@/contexts/userContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,8 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-zinc-900 text-zinc-100 px-5 py-4 lg:px-16 xl:px-20">
-        <Header />
-        {children}
+        <UserContextProvider>
+          <Header />
+          {children}
+        </UserContextProvider>
       </body>
     </html>
   );

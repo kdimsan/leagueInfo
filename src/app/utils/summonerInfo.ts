@@ -1,5 +1,3 @@
-import { ChampionsProps } from "./champions";
-
 export interface SummonerAccountProps {
   name: string;
   profileIconId: number;

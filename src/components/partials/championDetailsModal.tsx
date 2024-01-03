@@ -3,6 +3,10 @@ import { ApiResponse, ChampionData } from "@/app/utils/champions";
 import React, { useEffect, useState, useRef } from "react";
 import Close from "../close";
 import useOutsideClick from "@/hooks/useOutsideClick";
+import ChampionName from "./championInfoModal/championName";
+import ChampionLore from "./championInfoModal/championLore";
+import ChampionSkins from "./championInfoModal/championSkins";
+import ChampionInfo from "./championInfoModal/championInfo";
 
 interface ChampionDetailsProps {
   isOpen: boolean;
@@ -24,24 +28,28 @@ export default function ChampionDetailsModal({
 
   const handleClose = () => {
     onClose();
+    setLoreDescription(false);
+    setChampionData({});
   };
+
+  useOutsideClick(modalRef, handleClose);
 
   useEffect(() => {
     const fetchChampionData = async () => {
-      const championDetails = await api.post<
-        ApiResponse<{ [key: string]: ChampionData }>
-      >("/champions_details", {
-        championName: champion,
-      });
-      setChampionData(championDetails.data.data);
+      try {
+        if (isOpen && champion) {
+          const championDetails = await api.post<
+            ApiResponse<{ [key: string]: ChampionData }>
+          >("/champions_details", { championName: champion });
+          setChampionData(championDetails.data.data);
+        }
+      } catch (error) {
+        console.error("Error fetching champion data:", error);
+      }
     };
 
-    if (isOpen && champion) {
-      fetchChampionData();
-    }
+    fetchChampionData();
   }, [isOpen, champion]);
-
-  useOutsideClick(modalRef, handleClose);
 
   if (!isOpen) return null;
 
@@ -60,44 +68,20 @@ export default function ChampionDetailsModal({
         />
         {Object.keys(championData).map((championName) => (
           <div key={championName} className="flex flex-col mt-4">
-            <h3 className="w-full flex items-center justify-center text-xl font-semibold lg:text-3xl">
-              {championData[championName].name},{" "}
-              {championData[championName].title}
-            </h3>
+            <ChampionName championData={championData[championName]} />
 
-            <span className="mt-3 font-semibold text-lg lg:text-2xl">
-              Lore:
-            </span>
+            <ChampionInfo championData={championData[championName]} />
 
-            <div className="">
-              <p className="text-base">
-                {loreDescription
-                  ? championData[championName].lore
-                  : championData[championName].blurb}{" "}
-              </p>
-              <button
-                className="font-semibold mt-1 mb-3 lg:text-lg lg:hover:brightness-50 transition-all"
-                onClick={() => setLoreDescription(!loreDescription)}
-              >
-                {loreDescription ? "Hide lore" : "Full lore"}
-              </button>
-            </div>
+            <ChampionLore
+              championData={championData[championName]}
+              loreDescription={loreDescription}
+              setLoreDescription={setLoreDescription}
+            />
 
-            <div>
-              <h3 className="mt-3 font-semibold text-lg">SKINS</h3>
-              <div>
-                {championData[championName].skins.map((skins) => (
-                  <div key={skins.id} className="my-5">
-                    <img
-                      className="rounded-md shadow-costum-box-shadow-1"
-                      src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championName}_${skins.num}.jpg`}
-                      alt=""
-                    />
-                    <h4 className="font-semibold">{skins.name}</h4>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <ChampionSkins
+              championData={championData[championName]}
+              championName={championName}
+            />
           </div>
         ))}
 

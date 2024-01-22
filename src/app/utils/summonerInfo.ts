@@ -27,7 +27,7 @@ export interface SummonerMaestryChampionsProps {
 }
 
 export interface SummonerProps {
-  SUMMONER_DATA_RES: SummonerAccountProps;
-  SUMMONER_RANKED_RES: SummonerRankedProps[];
-  TOP_MAESTRY_CHAMPION: SummonerMaestryChampionsProps[];
+  summonerData: SummonerAccountProps;
+  summonerRankedData: SummonerRankedProps[];
+  summonerMaestryChampionsData: SummonerMaestryChampionsProps[];
 }

@@ -1,10 +1,8 @@
 "use client";
 import { api } from "./utils/api/api";
 import { useEffect, useState } from "react";
-import { FreeWeekData } from "./utils/freeWeek";
 import FreeWeekSection from "@/components/partials/freeWeekSection";
 import AllChampionsSection from "@/components/allChampionsSection";
-import { ChampionsProps } from "./utils/champions";
 
 export default function Home() {
   const [freeWeekData, setFreeWeekData] = useState();

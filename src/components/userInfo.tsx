@@ -13,12 +13,12 @@ export default function UserInfo() {
   return (
     <div>
       {data && (
-        <div className="w-1/2">
+        <div className="bg-neutral-800 xl:w-1/2 xl:py-5 xl:rounded-lg">
           <div className="flex flex-col items-center mt-8">
             <UserData />
 
             <div className="flex flex-col items-center  gap-4 justify-center mt-8 w-full lg:flex-row">
-              {data.SUMMONER_RANKED_RES.map((item, index) => (
+              {data.summonerRankedData.map((item, index) => (
                 <UserRank data={item} key={index} />
               ))}
             </div>

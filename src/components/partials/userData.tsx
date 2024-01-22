@@ -3,12 +3,12 @@ import React from "react";
 
 export default function UserData() {
   const { userData } = useUserData();
-  const data = userData?.SUMMONER_DATA_RES;
+  const data = userData?.summonerData;
   return (
     <div>
       {data && (
         <div className="flex items-center  justify-center w-full gap-3">
-          <div className="relative">
+          <div className="relative ">
             <img
               className="border border-yellow-400 rounded"
               width={100}

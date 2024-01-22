@@ -1,5 +1,5 @@
 "use client";
-import { SummonerProps } from "@/app/utils/summonerInfo";
+import { SummonerProps } from "@/app/utils/@types/summonerInfo";
 import { ReactNode, createContext, useState } from "react";
 
 interface UserContextType {

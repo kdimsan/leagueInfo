@@ -1,5 +1,5 @@
 import { winrate } from "@/app/utils/formatters/calculateWinrate";
-import { SummonerRankedProps } from "@/app/utils/summonerInfo";
+import { SummonerRankedProps } from "@/app/utils/@types/summonerInfo";
 import React from "react";
 
 interface UserRankProps {

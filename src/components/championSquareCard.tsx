@@ -1,5 +1,5 @@
-import { ChampionsProps } from "@/app/utils/champions";
-import { patch } from "@/app/utils/patch";
+import { ChampionsProps } from "@/app/utils/@types/champions";
+import { patch } from "@/app/utils/@types/patch";
 import React from "react";
 
 interface ChampionSquareCardProps {

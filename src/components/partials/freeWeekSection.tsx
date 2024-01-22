@@ -1,6 +1,6 @@
 import React from "react";
 import FreeWeekContent from "./freeWeekContent";
-import { FreeWeekData } from "@/app/utils/freeWeek";
+import { FreeWeekData } from "@/app/utils/@types/freeWeek";
 import TitleConfig from "../titleConfig";
 
 interface FreeWeekSectionProps {

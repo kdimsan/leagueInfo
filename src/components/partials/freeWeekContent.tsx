@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import ChampionDetailsModal from "./championDetailsModal";
-import { FreeWeekData } from "@/app/utils/freeWeek";
+import { FreeWeekData } from "@/app/utils/@types/freeWeek";
 import ChampionSquareCard from "../championSquareCard";
 
 interface FreeWeekRotationProps {

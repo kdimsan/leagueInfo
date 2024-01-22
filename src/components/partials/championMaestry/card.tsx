@@ -1,4 +1,4 @@
-import { SummonerMaestryChampionsProps } from "@/app/utils/summonerInfo";
+import { SummonerMaestryChampionsProps } from "@/app/utils/@types/summonerInfo";
 import React from "react";
 import ChampionMaestryImg from "./cardImage";
 import CardInfo from "./cardInfo";

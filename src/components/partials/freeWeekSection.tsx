@@ -10,8 +10,8 @@ interface FreeWeekSectionProps {
 export default function FreeWeekSection({ data }: FreeWeekSectionProps) {
   return (
     <div className="">
-      <TitleConfig title={"Free Week Rotation"} />
-      <div className="flex flex-col">
+      <TitleConfig className={"text-xl"} title={"Free Week Rotation"} />
+      <div className="flex flex-col justify-center items-center mt-6">
         <FreeWeekContent freeweek={data} />
       </div>
     </div>

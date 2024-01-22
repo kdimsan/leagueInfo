@@ -23,7 +23,7 @@ export default function AllChampionsSection({
     <div className="flex flex-col justify-center items-center mt-10">
       <TitleConfig className={"lg:text-2xl"} title={"League Champions"} />
       <div className="grid grid-cols-2  justify-center gap-7 mt-5 md:grid-cols-6 xl:grid-cols-10 xl:gap-x-10">
-        {data.map((champion, index) => (
+        {Object.values(data).map((champion, index) => (
           <ChampionSquareCard
             data={champion}
             key={index}

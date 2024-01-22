@@ -7,14 +7,14 @@ import AllChampionsSection from "@/components/allChampionsSection";
 import { ChampionsProps } from "./utils/champions";
 
 export default function Home() {
-  const [freeWeekData, setFreeWeekData] = useState<FreeWeekData>();
-  const [allChampionsData, setAllChampionsData] = useState<ChampionsProps[]>();
+  const [freeWeekData, setFreeWeekData] = useState();
+  const [allChampionsData, setAllChampionsData] = useState();
 
   useEffect(() => {
     const handlePageData = async () => {
       await api.get("/free_week").then(function (response) {
-        setFreeWeekData(response.data.FREE_WEEK_RES);
-        setAllChampionsData(response.data.ALL_CHAMPIONS_ARRAY);
+        setFreeWeekData(response.data.freeWeekChampionsData);
+        setAllChampionsData(response.data.championsRes);
       });
     };
     handlePageData();

@@ -20,7 +20,7 @@ export default function FreeWeekContent({ freeweek }: FreeWeekRotationProps) {
 
   return (
     <div className="grid grid-cols-2  justify-center  gap-7 md:grid-cols-6 xl:grid-cols-5 xl:gap-x-10">
-      {freeweek.freeChampions.map((champions, index) => (
+      {Object.values(freeweek).map((champions, index) => (
         <ChampionSquareCard
           key={index}
           data={champions}

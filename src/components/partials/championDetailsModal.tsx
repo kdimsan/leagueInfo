@@ -19,9 +19,7 @@ export default function ChampionDetailsModal({
   onClose,
   champion,
 }: ChampionDetailsProps) {
-  const [championData, setChampionData] = useState<{
-    [key: string]: ChampionData;
-  }>({});
+  const [championData, setChampionData] = useState<ChampionData>();
 
   const [loreDescription, setLoreDescription] = useState(false);
 
@@ -30,7 +28,7 @@ export default function ChampionDetailsModal({
   const handleClose = () => {
     onClose();
     setLoreDescription(false);
-    setChampionData({});
+    setChampionData(undefined);
   };
 
   useOutsideClick(modalRef, handleClose);
@@ -39,10 +37,10 @@ export default function ChampionDetailsModal({
     const fetchChampionData = async () => {
       try {
         if (isOpen && champion) {
-          const championDetails = await api.post<
-            ApiResponse<{ [key: string]: ChampionData }>
-          >("/champions_details", { championName: champion });
-          setChampionData(championDetails.data.data);
+          const championDetails = await api.post("/champion_details", {
+            championName: champion,
+          });
+          setChampionData(championDetails.data.championDetails);
         }
       } catch (error) {
         console.error("Error fetching champion data:", error);
@@ -67,24 +65,25 @@ export default function ChampionDetailsModal({
           src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion}_0.jpg`}
           alt="Champion splash art"
         />
-        {Object.keys(championData).map((championName) => (
-          <div key={championName} className="flex flex-col mt-4">
-            <ChampionName championData={championData[championName]} />
+        {championData &&
+          Object.values(championData).map((championDataArray: ChampionData) => (
+            <div key={championDataArray.id} className="flex flex-col mt-4">
+              <ChampionName championData={championDataArray} />
 
-            <ChampionInfo championData={championData[championName]} />
+              <ChampionInfo championData={championDataArray} />
 
-            <ChampionLore
-              championData={championData[championName]}
-              loreDescription={loreDescription}
-              setLoreDescription={setLoreDescription}
-            />
+              <ChampionLore
+                championData={championDataArray}
+                loreDescription={loreDescription}
+                setLoreDescription={setLoreDescription}
+              />
 
-            <ChampionSkins
-              championData={championData[championName]}
-              championName={championName}
-            />
-          </div>
-        ))}
+              <ChampionSkins
+                championData={championDataArray}
+                championName={championDataArray.name}
+              />
+            </div>
+          ))}
 
         <button className="absolute top-4 right-2" onClick={handleClose}>
           {<Close />}

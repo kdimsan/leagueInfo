@@ -24,6 +24,7 @@ export default function ChampionDetailsModal({
   }>({});
 
   const [loreDescription, setLoreDescription] = useState(false);
+
   const modalRef = useRef<HTMLDivElement>(null);
 
   const handleClose = () => {

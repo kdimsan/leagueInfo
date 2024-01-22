@@ -4,6 +4,7 @@ import UserRank from "./partials/userRank";
 import ChampionMaestry from "./partials/championMaestry/championMaestry";
 import TitleConfig from "./titleConfig";
 import useUserData from "@/hooks/useUserData";
+import SummonerLatestMatches from "./summonerLatestMatches";
 
 export default function UserInfo() {
   const { userData } = useUserData();
@@ -13,8 +14,8 @@ export default function UserInfo() {
   return (
     <div>
       {data && (
-        <div className="bg-neutral-800 xl:w-1/2 xl:py-5 xl:rounded-lg">
-          <div className="flex flex-col items-center mt-8">
+        <div className="bg-neutral-800  xl:py-5 xl:rounded-lg flex flex-col xl:flex-row ">
+          <div className="flex flex-col items-center mt-8 xl:w-1/2">
             <UserData />
 
             <div className="flex flex-col items-center  gap-4 justify-center mt-8 w-full lg:flex-row">
@@ -31,6 +32,9 @@ export default function UserInfo() {
             <div className="">
               <ChampionMaestry />
             </div>
+          </div>
+          <div>
+            <SummonerLatestMatches />
           </div>
         </div>
       )}

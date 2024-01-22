@@ -5,7 +5,7 @@ import React from "react";
 
 export default function SummonerPage() {
   return (
-    <main className="">
+    <main className="mt-5">
       <UserInfo />
     </main>
   );

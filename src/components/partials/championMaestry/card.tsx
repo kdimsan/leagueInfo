@@ -18,7 +18,7 @@ export default function ChampionMaestryCard({
 
   return (
     <div className="w-full flex flex-col items-center mt-4" key={key}>
-      <div className="w-full max-w-xs flex gap-3 bg-neutral-600 rounded-md py-2 px-3 lg:max-w-sm">
+      <div className="w-full max-w-xs flex gap-3 bg-neutral-700 rounded-md py-2 px-3 lg:max-w-sm">
         <ChampionMaestryImg championName={championName} />
         <CardInfo champion={champion} />
       </div>

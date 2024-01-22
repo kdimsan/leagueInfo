@@ -2,11 +2,14 @@ import { api } from "@/app/utils/api/api";
 import useUserData from "@/hooks/useUserData";
 import React, { useState } from "react";
 import Search from "../search";
+import Link from "next/link";
 
 export default function FindSummonerInput() {
   const { setUserData } = useUserData();
 
   const [riotId, setRiotId] = useState({ gameName: "", tagLine: "" });
+
+  const riotIdString: string = `${riotId.gameName}-${riotId.tagLine}`;
 
   const handleRiotId = (e: string) => {
     const [gameName, tagLine] = e.split(" #");
@@ -35,12 +38,13 @@ export default function FindSummonerInput() {
         placeholder="Game Name+ #TagLine"
         onChange={(e) => handleRiotId(e.target.value)}
       />
-      <button
+      <Link
+        href={`/summoner`}
         className="px-2 py-2 rounded-r-md bg-green-700 "
         onClick={handleUserNameData}
       >
-        {<Search />}
-      </button>
+        <Search />
+      </Link>
     </div>
   );
 }

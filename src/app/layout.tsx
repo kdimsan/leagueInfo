@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-zinc-900 text-zinc-100 px-5 py-4 lg:px-16 xl:px-20">
+      <body className="bg-zinc-900 text-zinc-100 px-5 py-4 lg:px-16 xl:px-32">
         <UserContextProvider>
           <Header />
           {children}

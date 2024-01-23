@@ -1,4 +1,4 @@
-import { lastTimePlayedConverter } from "@/app/utils/formatters/lastTimeConverter";
+import { lastTimePlayedConverter } from "@/app/utils/formatters/timeCalculators";
 import { formatMaestryValue } from "@/app/utils/formatters/maestryValue";
 import { SummonerMaestryChampionsProps } from "@/app/utils/@types/summonerInfo";
 import React from "react";

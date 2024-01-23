@@ -3,9 +3,10 @@ export interface SummonerLatestMatchesProps {
   participantsPuuid: string[];
 }
 
-interface Info {
+export interface Info {
   gameMode: string;
   gameStartTimestamp: number;
+  gameEndTimestamp: number;
   gameDuration: number;
   gameId: number;
   gameType: string;
@@ -13,7 +14,7 @@ interface Info {
   teams: Team[];
 }
 
-interface Participant {
+export interface Participant {
   assists: number;
   challenges: Challenges;
   champLevel: number;
@@ -38,6 +39,7 @@ interface Participant {
   visionScore: number;
   wardsKilled: number;
   wardsPlaced: number;
+  win: boolean;
 }
 
 interface Challenges {

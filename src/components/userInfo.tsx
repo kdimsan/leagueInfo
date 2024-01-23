@@ -33,7 +33,7 @@ export default function UserInfo() {
               <ChampionMaestry />
             </div>
           </div>
-          <div>
+          <div className="xl: w-1/2">
             <SummonerLatestMatches />
           </div>
         </div>

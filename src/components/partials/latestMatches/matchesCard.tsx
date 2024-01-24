@@ -4,6 +4,7 @@ import {
 } from "@/app/utils/@types/summonerMatches";
 import React from "react";
 import MatchInfo from "./matchInfo";
+import MatchSummonerInfos from "./matchSummonerInfos";
 
 interface MatchCardData {
   matchData: SummonerLatestMatchesProps;
@@ -26,11 +27,12 @@ export default function MatchesCard({
         userDataByMatch.win ? "bg-green-800" : "bg-red-800"
       } px-4 py-3 rounded-lg`}
     >
-      <div className="content ">
+      <div className="content flex">
         <MatchInfo
           userDataByMatch={userDataByMatch}
           matchInfo={matchData.matchInfo}
         />
+        <MatchSummonerInfos matchUserInfo={userDataByMatch} />
       </div>
     </div>
   );

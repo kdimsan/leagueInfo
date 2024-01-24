@@ -22,15 +22,25 @@ export interface Participant {
   championName: string;
   deaths: number;
   goldEarned: number;
+  item0: number;
+  item1: number;
+  item2: number;
+  item3: number;
+  item4: number;
+  item5: number;
+  item6: number;
   kills: number;
   lane: string;
   neutralMinionsKilled: number;
+  perks: Perks;
   profileIcon: number;
   puuid: string;
   riotIdGameName: string;
   riotIdTagline: string;
   role: string;
   summonerId: string;
+  summoner1Id: number;
+  summoner2Id: number;
   summonerLevel: number;
   teamId: number;
   totalDamageDealtToChampions: number;
@@ -46,6 +56,30 @@ interface Challenges {
   goldPerMinute: number;
   kda: number;
   killParticipation: number;
+}
+
+interface Perks {
+  statPerks: StatPerks;
+  styles: Style[];
+}
+
+interface StatPerks {
+  defense: number;
+  flex: number;
+  offense: number;
+}
+
+interface Style {
+  description: string;
+  selections: Selection[];
+  style: number;
+}
+
+interface Selection {
+  perk: number;
+  var1: number;
+  var2: number;
+  var3: number;
 }
 
 interface Team {

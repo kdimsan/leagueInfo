@@ -1,4 +1,4 @@
-import { Info, Participant } from "@/app/utils/@types/summonerMatches";
+import { MatchInfo, Participant } from "@/app/utils/@types/summonerMatches";
 import {
   calcularDiferencaTempo,
   secondsToMinutes,
@@ -6,7 +6,7 @@ import {
 import React from "react";
 
 interface MatchInfoProps {
-  matchInfo: Info;
+  matchInfo: MatchInfo;
   userDataByMatch: Participant;
 }
 

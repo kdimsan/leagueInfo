@@ -11,14 +11,6 @@ interface MatchSummonerInfosProps {
 export default function MatchSummonerInfos({
   matchUserInfo,
 }: MatchSummonerInfosProps) {
-  const userItems: number[] = [];
-
-  for (const key in matchUserInfo) {
-    if (key.startsWith("item") && Number.isInteger(Number(key.slice(4)))) {
-      userItems.push(Number(matchUserInfo[key as keyof Participant]));
-    }
-  }
-
   return (
     <div className="content">
       <div className="w-fit flex gap-2">
@@ -27,12 +19,13 @@ export default function MatchSummonerInfos({
           championLevel={matchUserInfo.champLevel}
         />
         <SummonerPerks
-          spell1={matchUserInfo.summoner1Id}
-          spell2={matchUserInfo.summoner2Id}
+          spell1={matchUserInfo.summonerSpell1}
+          spell2={matchUserInfo.summonerSpell2}
+          runes={matchUserInfo.perks}
         />
       </div>
       <div className="items mt-2">
-        <SummonerItems userItems={userItems} />
+        <SummonerItems userItems={matchUserInfo.items} />
       </div>
     </div>
   );

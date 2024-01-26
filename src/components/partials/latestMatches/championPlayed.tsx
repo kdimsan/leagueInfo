@@ -13,7 +13,7 @@ export default function ChampionPlayed({
 }: ChampionPlayedProps) {
   //https://ddragon.leagueoflegends.com/cdn/${patch}/img/champion/${championName}.png
   return (
-    <div className="relative w-fit">
+    <div className="relative w-fit h-fit">
       <Image
         className="rounded-full relative overflow-hidden"
         src={`https://opgg-static.akamaized.net/meta/images/lol/${patch}/champion/${championName}.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_160,h_160&v=1705466001567`}

@@ -15,7 +15,7 @@ export default function MatchesCard({
   matchData,
   searchUserPuiid,
 }: MatchCardData) {
-  const matchInfo = matchData.matchInfo.participants;
+  const matchInfo = matchData.matchInfo.participantsData;
 
   const userDataByMatch = matchInfo.filter(
     (userPuiid) => userPuiid.puuid === searchUserPuiid

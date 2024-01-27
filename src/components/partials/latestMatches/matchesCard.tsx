@@ -1,10 +1,8 @@
-import {
-  Participant,
-  SummonerLatestMatchesProps,
-} from "@/app/utils/@types/summonerMatches";
+import { SummonerLatestMatchesProps } from "@/app/utils/@types/summonerMatches";
 import React from "react";
 import MatchInfo from "./matchInfo";
 import MatchSummonerInfos from "./matchSummonerInfos";
+import MatchPlayers from "./matchPlayers";
 
 interface MatchCardData {
   matchData: SummonerLatestMatchesProps;
@@ -15,24 +13,32 @@ export default function MatchesCard({
   matchData,
   searchUserPuiid,
 }: MatchCardData) {
-  const matchInfo = matchData.matchInfo.participantsData;
+  const participantsArray = matchData.matchInfo.participantsData;
 
-  const userDataByMatch = matchInfo.filter(
+  const userDataByMatch = participantsArray.filter(
     (userPuiid) => userPuiid.puuid === searchUserPuiid
   )[0];
 
   return (
     <div
-      className={`card-container flex ${
+      className={`card-container flex justify-between ${
         userDataByMatch.win ? "bg-green-800" : "bg-red-800"
       } px-4 py-3 rounded-lg`}
     >
-      <div className="content flex">
+      <div className="card-content flex items-center justify-center">
         <MatchInfo
           userDataByMatch={userDataByMatch}
           matchInfo={matchData.matchInfo}
         />
+      </div>
+      <div className="flex items-center">
         <MatchSummonerInfos matchUserInfo={userDataByMatch} />
+      </div>
+      <div>
+        <MatchPlayers
+          participantsByMatchInfo={participantsArray}
+          searchUserPuiid={userDataByMatch.puuid}
+        />
       </div>
     </div>
   );

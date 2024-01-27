@@ -16,6 +16,7 @@ export interface MatchInfo {
 
 export interface Participant {
   assists: number;
+  challenges: Challenges;
   champLevel: number;
   championId: number;
   championName: string;
@@ -50,10 +51,11 @@ export interface Runes {
   secondaryRuneStyle: number;
 }
 
-interface Challenges {
+export interface Challenges {
   goldPerMinute: number;
   kda: number;
   killParticipation: number;
+  gameLength: number;
 }
 
 interface Perks {

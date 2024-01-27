@@ -1,4 +1,4 @@
-import { ChampionsProps } from "@/app/utils/champions";
+import { ChampionsProps } from "@/app/utils/@types/champions";
 import React, { useState } from "react";
 import ChampionSquareCard from "./championSquareCard";
 import ChampionDetailsModal from "./partials/championDetailsModal";

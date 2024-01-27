@@ -3,6 +3,7 @@ import {
   calcularDiferencaTempo,
   secondsToMinutes,
 } from "@/app/utils/formatters/timeCalculators";
+import { queueTypeEnum } from "@/app/utils/queueTypeEnum";
 import React from "react";
 
 interface MatchInfoProps {
@@ -15,6 +16,7 @@ export default function MatchInfo({
   userDataByMatch,
 }: MatchInfoProps) {
   const endGameDate = calcularDiferencaTempo(matchInfo.gameEndTimestamp);
+  const queueType = queueTypeEnum[matchInfo.queueId];
   return (
     <div className="h-full match-info flex flex-col justify-between">
       <div className="flex flex-col">
@@ -23,7 +25,7 @@ export default function MatchInfo({
             userDataByMatch.win ? "text-lime-500" : "text-red-500"
           } font-bold`}
         >
-          {matchInfo.gameMode}
+          {queueType}
         </span>
 
         <span className="text-xs text-neutral-400 font-medium">

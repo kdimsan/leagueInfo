@@ -31,8 +31,8 @@ export default function MatchPlayers({
         alt={`${participant.riotIdGameName} played as ${participant.championName}`}
       />
       <span
-        className={`flex items-center text-ellipsis text-xs overflow-hidden w-20 ${
-          participant.teamId === 100 ? "justify-end" : "justify-normal"
+        className={`text-ellipsis text-xs overflow-hidden w-20  ${
+          participant.teamId === 100 ? "text-right" : "text-left"
         }`}
       >
         {participant.riotIdGameName}

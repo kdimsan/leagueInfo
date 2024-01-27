@@ -11,6 +11,7 @@ export interface MatchInfo {
   gameId: number;
   gameType: string;
   participantsData: Participant[];
+  queueId: number;
   teams: Team[];
 }
 

@@ -1,3 +1,5 @@
+import { ChampionBase } from "./champions";
+
 export interface SummonerLatestMatchesProps {
   matchInfo: MatchInfo;
   participantsPuuid: string[];
@@ -83,54 +85,14 @@ interface Selection {
   var3: number;
 }
 
-interface Team {
-  bans: any[];
-  objectives: Objectives;
+export interface Team {
+  bans: ChampionBase[];
+  objectives: Objectives[];
   teamId: number;
   win: boolean;
 }
 
-interface Objectives {
-  baron: Baron;
-  champion: Champion;
-  dragon: Dragon;
-  horde: Horde;
-  inhibitor: Inhibitor;
-  riftHerald: RiftHerald;
-  tower: Tower;
-}
-
-interface Baron {
-  first: boolean;
-  kills: number;
-}
-
-interface Champion {
-  first: boolean;
-  kills: number;
-}
-
-interface Dragon {
-  first: boolean;
-  kills: number;
-}
-
-interface Horde {
-  first: boolean;
-  kills: number;
-}
-
-interface Inhibitor {
-  first: boolean;
-  kills: number;
-}
-
-interface RiftHerald {
-  first: boolean;
-  kills: number;
-}
-
-interface Tower {
-  first: boolean;
+export interface Objectives {
+  name: string;
   kills: number;
 }

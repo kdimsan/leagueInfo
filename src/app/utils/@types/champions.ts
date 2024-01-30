@@ -19,6 +19,12 @@ export interface ApiResponse<T> {
   data: T;
 }
 
+export interface ChampionBase {
+  championName: string;
+  championId: string;
+  championKey: number;
+}
+
 export interface ChampionData {
   id: string;
   key: string;

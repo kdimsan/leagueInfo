@@ -14,8 +14,8 @@ export default function UserInfo() {
   return (
     <div>
       {data && (
-        <div className="bg-neutral-800  xl:py-5 xl:rounded-lg flex flex-col xl:flex-row ">
-          <div className="flex flex-col items-center mt-8 xl:w-1/2">
+        <div className="bg-neutral-800  xl:py-5 xl:rounded-lg flex flex-col xl:flex-row xl:justify-between xl:px-14">
+          <div className="flex flex-col items-center mt-8">
             <UserData />
 
             <div className="flex flex-col items-center  gap-4 justify-center mt-8 w-full lg:flex-row">
@@ -33,7 +33,7 @@ export default function UserInfo() {
               <ChampionMaestry />
             </div>
           </div>
-          <div className="xl: w-1/2">
+          <div className="">
             <SummonerLatestMatches />
           </div>
         </div>

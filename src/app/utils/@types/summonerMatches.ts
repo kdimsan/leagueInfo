@@ -42,6 +42,7 @@ export interface Participant {
   totalDamageDealtToChampions: number;
   totalDamageTaken: number;
   totalMinionsKilled: number;
+  totalFarm: number;
   items: number[];
   visionScore: number;
   wardsKilled: number;

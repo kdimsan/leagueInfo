@@ -1,29 +1,20 @@
 import { Challenges } from "@/app/utils/@types/summonerMatches";
+import { calculateFarmPerMin } from "@/app/utils/formatters/calculateFarmPerMin";
 import React from "react";
 
 interface MatchSummonerExtraDataProps {
   challenges: Challenges;
   visionScore: number;
-  minionsFarm: number;
-  neutralMonsterFarm: number;
+  totalFarm: number;
   totalDamage: number;
 }
 
 export default function MatchSummonerExtraData({
   challenges,
   visionScore,
-  minionsFarm,
-  neutralMonsterFarm,
+  totalFarm,
   totalDamage,
 }: MatchSummonerExtraDataProps) {
-  const totalFarm = (
-    minionsFarm: number,
-    neutralFarm: number,
-    gameDuration: number
-  ) => {
-    const farm = minionsFarm + neutralFarm;
-    return `CS ${farm} | (${(farm / (gameDuration / 60)).toFixed(2)})/min`;
-  };
   const killParticipationPerCent = (killParticipation: number) => {
     return `${(killParticipation * 100).toFixed(0)}%`;
   };
@@ -37,9 +28,12 @@ export default function MatchSummonerExtraData({
         </span>
       </div>
       <div className="flex flex-col text-sm ml-3 text-neutral-400 leading-tight">
-        <span>
-          {totalFarm(minionsFarm, neutralMonsterFarm, challenges.gameLength)}
-        </span>
+        <div>
+          <span>CS: {totalFarm} </span>
+          <span>
+            | {calculateFarmPerMin(totalDamage, challenges.gameLength)}/min
+          </span>
+        </div>
         {visionScore === 0 ? (
           <span>Total Dmg {totalDamage}</span>
         ) : (

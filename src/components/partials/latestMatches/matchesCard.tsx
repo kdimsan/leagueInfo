@@ -1,7 +1,7 @@
 import { SummonerLatestMatchesProps } from "@/app/utils/@types/summonerMatches";
 import React, { useState } from "react";
 import MatchInfo from "./matchInfo";
-import MatchSummonerInfos from "./matchSummonerInfos";
+import MatchSearchUserInfos from "./matchSearchUserInfos";
 import MatchPlayers from "./matchPlayers";
 import MatchDetailsCard from "./matchDetails/matchDetailsCard";
 
@@ -24,9 +24,9 @@ export default function MatchesCard({
   return (
     <div onClick={() => setMatchDetailsStatus(!matchDetailsStatus)}>
       <div
-        className={`card-container flex justify-between gap-4 px-4 py-3 rounded-lg ${
-          userDataByMatch.win ? "bg-green-800" : "bg-red-800"
-        }`}
+        className={`card-container flex justify-between gap-4 px-4 py-3 rounded-lg 
+        ${matchDetailsStatus ? "rounded-b-none" : ""}
+        ${userDataByMatch.win ? "bg-green-800" : "bg-red-800"}`}
       >
         <div className="card-content flex items-center justify-center">
           <MatchInfo
@@ -35,7 +35,7 @@ export default function MatchesCard({
           />
         </div>
         <div className="flex items-center">
-          <MatchSummonerInfos matchUserInfo={userDataByMatch} />
+          <MatchSearchUserInfos matchUserInfo={userDataByMatch} />
         </div>
         <div>
           <MatchPlayers

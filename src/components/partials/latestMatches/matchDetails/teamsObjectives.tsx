@@ -1,10 +1,11 @@
 import { Objectives } from "@/app/utils/@types/summonerMatches";
 import Baron from "@/images/baron";
 import Dragon from "@/images/dragon";
-import Inibidor from "@/images/inibidor";
+import Inhibitor from "@/images/Inhibitor";
 import RiftHerald from "@/images/riftHerald";
 import Tower from "@/images/tower";
 import Horde from "@/images/horde";
+import Champion from "@/images/champion";
 
 import React from "react";
 
@@ -18,9 +19,10 @@ interface SVGComponents {
 
 const svgComponents: SVGComponents = {
   Baron: Baron,
+  Champion: Champion,
   Dragon: Dragon,
-  Inibidor: Inibidor,
-  RiftHerald: RiftHerald,
+  Inhibitor: Inhibitor,
+  Rift_Herald: RiftHerald,
   Tower: Tower,
   Horde: Horde,
 };
@@ -28,23 +30,22 @@ export default function TeamsObjectives({
   teamObjectives,
 }: TeamsObjectivesProps) {
   return (
-    <ul>
+    <ul className="grid grid-cols-3 w-fit">
       {teamObjectives.map((objective, index) => {
         const SVGComponent = svgComponents[objective.name];
 
         if (!SVGComponent) {
           return (
             <li key={index}>
-              <span>{objective.name}</span>
+              <span>{objective.name.replace("_", " ")}</span>
               <span>{objective.kills}</span>
             </li>
           );
         }
         return (
-          <li key={index}>
+          <li className="flex items-center gap-1" key={index}>
             <SVGComponent />
             <div>
-              <span>{objective.name}</span>
               <span>{objective.kills}</span>
             </div>
           </li>

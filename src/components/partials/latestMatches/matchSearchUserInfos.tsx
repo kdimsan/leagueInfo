@@ -6,13 +6,13 @@ import SummonerItems from "./summonerItems";
 import SummonerMatchFrag from "./summonerMatchFrag";
 import MatchSummonerExtraData from "./matchSummonerExtraData";
 
-interface MatchSummonerInfosProps {
+interface MatchSearchUserInfosProps {
   matchUserInfo: Participant;
 }
 
-export default function MatchSummonerInfos({
+export default function MatchSearchUserInfos({
   matchUserInfo,
-}: MatchSummonerInfosProps) {
+}: MatchSearchUserInfosProps) {
   return (
     <div className="">
       <div className="w-fit h-fit flex justify-center items-center gap-2">

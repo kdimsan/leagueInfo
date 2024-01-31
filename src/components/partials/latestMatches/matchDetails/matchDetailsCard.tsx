@@ -1,51 +1,49 @@
 import { MatchInfo } from "@/app/utils/@types/summonerMatches";
 import React from "react";
-import TeamBans from "./teamBans";
 
 import TeamsObjectives from "./teamsObjectives";
+import MatchResume from "./matchResume";
+import MatchDetailsTable from "./matchDetailsTable";
 
 interface MatchDetailsCardProps {
   matchDetails: MatchInfo;
 }
 
+//matchSummonersInfos
+
 export default function MatchDetailsCard({
   matchDetails,
 }: MatchDetailsCardProps) {
   return (
-    <div className="teams-card w-full flex justify-between ">
-      {matchDetails.teams.map((team) => (
-        <div
-          className={`w-full ${
-            team.teamId === 100 ? "bg-blue-800" : "bg-red-800"
-          }`}
-          key={team.teamId}
-        >
-          <div className="flex items-center upper-part">
-            <span
-              className={`text-sm font-medium ${
-                team.win ? "text-green-500" : "text-red-500"
+    <div className="card-details w-full justify-between">
+      {matchDetails.teams.map((team) =>
+        team.win ? (
+          <div
+            className={`p-3 ${
+              team.teamId === 100 ? "bg-blue-900" : "bg-red-800"
+            }`}
+            key={team.teamId}
+          >
+            <MatchResume team={team} />
+            <MatchDetailsTable />
+          </div>
+        ) : (
+          <div key={team.teamId}>
+            {/* <div className="match-graphs">
+              {matchDetails.participantsData.map(
+                (participant) => participant.riotIdGameName
+              )}
+            </div> */}
+            <div
+              className={`p-3 ${
+                team.teamId === 100 ? "bg-blue-900" : "bg-red-800"
               }`}
             >
-              {team.win ? "Victory" : "Defeated"}{" "}
-            </span>
-            <span className="text-xs font-normal text-neutral-500">
-              {team.teamId === 100 ? "(Blue Team)" : "(Red Team)"}
-            </span>
-
-            {team.bans && team.bans.length != 0 && (
-              <div className="flex">
-                <TeamBans championsBans={team.bans} />
-              </div>
-            )}
+              <MatchResume team={team} />
+            </div>
           </div>
-          <div className="objectives">
-            <TeamsObjectives teamObjectives={team.objectives} />
-          </div>
-          {/* <div>
-            <MatchDetailsSummoners/>
-          </div> */}
-        </div>
-      ))}
+        )
+      )}
     </div>
   );
 }

@@ -18,13 +18,8 @@ export default function MatchDetailsCard({
     <div className="card-details w-full justify-between">
       {matchDetails.teams.map((team) =>
         //team One
-        team.win ? (
-          <div
-            className={`py-2 ${
-              team.teamId === 100 ? "bg-blue-900" : "bg-red-800"
-            }`}
-            key={team.teamId}
-          >
+        team.teamId === 100 ? (
+          <div className={`py-2 bg-blue-team`} key={team.teamId}>
             <MatchResume team={team} />
             <MatchDetailsTable
               participants={matchDetails.participantsData}
@@ -36,9 +31,8 @@ export default function MatchDetailsCard({
           <div key={team.teamId}>
             <div
               //Team two
-              className={`py-2 rounded-b-md ${
-                team.teamId === 100 ? "bg-blue-900" : "bg-red-800"
-              }`}
+              className={`py-2 rounded-b-md bg-red-team
+              `}
             >
               <MatchResume team={team} />
               <MatchDetailsTable

@@ -8,7 +8,9 @@ interface MatchResumeProps {
 
 export default function MatchResume({ team }: MatchResumeProps) {
   return (
-    <div className={`upper-part flex items-center px-3 py-1 justify-between`}>
+    <div
+      className={`upper-part flex items-center px-3 py-1 justify-between border-b-2 border-neutral-800`}
+    >
       <div className={`flex items-center gap-1`}>
         <span
           className={` text-sm font-bold ${
@@ -17,7 +19,7 @@ export default function MatchResume({ team }: MatchResumeProps) {
         >
           {team.win ? "Victory" : "Defeated"}{" "}
         </span>
-        <span className="text-xs font-normal text-neutral-500">
+        <span className="text-xs font-medium text-neutral-400">
           {team.teamId === 100 ? "(Blue Team)" : "(Red Team)"}
         </span>
       </div>

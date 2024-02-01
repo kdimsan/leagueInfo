@@ -11,8 +11,10 @@ export default function SummonersGold({
 }: SummonerGoldProps) {
   return (
     <td className="text-xs font-medium text-neutral-300">
-      <span>{totalGold.toLocaleString("en-US")} </span>
-      <span className="italic">| {goldPerMin.toFixed(1)}/min</span>
+      <div className="flex flex-col items-center justify-center">
+        <span>{totalGold.toLocaleString("en-US")} </span>
+        <span className="italic">{goldPerMin.toFixed(1)} /min</span>
+      </div>
     </td>
   );
 }

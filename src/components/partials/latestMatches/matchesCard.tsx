@@ -22,11 +22,16 @@ export default function MatchesCard({
   )[0];
 
   return (
-    <div onClick={() => setMatchDetailsStatus(!matchDetailsStatus)}>
+    <div>
       <div
+        onClick={() => setMatchDetailsStatus(!matchDetailsStatus)}
         className={`card-container flex justify-between gap-4 px-4 py-3 rounded-lg 
         ${matchDetailsStatus ? "rounded-b-none" : ""}
-        ${userDataByMatch.win ? "bg-green-800" : "bg-red-800"}`}
+        ${
+          userDataByMatch.win
+            ? "bg-gradient-to-b from-match-card-green-dark to-match-card-green-light"
+            : "bg-gradient-to-b from-match-card-red-dark to-match-card-red-light"
+        }`}
       >
         <div className="card-content flex items-center justify-center">
           <MatchInfo

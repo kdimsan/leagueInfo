@@ -12,8 +12,8 @@ export default function SummonersDamages({
   damageDealt,
 }: SummonersDamages) {
   return (
-    <td>
-      <div className="flex flex-col text-xs font-medium text-neutral-300 italic">
+    <td className="text-center">
+      <div className="flex flex-col items-center text-xs font-medium text-neutral-300 italic">
         <div className="flex items-center gap-1">
           <Swords />
           <span>{damageDealt.toLocaleString("en-US")}</span>

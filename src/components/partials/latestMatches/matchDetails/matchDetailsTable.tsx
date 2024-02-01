@@ -1,11 +1,11 @@
 import { Participant } from "@/app/utils/@types/summonerMatches";
 import React from "react";
-import ChampionPlayed from "../championPlayed";
 import Summoner from "./matchTableContent/summoners";
 import SummonersGold from "./matchTableContent/summonersGold";
 import SummonersFarm from "./matchTableContent/summonersFarm";
 import SummonersDamages from "./matchTableContent/summonersDamages";
 import SummonersItems from "./matchTableContent/summonersItems";
+import TableHeader from "./matchTableContent/tableHeader";
 
 interface MatchDetailsTableProps {
   participants: Participant[];
@@ -18,18 +18,20 @@ export default function MatchDetailsTable({
 }: MatchDetailsTableProps) {
   return (
     <table className="w-full m-auto text-center">
-      <thead className="text-sm ">
-        <th>Summoner</th>
-        <th>Gold</th>
-        <th>Farm</th>
-        <th>Damage</th>
-        <th>Items</th>
-      </thead>
+      <TableHeader />
       <tbody className="w-full text-center m-auto">
         {participants.map((participant, index) => {
+          const rowColorClass =
+            participantTeam === 100
+              ? index % 2 === 0
+                ? "bg-match-details-blue-light"
+                : "bg-match-details-blue-dark"
+              : index % 2 === 0
+              ? "bg-match-details-red-light"
+              : "bg-match-details-red-dark";
           return (
             participant.teamId === participantTeam && (
-              <tr className={`text-center `}>
+              <tr className={`text-center   ${rowColorClass}`}>
                 <Summoner participant={participant} />
                 <SummonersGold
                   goldPerMin={participant.challenges.goldPerMinute}

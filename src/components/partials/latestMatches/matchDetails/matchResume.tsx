@@ -8,7 +8,7 @@ interface MatchResumeProps {
 
 export default function MatchResume({ team }: MatchResumeProps) {
   return (
-    <div className={`upper-part flex items-center justify-between`}>
+    <div className={`upper-part flex items-center px-3 py-1 justify-between`}>
       <div className={`flex items-center gap-1`}>
         <span
           className={` text-sm font-bold ${

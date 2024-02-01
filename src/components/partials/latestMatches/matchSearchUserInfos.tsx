@@ -17,6 +17,8 @@ export default function MatchSearchUserInfos({
     <div className="">
       <div className="w-fit h-fit flex justify-center items-center gap-2">
         <ChampionPlayed
+          width={48}
+          height={48}
           championName={matchUserInfo.championName}
           championLevel={matchUserInfo.champLevel}
         />
@@ -24,6 +26,8 @@ export default function MatchSearchUserInfos({
           spell1={matchUserInfo.summonerSpell1}
           spell2={matchUserInfo.summonerSpell2}
           runes={matchUserInfo.perks}
+          width={24}
+          height={24}
         />
         <SummonerMatchFrag
           kills={matchUserInfo.kills}
@@ -34,8 +38,7 @@ export default function MatchSearchUserInfos({
         <MatchSummonerExtraData
           challenges={matchUserInfo.challenges}
           visionScore={matchUserInfo.visionScore}
-          minionsFarm={matchUserInfo.totalMinionsKilled}
-          neutralMonsterFarm={matchUserInfo.neutralMinionsKilled}
+          totalFarm={matchUserInfo.totalFarm}
           totalDamage={matchUserInfo.totalDamageDealtToChampions}
         />
       </div>

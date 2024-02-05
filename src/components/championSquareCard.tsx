@@ -15,7 +15,7 @@ export default function ChampionSquareCard({
 }: ChampionSquareCardProps) {
   return (
     <div
-      className="flex flex-col w-fit items-center justify-center cursor-pointer"
+      className="flex flex-col w-fit items-center justify-center cursor-pointer hover:-translate-x-2 hover:-translate-y-2 transition-all hover:drop-shadow-costum1"
       key={key}
       onClick={onClick}
     >
@@ -24,7 +24,7 @@ export default function ChampionSquareCard({
         src={`https://ddragon.leagueoflegends.com/cdn/${patch}/img/champion/${data.id}.png`}
         alt="Free week champion image"
       />
-      <span>{data.name}</span>
+      <span className="font-medium">{data.name}</span>
     </div>
   );
 }

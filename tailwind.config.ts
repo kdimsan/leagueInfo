@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      dropShadow: {
+        costum1: "8px 10px 6px #000",
+      },
       maxWidth: {
         "costum-mw-1": "90px",
       },
@@ -32,12 +35,9 @@ const config: Config = {
       padding: {
         "costum-icon-padding": "2px 6px",
       },
-      boxShadow: {
-        "costum-box-shadow-1": "6px 7px 20px 1px rgba(0,0,0,1)",
-      },
       textColor: {
         "legend-collor": "#C67322",
-        "ultrarare-collor": "#7E15BF",
+        "ultrarare-collor": "#A45CD0",
         "rare-color": "#6CABF1",
         "common-color": "#2FB435",
       },

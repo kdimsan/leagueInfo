@@ -1,0 +1,18 @@
+export enum regions {
+  "br1" = "Brazil",
+  "eun1" = "Europe Nordic & East",
+  "euw1" = "Europe West",
+  "jp1" = "Japan",
+  "kr" = "Korea",
+  "la1" = "LAN",
+  "la2" = "LAS",
+  "na1" = "North America",
+  "oc1" = "Oceania",
+  "ph2" = "Philippines",
+  "ru1" = "Russia",
+  "sg2" = "Singapore",
+  "tw2" = "Taiwan",
+  "th2" = "Thailand",
+  "tr1" = "Türkiye",
+  "vn2" = "Vietnam",
+}

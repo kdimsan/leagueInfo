@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       dropShadow: {
         costum1: "8px 10px 6px #000",
+        costum2: "2px 12px 6px #000",
       },
       maxWidth: {
         "costum-mw-1": "90px",
@@ -46,9 +47,14 @@ const config: Config = {
           "0%": { transform: "translateY(-60px)", opacity: "0" },
           "100%": { transform: "translateY(0px)", opacity: "1" },
         },
+        dropdown: {
+          "0%": { top: "10%", opacity: "0" },
+          "100%": { top: "90%", opacity: "1" },
+        },
       },
       animation: {
         "appearing-down": "appearing 300ms linear",
+        dropdown: "dropdown 250ms cubic-bezier(0.4, 0, 0.2, 1)",
       },
     },
   },

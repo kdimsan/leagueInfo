@@ -1,5 +1,5 @@
 import { api } from "@/app/utils/api/api";
-import { ChampionData } from "@/app/utils/champions";
+import { ChampionData } from "@/app/utils/@types/champions";
 import React, { useEffect, useState, useRef } from "react";
 import Close from "../close";
 import useOutsideClick from "@/hooks/useOutsideClick";

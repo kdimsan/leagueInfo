@@ -92,8 +92,8 @@ export default function FindSummonerInput() {
               >
                 <Image
                   src={`./regions/${key}.svg`}
-                  width={22}
-                  height={22}
+                  width={24}
+                  height={24}
                   alt="server region"
                   quality={100}
                 />

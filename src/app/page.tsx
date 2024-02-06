@@ -19,7 +19,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className=" flex flex-col flex-1 justify-center mt-8">
+    <main className="flex flex-col justify-center bg-neutral-800 rounded-md mt-8 xl:py-2 xl:px-20">
       {freeWeekData && <FreeWeekSection data={freeWeekData} />}
       {allChampionsData && <AllChampionsSection data={allChampionsData} />}
     </main>

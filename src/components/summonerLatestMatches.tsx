@@ -9,7 +9,7 @@ export default function SummonerLatestMatches() {
   const searchUserPuiid = userData?.summonerData.puuid;
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-4 px-12 xl:px-0 xl:max-w-none">
       {data &&
         searchUserPuiid &&
         data.map((matchData) => (

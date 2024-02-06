@@ -1,32 +1,27 @@
 import useUserData from "@/hooks/useUserData";
 import React from "react";
+import UserAccountDetails from "./userAccountDetails";
+import UserRank from "./userRank";
 
 export default function UserData() {
   const { userData } = useUserData();
   const data = userData?.summonerData;
+  const rankedData = userData?.summonerRankedData;
+
   return (
-    <div>
-      {data && (
-        <div className="flex items-center  justify-center w-full gap-3">
-          <div className="relative ">
-            <img
-              className="border border-yellow-400 rounded"
-              width={100}
-              height={100}
-              src={`https://ddragon.leagueoflegends.com/cdn/13.23.1/img/profileicon/${data.profileIconId}.png`}
-              alt="Profile icon"
-            />
-
-            <span className="absolute -bottom-3 left-8 text-sm p-costum-icon-padding bg-amber-400 rounded-full font-semibold">
-              {data.summonerLevel}
-            </span>
-          </div>
-
-          <div>
-            <h4 className="text-lg font-bold">{data.name}</h4>
-          </div>
+    <div className="w-full px-10 lg:px-0">
+      <div
+        className="flex flex-col items-center justify-center w-full gap-5 bg-neutral-600 py-4 rounded-md mt-8
+        lg:flex-row lg:px-5"
+      >
+        {data && <UserAccountDetails />}
+        <div className="flex flex-col gap-3 w-full">
+          {rankedData &&
+            rankedData.map((rankData) => (
+              <UserRank key={rankData.leagueId} rankedsData={rankData} />
+            ))}
         </div>
-      )}
+      </div>
     </div>
   );
 }

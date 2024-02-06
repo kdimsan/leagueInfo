@@ -45,20 +45,20 @@ export default function FindSummonerInput() {
     const [gameName, tagLine] = data.riotId.split("#");
     console.log(data);
 
-    // try {
-    //   const response = await api.get("/summoner", {
-    //     params: {
-    //       gameName: gameName,
-    //       tagLine: tagLine,
-    //       region: data.region,
-    //     },
-    //   });
-    //   setUserData(response.data);
-    //   router.push("/summoner");
-    // } catch (error) {
-    //   console.log(error);
-    // }
-    // resetField("riotId");
+    try {
+      const response = await api.get("/summoner", {
+        params: {
+          gameName: gameName,
+          tagLine: tagLine,
+          region: data.region,
+        },
+      });
+      setUserData(response.data);
+      router.push("/summoner");
+    } catch (error) {
+      console.log(error);
+    }
+    resetField("riotId");
   };
 
   return (
@@ -71,7 +71,7 @@ export default function FindSummonerInput() {
           type="button"
           onClick={handleSelectRegionState}
           className=" px-2 h-full w-1/3 relative overflow-hidden 
-          text-neutral-800 font-medium text-ellipsis whitespace-nowrap
+          text-neutral-600 font-semibold text-ellipsis whitespace-nowrap
           after:content[''] after:absolute after:w-px after:h-3 after:bg-black after:top-1/2 after:right-0 after:-mt-1.5"
           {...register("region")}
           value={"br1"}
@@ -80,12 +80,13 @@ export default function FindSummonerInput() {
         </button>
         {isOpen && (
           <ul
-            className="text-neutral-950 absolute top-8 rounded-b-md 
+            className="absolute top-8 rounded-b-md 
           cursor-pointer animate-dropdown transition-all drop-shadow-costum2"
           >
             {Object.entries(regions).map(([key, region]) => (
               <li
-                className="flex items-center gap-1 p-1 border-b border-slate-500 bg-slate-300 last:rounded-b-md hover:brightness-75 transition-all"
+                className="flex items-center gap-1 p-1 border-b border-slate-500 bg-slate-300
+                last:rounded-b-md hover:brightness-75 transition-all"
                 ref={ref}
                 key={key}
                 onClick={() => handleValue(key)}
@@ -97,7 +98,7 @@ export default function FindSummonerInput() {
                   alt="server region"
                   quality={100}
                 />
-                <span className="font-medium">{region}</span>
+                <span className="font-semibold text-neutral-800">{region}</span>
               </li>
             ))}
           </ul>

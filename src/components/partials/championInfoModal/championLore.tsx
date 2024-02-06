@@ -1,4 +1,4 @@
-import { ChampionData } from "@/app/utils/champions";
+import { ChampionData } from "@/app/utils/@types/champions";
 import React, { useState } from "react";
 
 interface ChampionLoreProps {
@@ -15,14 +15,14 @@ export default function ChampionLore({
   return (
     <div>
       <div>
-        <span className="mt-3 font-semibold text-lg lg:text-2xl">Lore:</span>
+        <span className="mt-3 font-semibold text-lg lg:text-xl">Lore:</span>
       </div>
       <div className="">
         <p className="text-base">
           {loreDescription ? championData.lore : championData.blurb}{" "}
         </p>
         <button
-          className="font-semibold mt-1 mb-3 lg:text-lg lg:hover:brightness-50 transition-all"
+          className="font-semibold mt-1 mb-3 lg:text-base lg:hover:brightness-50 transition-all"
           onClick={() => setLoreDescription(!loreDescription)}
         >
           {loreDescription ? "Hide lore" : "Full lore"}

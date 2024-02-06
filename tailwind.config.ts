@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        title: ["var(--font-title)"],
+        main: ["var(--font-main)"],
+      },
       dropShadow: {
         costum1: "8px 10px 6px #000",
         costum2: "2px 12px 6px #000",

@@ -8,14 +8,14 @@ export default function UserAccountDetails() {
   const accountInfo = userData?.summonerData;
   return (
     <div
-      className="w-full border-b-2 border-neutral-800 relative 
-    lg:border-b-0 lg:after:content[''] after:absolute after:-right-2.5 after:top-0 after:w-0.5 after:h-full after:bg-neutral-800"
+      className="w-full relative after:content[''] after:absolute after:right-0 after:-bottom-2.5 after:h-0.5 after:w-full
+     lg:after:content-[''] lg:after:-right-2.5 lg:after:top-0 lg:after:w-0.5 lg:after:h-full after:bg-neutral-800"
     >
       {accountInfo && (
         <div className="flex flex-col items-center justify-center w-full gap-5">
           <div className="relative ">
             <Image
-              className="border border-yellow-400 rounded"
+              className="border-2 border-yellow-400 rounded-md"
               width={100}
               height={100}
               src={`https://ddragon.leagueoflegends.com/cdn/13.23.1/img/profileicon/${accountInfo.profileIconId}.png`}

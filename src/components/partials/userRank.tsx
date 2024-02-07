@@ -25,7 +25,7 @@ export default function UserRank({ rankedsData }: UserRankProps) {
       <div className="flex items-center gap-5 justify-center">
         <div className="flex items-center justify-center gap-1">
           <Image
-            className="h-14 w-14"
+            className="h-14 w-14 lg:h-20 lg:w-20"
             src={`/rankedEmblems/${rankedsData.tier.toLowerCase()}.png`}
             width={100}
             height={100}

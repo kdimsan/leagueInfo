@@ -8,7 +8,7 @@ export default function ChampionMaestry() {
   const data = userData;
 
   return (
-    <div className="lg:grid lg:grid-cols-2 lg:gap-x-4">
+    <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-x-4">
       {data &&
         data.summonerMaestryChampionsData.map((champion, index) => (
           <ChampionMaestryCard champion={champion} key={index} />

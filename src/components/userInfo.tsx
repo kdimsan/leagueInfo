@@ -1,9 +1,7 @@
 import React from "react";
 import UserData from "./partials/userData";
-import UserRank from "./partials/userRank";
 import ChampionMaestry from "./partials/championMaestry/championMaestry";
 import TitleConfig from "./titleConfig";
-import useUserData from "@/hooks/useUserData";
 import SummonerLatestMatches from "./summonerLatestMatches";
 
 export default function UserInfo() {
@@ -14,13 +12,10 @@ export default function UserInfo() {
           <UserData />
 
           <TitleConfig
-            className={"mt-9 -mb-1"}
+            className={"mt-9 -mb-1 text-xl lg:text-2xl"}
             title="Top 10 Champions by Maestry"
           />
-
-          <div className="">
-            <ChampionMaestry />
-          </div>
+          <ChampionMaestry />
         </div>
         <div className="m-auto xl:m-0">
           <SummonerLatestMatches />

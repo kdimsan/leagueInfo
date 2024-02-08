@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import MatchInfo from "./matchInfo";
 import MatchSearchUserInfos from "./matchSearchUserInfos";
 import MatchPlayers from "./matchPlayers";
-import MatchDetailsCard from "./matchDetails/matchDetailsCard";
+import MatchDetailsCard from "./matchDetails";
 
 interface MatchCardData {
   matchData: SummonerLatestMatchesProps;

@@ -17,7 +17,7 @@ interface CustomLegendProps {
   }[];
 }
 
-interface CustomizedLabelProps extends PieLabelRenderProps {
+interface CustomizedLabelProps {
   cx: number;
   cy: number;
   midAngle: number;
@@ -27,13 +27,13 @@ interface CustomizedLabelProps extends PieLabelRenderProps {
   index: number;
 }
 
-const COLORS = ["#f4f1de", "#00C49F", "#3d405b", "#81b29a", "#f2cc8f"];
+const COLORS = ["#f4f1de", "#00C49F", "#00afb9", "#81b29a", "#f2cc8f"];
 
 const CustomLegend = ({ participants, payload }: CustomLegendProps) => {
   return (
-    <ul className="flex flex-col gap-y-1 justify-center absolute -top-24 -left-12 w-fit">
+    <ul className="grid grid-cols-3 gap-0.5 -mb-1">
       {payload.map((entry, index) => (
-        <li className="flex items-center gap-0.5" key={index}>
+        <li className=" flex items-center gap-0.5" key={index}>
           <div className="w-4 h-4">
             <ChampionImage
               styles="w-4 h-4"
@@ -43,9 +43,6 @@ const CustomLegend = ({ participants, payload }: CustomLegendProps) => {
           <span className="text-xs" style={{ color: `${entry.color}` }}>
             {participants[index].kills}
           </span>
-          <span className="text-xs" style={{ color: `${entry.color}` }}>{`(${(
-            entry.payload.percent * 100
-          ).toFixed(0)}%)`}</span>
         </li>
       ))}
     </ul>
@@ -59,7 +56,6 @@ export default function IndividualGraphics({
     (acc, participant) => acc + participant.kills,
     0
   );
-  console.log(totalKills);
 
   const data = participants.map((participant) => {
     return {
@@ -79,23 +75,51 @@ export default function IndividualGraphics({
     percent: (entry.value / totalKills) * 100,
   }));
 
+  const renderCustomizedLabel = ({
+    cx,
+    cy,
+    midAngle,
+    innerRadius,
+    outerRadius,
+    percent,
+    index,
+  }: CustomizedLabelProps) => {
+    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+    const x = cx + (radius + 22) * Math.cos(-midAngle * (Math.PI / 180));
+    const y = cy + (radius + 25) * Math.sin(-midAngle * (Math.PI / 180));
+
+    return (
+      <text
+        className="text-xs font-semibold"
+        x={x}
+        y={y}
+        fill={COLORS[index % COLORS.length]}
+        textAnchor={x > cx ? "start" : "end"}
+        dominantBaseline="central"
+      >
+        {`${(percent * 100).toFixed(0)}%`}
+      </text>
+    );
+  };
+
   return (
     <div className="flex h-full items-center relative justify-center">
-      <PieChart className="!absolute !left-10" width={120} height={128}>
+      <PieChart className="" width={154} height={132}>
         <Pie
           dataKey="value"
           data={data}
           cx="50%"
           cy="50%"
-          labelLine={false}
           outerRadius={40}
+          label={renderCustomizedLabel}
+          labelLine={false}
         >
           {data.map((entry, index) => (
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
         </Pie>
         <Legend
-          height={10}
+          align="center"
           content={
             <CustomLegend participants={participants} payload={dataForLegend} />
           }

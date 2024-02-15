@@ -1,4 +1,4 @@
-import { patch } from "@/app/utils/@types/patch";
+import { patch } from "@/app/utils/patch";
 import { MatchInfo } from "@/app/utils/@types/summonerMatches";
 import ChampionImage from "@/components/partials/championImage";
 import IndividualGraphics from "@/components/partials/graphics/individualGraphics";

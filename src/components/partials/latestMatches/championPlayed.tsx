@@ -1,4 +1,4 @@
-import { patch } from "@/app/utils/@types/patch";
+import { patch } from "@/app/utils/patch";
 import Image from "next/image";
 import React from "react";
 

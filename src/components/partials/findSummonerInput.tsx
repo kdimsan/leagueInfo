@@ -1,11 +1,11 @@
 import { api } from "@/app/utils/api/api";
 import useUserData from "@/hooks/useUserData";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { ErrorMessage } from "@hookform/error-message";
 
-import Search from "../search";
+import Search from "../icons/search";
 import { regions } from "@/app/utils/regions";
 import useOutsideClick from "@/hooks/useOutsideClick";
 import Image from "next/image";

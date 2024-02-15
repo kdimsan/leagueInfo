@@ -1,4 +1,4 @@
-import { patch } from "@/app/utils/@types/patch";
+import { patch } from "@/app/utils/patch";
 import Image from "next/image";
 import React, { useState } from "react";
 //Caso o item não seja comprado, sele será 0.

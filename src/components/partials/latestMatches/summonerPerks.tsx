@@ -1,4 +1,4 @@
-import { patch } from "@/app/utils/@types/patch";
+import { patch } from "@/app/utils/patch";
 import { Runes } from "@/app/utils/@types/summonerMatches";
 import { spellsEnum } from "@/app/utils/summonerSpellsEnum";
 import Image from "next/image";

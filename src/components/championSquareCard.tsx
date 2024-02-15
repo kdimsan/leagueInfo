@@ -1,5 +1,5 @@
 import { ChampionsProps } from "@/app/utils/@types/champions";
-import { patch } from "@/app/utils/@types/patch";
+import { patch } from "@/app/utils/patch";
 import Image from "next/image";
 import React from "react";
 
@@ -28,7 +28,7 @@ export default function ChampionSquareCard({
         width={96}
         height={96}
       />
-      <span className="font-medium">{data.name}</span>
+      <span className="font-medium whitespace-nowrap">{data.name}</span>
     </div>
   );
 }

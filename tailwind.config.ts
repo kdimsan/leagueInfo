@@ -32,6 +32,11 @@ const config: Config = {
         "match-details-blue-light": "#113066",
         "match-details-red-dark": "#4A0505",
         "match-details-red-light": "#580D0D",
+        "costum-blue-950": "#000814",
+        "costum-blue-800": "#001d3d",
+        "costum-blue-700": "#003566",
+        "costum-yellow-500": "#ffc300",
+        "costum-yellow-400": "#ffd60a",
       },
       backgroundColor: {
         "blue-team": "#0E1829",

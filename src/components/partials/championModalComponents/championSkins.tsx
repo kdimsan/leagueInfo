@@ -1,4 +1,5 @@
-import { ChampionData } from "@/app/utils/champions";
+import { ChampionData } from "@/app/utils/@types/champions";
+import Image from "next/image";
 import React from "react";
 
 interface ChampionSkinsData {
@@ -18,7 +19,7 @@ export default function ChampionSkins({
           <img
             className="rounded-md shadow-costum-box-shadow-1"
             src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championName}_${skins.num}.jpg`}
-            alt=""
+            alt={`Champion ${championName} skin ${skins.name}`}
           />
           <h4 className="font-semibold">{skins.name}</h4>
         </div>

@@ -1,10 +1,9 @@
-import { ChampionData } from "@/app/utils/champions";
+import { ChampionData } from "@/app/utils/@types/champions";
 import React from "react";
 import {
   Radar,
   RadarChart,
   PolarGrid,
-  Legend,
   PolarAngleAxis,
   PolarRadiusAxis,
   ResponsiveContainer,

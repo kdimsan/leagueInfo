@@ -1,4 +1,4 @@
-import { patch } from "@/app/utils/@types/patch";
+import { patch } from "@/app/utils/patch";
 import React from "react";
 
 type ChampionMaestryImgProps = {

@@ -51,6 +51,11 @@ const config: Config = {
         "rare-color": "#6CABF1",
         "common-color": "#2FB435",
       },
+      backgroundImage: {
+        "linear-skeleton":
+          "linear-gradient(90deg, hsl(0, 0%, 20%) 0%, hsl(0, 0%, 48%) 50%, hsl(0, 0%, 20%) 100%)",
+      },
+      backgroundSize: { "skeleton-size": "300% 100%" },
       keyframes: {
         appearing: {
           "0%": { transform: "translateY(-60px)", opacity: "0" },
@@ -60,10 +65,16 @@ const config: Config = {
           "0%": { top: "10%", opacity: "0" },
           "100%": { top: "90%", opacity: "1" },
         },
+        colorSkeleton: {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
+        },
       },
       animation: {
         "appearing-down": "appearing 300ms linear",
         dropdown: "dropdown 250ms cubic-bezier(0.4, 0, 0.2, 1)",
+        colorSkeleton: "colorSkeleton 2s infinite linear",
       },
     },
   },

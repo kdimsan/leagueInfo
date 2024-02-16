@@ -1,27 +1,28 @@
-"use client";
-import { api } from "./utils/api/api";
-import { useEffect, useState } from "react";
-import FreeWeekSection from "@/components/partials/freeWeekSection";
 import AllChampionsSection from "@/components/allChampionsSection";
+import FreeWeekSection from "@/components/partials/freeWeekSection";
+import { getFreeWeek } from "@/services/getFreeWeek";
 
-export default function Home() {
-  const [freeWeekData, setFreeWeekData] = useState();
-  const [allChampionsData, setAllChampionsData] = useState();
+const FreeWeek = async () => {
+  const freeWeek = await getFreeWeek();
 
-  useEffect(() => {
-    const handlePageData = async () => {
-      await api.get("/free_week").then(function (response) {
-        setFreeWeekData(response.data.freeWeekChampionsData);
-        setAllChampionsData(response.data.championsRes);
-      });
-    };
-    handlePageData();
-  }, []);
+  const { allChampionsRes, freeWeekChampionsData } = freeWeek.FreeWeekData;
 
   return (
-    <main className="flex flex-col justify-center bg-neutral-800 rounded-md mt-8 xl:py-2 xl:px-20">
-      {freeWeekData && <FreeWeekSection data={freeWeekData} />}
-      {allChampionsData && <AllChampionsSection data={allChampionsData} />}
-    </main>
+    <>
+      <FreeWeekSection data={freeWeekChampionsData} />
+      <AllChampionsSection data={allChampionsRes} />
+    </>
   );
+};
+
+const Component = async () => {
+  return (
+    <div className="flex flex-col justify-center bg-neutral-800 rounded-md mt-8 xl:py-2 xl:px-20">
+      <FreeWeek />
+    </div>
+  );
+};
+
+export default function Home() {
+  return <Component />;
 }

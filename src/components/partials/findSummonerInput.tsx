@@ -43,7 +43,6 @@ export default function FindSummonerInput() {
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     const [gameName, tagLine] = data.riotId.split("#");
-    console.log(data);
 
     try {
       const response = await api.get("/summoner", {

@@ -4,13 +4,11 @@ import Image from "next/image";
 import React from "react";
 
 interface ChampionSquareCardProps {
-  key: number;
   data: ChampionsProps;
   onClick: () => void;
 }
 
 export default function ChampionSquareCard({
-  key,
   data,
   onClick,
 }: ChampionSquareCardProps) {
@@ -18,7 +16,6 @@ export default function ChampionSquareCard({
     <div
       className="flex flex-col w-fit items-center justify-center cursor-pointer tracking-wide
       hover:-translate-x-2 hover:-translate-y-2 transition-all hover:drop-shadow-costum1 hover:brightness-125"
-      key={key}
       onClick={onClick}
     >
       <Image

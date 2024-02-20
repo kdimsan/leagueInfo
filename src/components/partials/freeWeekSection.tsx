@@ -23,11 +23,12 @@ export default function FreeWeekSection({ data }: FreeWeekSectionProps) {
       <TitleConfig className={"lg:text-3xl"} title={"Free Week Rotation"} />
       <div className="grid grid-cols-2 justify-center items-center gap-7 mt-5 md:grid-cols-6 xl:grid-cols-11 xl:gap-x-10">
         {data.map((champions, index) => (
-          <ChampionSquareCard
-            key={index}
-            data={champions}
-            onClick={() => handleModal(champions.id)}
-          />
+          <div key={index}>
+            <ChampionSquareCard
+              data={champions}
+              onClick={() => handleModal(champions.id)}
+            />
+          </div>
         ))}
         <ChampionDetailsModal
           champion={selctedChampion}

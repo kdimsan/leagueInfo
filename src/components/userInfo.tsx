@@ -1,10 +1,21 @@
+"use client";
 import React from "react";
 import UserData from "./partials/userData";
 import ChampionMaestry from "./partials/championMaestry/championMaestry";
 import TitleConfig from "./titleConfig";
 import SummonerLatestMatches from "./summonerLatestMatches";
+import { SummonerProps } from "@/app/utils/@types/summonerInfo";
+import useUserData from "@/hooks/useUserData";
 
-export default function UserInfo() {
+interface UserInfoProps {
+  summonerData: SummonerProps;
+}
+
+export default function UserInfo({ summonerData }: UserInfoProps) {
+  const { setUserData } = useUserData();
+
+  setUserData(summonerData);
+
   return (
     <div>
       <div className="flex flex-col px-3 bg-neutral-800 xl:p-5 xl:rounded-lg xl:flex-row xl:justify-between xl:gap-6">

@@ -19,11 +19,11 @@ export default function ChampionSquareCard({
       onClick={onClick}
     >
       <Image
-        className="rounded-md w-24"
+        className="rounded-md"
         src={`https://ddragon.leagueoflegends.com/cdn/${patch}/img/champion/${data.id}.png`}
         alt="Free week champion image"
-        width={96}
-        height={96}
+        width={80}
+        height={80}
       />
       <span className="font-medium whitespace-nowrap">{data.name}</span>
     </div>

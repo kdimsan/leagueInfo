@@ -1,20 +1,20 @@
 import { SummonerProps } from "@/app/utils/@types/summonerInfo";
 import { api } from "@/app/utils/api/api";
+import useUserData from "@/hooks/useUserData";
 
-export async function getUserData(userName: string[]) {
+export async function getUserData(userName: string) {
+  const [gameName, tagLine, region] = userName.split("-");
+
   try {
-    console.log("dentro", userName);
-
     const response: SummonerProps = (
       await api.get("/summoner", {
         params: {
-          gameName: userName[0],
-          tagLine: userName[1],
-          region: userName[2],
+          gameName: gameName,
+          tagLine: tagLine,
+          region: region,
         },
       })
     ).data;
-    console.log(response);
 
     return response;
   } catch (err) {

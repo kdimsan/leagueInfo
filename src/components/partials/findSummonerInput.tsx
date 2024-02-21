@@ -46,7 +46,7 @@ export default function FindSummonerInput() {
     const region = data.region;
 
     setUserName([gameName, tagLine, region]);
-    router.push("/summoner");
+    router.push(`/${gameName}-${tagLine}-${region}/summoner`);
     resetField("riotId");
   };
 

@@ -23,7 +23,7 @@ export default function FindSummonerInput() {
     setValue,
     formState: { errors },
   } = useForm<Inputs>();
-  const { setUserData } = useUserData();
+  const { setUserName } = useUserData();
   const router = useRouter();
   const ref = useRef<HTMLLIElement | null>(null);
 
@@ -43,20 +43,10 @@ export default function FindSummonerInput() {
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     const [gameName, tagLine] = data.riotId.split("#");
+    const region = data.region;
 
-    try {
-      const response = await api.get("/summoner", {
-        params: {
-          gameName: gameName,
-          tagLine: tagLine,
-          region: data.region,
-        },
-      });
-      setUserData(response.data);
-      router.push("/summoner");
-    } catch (error) {
-      console.log(error);
-    }
+    setUserName([gameName, tagLine, region]);
+    router.push("/summoner");
     resetField("riotId");
   };
 

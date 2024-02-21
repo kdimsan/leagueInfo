@@ -17,7 +17,7 @@ export default function UserInfo() {
           />
           <ChampionMaestry />
         </div>
-        <div className="m-auto xl:m-0">
+        <div className="m-auto w-full px-3 py-2 xl:m-0 xl:w-1/2">
           <SummonerLatestMatches />
         </div>
       </div>

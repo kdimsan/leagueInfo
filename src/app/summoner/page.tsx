@@ -29,9 +29,7 @@ export default function SummonerPage() {
 
   return (
     <main className="mt-5">
-      <Suspense fallback={<div>Loading...</div>}>
-        <UserInfo />
-      </Suspense>
+      <UserInfo />
     </main>
   );
 }

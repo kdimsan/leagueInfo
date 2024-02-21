@@ -36,7 +36,7 @@ const Loading = () => {
         className="flex flex-col items-center justify-center w-full gap-5 bg-neutral-600 py-4 rounded-md mt-8
           lg:flex-row lg:px-5 lg:w-96 lg:items-center lg:justify-between"
       >
-        <div className="lg: w-44">
+        <div className="flex items-center justify-center px-24 lg:w-44">
           <div
             className="w-28 h-28 rounded-md animate-colorSkeleton bg-linear-skeleton bg-skeleton-size
           relative after:content[''] after:absolute after:right-0 after:-bottom-2.5 after:h-0.5 after:w-full

@@ -43,7 +43,7 @@ const Loading = () => {
                 </div>
                 <div className="flex gap-1 items-center justify-between mt-1 text-xs">
                   <p>Last played: </p>
-                  <div className="animate-colorSkeleton bg-linear-skeleton bg-skeleton-size h-3 w-full"></div>
+                  <div className="animate-colorSkeleton bg-linear-skeleton bg-skeleton-size h-3 w-16"></div>
                 </div>
               </div>
             </div>

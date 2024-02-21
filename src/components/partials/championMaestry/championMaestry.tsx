@@ -12,7 +12,9 @@ const ChampionMaestryRender = () => {
   return (
     <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-x-4">
       {userData.summonerMaestryChampionsData.map((champion, index) => (
-        <ChampionMaestryCard champion={champion} key={index} />
+        <div className="my-2" key={index}>
+          <ChampionMaestryCard champion={champion} />
+        </div>
       ))}
     </div>
   );

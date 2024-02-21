@@ -14,9 +14,9 @@ export default function SummonerMatchFrag({
   kda,
 }: SummonerMatchFragProps) {
   return (
-    <div className="flex flex-col items-center  -mt-3">
+    <div className="flex flex-col items-center">
       <div>
-        <span className="text-base font-semibold">
+        <span className="text-sm font-semibold">
           {kills} / {deaths} / {assists}
         </span>
       </div>

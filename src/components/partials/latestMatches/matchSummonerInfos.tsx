@@ -6,13 +6,13 @@ import SummonerItems from "./summonerItems";
 import SummonerMatchFrag from "./summonerMatchFrag";
 import MatchSummonerExtraData from "./matchSummonerExtraData";
 
-interface MatchSearchUserInfosProps {
+interface MatchSummonerInfosProps {
   matchUserInfo: Participant;
 }
 
-export default function MatchSearchUserInfos({
+export default function MatchSummonerInfos({
   matchUserInfo,
-}: MatchSearchUserInfosProps) {
+}: MatchSummonerInfosProps) {
   return (
     <div className="">
       <div className="w-fit h-fit flex justify-center items-center gap-2">
@@ -26,20 +26,14 @@ export default function MatchSearchUserInfos({
           spell1={matchUserInfo.summonerSpell1}
           spell2={matchUserInfo.summonerSpell2}
           runes={matchUserInfo.perks}
-          width={24}
-          height={24}
+          width={22}
+          height={22}
         />
         <SummonerMatchFrag
           kills={matchUserInfo.kills}
           assists={matchUserInfo.assists}
           deaths={matchUserInfo.deaths}
           kda={matchUserInfo.challenges.kda}
-        />
-        <MatchSummonerExtraData
-          challenges={matchUserInfo.challenges}
-          visionScore={matchUserInfo.visionScore}
-          totalFarm={matchUserInfo.totalFarm}
-          totalDamage={matchUserInfo.totalDamageDealtToChampions}
         />
       </div>
       <div className="items mt-2 w-fit">

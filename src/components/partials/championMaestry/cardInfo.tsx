@@ -9,12 +9,16 @@ type CardInfoProps = {
 
 export default function CardInfo({ champion }: CardInfoProps) {
   return (
-    <div className="w-full">
-      <h4 className="border-b border-zinc-900 w-full text-center font-semibold mb-2">
+    <div className="">
+      <h4 className="border-b border-zinc-900 m-auto text-center font-semibold mb-2">
         {champion.championName}
       </h4>
-      <div className="flex gap-2 items-center justify-between text-xs">
-        <div className="flex gap-1 items-center">
+      <div
+        className="flex gap-2 items-center justify-between text-xs 
+      xl:flex-col xl:gap-1 xl:justify-normal xl:items-start 
+      2xl:flex-row 2xl:gap-2 2xl:justify-between 2xl:items-center"
+      >
+        <div className="flex gap-1 items-center xl:justify-between">
           <p>Maestry Level:</p>
           <p className="font-semibold">{champion.championLevel}</p>
         </div>
@@ -27,9 +31,9 @@ export default function CardInfo({ champion }: CardInfoProps) {
       </div>
       <div className="flex gap-1 items-center justify-between mt-1 text-xs">
         <p>Last played: </p>
-        <h4 className="font-semibold">
+        <p className="font-semibold">
           {lastTimePlayedConverter(champion.lastPlayTime)}
-        </h4>
+        </p>
       </div>
     </div>
   );

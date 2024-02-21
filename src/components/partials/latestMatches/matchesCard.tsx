@@ -1,9 +1,10 @@
 import { SummonerLatestMatchesProps } from "@/app/utils/@types/summonerMatches";
 import React, { useState } from "react";
 import MatchInfo from "./matchInfo";
-import MatchSearchUserInfos from "./matchSearchUserInfos";
+import MatchSummonerInfos from "./matchSummonerInfos";
 import MatchPlayers from "./matchPlayers";
 import MatchDetailsCard from "./matchDetails";
+import MatchSummonerExtraData from "./matchSummonerExtraData";
 
 interface MatchCardData {
   matchData: SummonerLatestMatchesProps;
@@ -25,7 +26,7 @@ export default function MatchesCard({
     <div>
       <div
         onClick={() => setMatchDetailsStatus(!matchDetailsStatus)}
-        className={`card-container flex justify-between gap-4 px-4 py-3 rounded-lg 
+        className={`card-container flex flex-col gap-4 px-4 py-3 rounded-lg 
         ${matchDetailsStatus ? "rounded-b-none" : ""}
         ${
           userDataByMatch.win
@@ -33,16 +34,18 @@ export default function MatchesCard({
             : "bg-gradient-to-b from-match-card-red-dark to-match-card-red-light"
         }`}
       >
-        <div className="card-content flex items-center justify-center">
-          <MatchInfo
-            userDataByMatch={userDataByMatch}
-            matchInfo={matchData.matchInfo}
+        <MatchInfo
+          userDataByMatch={userDataByMatch}
+          matchInfo={matchData.matchInfo}
+        />
+        <div className="flex items-start justify-evenly">
+          <MatchSummonerInfos matchUserInfo={userDataByMatch} />
+          <MatchSummonerExtraData
+            challenges={userDataByMatch.challenges}
+            visionScore={userDataByMatch.visionScore}
+            totalFarm={userDataByMatch.totalFarm}
+            totalDamage={userDataByMatch.totalDamageDealtToChampions}
           />
-        </div>
-        <div className="flex items-center">
-          <MatchSearchUserInfos matchUserInfo={userDataByMatch} />
-        </div>
-        <div>
           <MatchPlayers
             participantsByMatchInfo={participantsArray}
             searchUserPuiid={userDataByMatch.puuid}

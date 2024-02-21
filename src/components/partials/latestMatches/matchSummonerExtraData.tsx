@@ -20,14 +20,14 @@ export default function MatchSummonerExtraData({
   };
 
   return (
-    <div className="flex flex-col border-l border-neutral-800 ml-3">
-      <div className="ml-3">
+    <div className="flex flex-col relative after:content[''] after:w-0.5 after:h-14 after:absolute  after:bg-neutral-800 after:-left-3 after:top-0">
+      <div>
         <span className="text-sm font-medium text-neutral-300">
           {killParticipationPerCent(challenges.killParticipation)} kill
           participation
         </span>
       </div>
-      <div className="flex flex-col text-sm ml-3 text-neutral-400 leading-tight">
+      <div className="flex flex-col text-sm text-neutral-400 leading-tight">
         <div>
           <span>CS: {totalFarm} </span>
           <span>

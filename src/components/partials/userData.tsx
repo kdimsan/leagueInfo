@@ -12,9 +12,9 @@ const UserDataRender = () => {
     });
   }
   return (
-    <div className="w-full px-10 lg:px-0">
+    <div className="w-full max-w-lg lg:px-0">
       <div
-        className="flex flex-col items-center justify-center w-full gap-5 bg-neutral-600 py-4 rounded-md mt-8
+        className="flex flex-col items-center justify-center w-full gap-5 bg-neutral-600 py-4 px-5 rounded-md mt-8
         lg:flex-row lg:px-5"
       >
         <UserAccountDetails />

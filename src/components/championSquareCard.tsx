@@ -14,7 +14,7 @@ export default function ChampionSquareCard({
 }: ChampionSquareCardProps) {
   return (
     <div
-      className="flex flex-col w-fit items-center justify-center cursor-pointer tracking-wide
+      className="flex flex-col items-center w-32 justify-center cursor-pointer tracking-wide
       hover:-translate-x-2 hover:-translate-y-2 transition-all hover:drop-shadow-costum1 hover:brightness-125"
       onClick={onClick}
     >
@@ -25,7 +25,7 @@ export default function ChampionSquareCard({
         width={80}
         height={80}
       />
-      <span className="font-medium whitespace-nowrap">{data.name}</span>
+      <span className="font-medium whitespace-nowrap w-fit">{data.name}</span>
     </div>
   );
 }

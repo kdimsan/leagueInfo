@@ -26,7 +26,7 @@ export default function AllChampionsSection({
         className={"lg:text-3xl"}
         title={"League of Legends Champions"}
       />
-      <div className="grid grid-cols-2 justify-center items-center gap-7 mt-5 md:grid-cols-6 xl:grid-cols-10 xl:gap-x-10">
+      <div className="grid grid-cols-2 justify-center items-center gap-7 mt-5 md:grid-cols-6 xl:grid-cols-11 xl:gap-x-2">
         {data.map((champion, index) => (
           <ChampionSquareCard
             data={champion}

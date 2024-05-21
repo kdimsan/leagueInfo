@@ -38,15 +38,19 @@ export default function MatchesCard({
           userDataByMatch={userDataByMatch}
           matchInfo={matchData.matchInfo}
         />
-        <div className="flex items-start justify-evenly">
-          <MatchSummonerInfos matchUserInfo={userDataByMatch} />
-          <MatchSummonerExtraData
-            challenges={userDataByMatch.challenges}
-            visionScore={userDataByMatch.visionScore}
-            totalFarm={userDataByMatch.totalFarm}
-            totalDamage={userDataByMatch.totalDamageDealtToChampions}
-          />
+        <div className="flex flex-wrap items-start justify-center w-full gap-4 lg:flex-nowrap lg:gap-0">
+          <div className="flex flex-col items-center sm:flex-row sm:items-start w-full gap-4">
+            <MatchSummonerInfos matchUserInfo={userDataByMatch} />
+            <MatchSummonerExtraData
+              className="w-full lg:w-1/3 items-center"
+              challenges={userDataByMatch.challenges}
+              visionScore={userDataByMatch.visionScore}
+              totalFarm={userDataByMatch.totalFarm}
+              totalDamage={userDataByMatch.totalDamageDealtToChampions}
+            />
+          </div>
           <MatchPlayers
+            className="lg:w-1/2"
             participantsByMatchInfo={participantsArray}
             searchUserPuiid={userDataByMatch.puuid}
           />

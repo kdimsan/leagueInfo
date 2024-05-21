@@ -18,7 +18,7 @@ export default function MatchInfo({
   const endGameDate = calcularDiferencaTempo(matchInfo.gameEndTimestamp);
   const queueType = queueTypeEnum[matchInfo.queueId];
   return (
-    <div className="flex items-center justify-evenly border-b border-neutral-800">
+    <div className="flex items-center gap-1 justify-evenly border-b border-neutral-800">
       <span
         className={`queue-type text-sm text ${
           userDataByMatch.win ? "text-lime-500" : "text-red-500"

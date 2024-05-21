@@ -7,6 +7,7 @@ interface MatchSummonerExtraDataProps {
   visionScore: number;
   totalFarm: number;
   totalDamage: number;
+  className: string;
 }
 
 export default function MatchSummonerExtraData({
@@ -14,15 +15,19 @@ export default function MatchSummonerExtraData({
   visionScore,
   totalFarm,
   totalDamage,
+  className,
 }: MatchSummonerExtraDataProps) {
   const killParticipationPerCent = (killParticipation: number) => {
     return `${(killParticipation * 100).toFixed(0)}%`;
   };
 
   return (
-    <div className="flex flex-col relative after:content[''] after:w-0.5 after:h-24 after:absolute  after:bg-neutral-800 after:-left-3 after:top-0">
-      <div>
-        <span className="text-sm font-medium text-neutral-300">
+    <div
+      className={` ${className} flex flex-col relative w-full lg:w-1/3 items-center justify-center
+      sm:after:content[''] sm:after:w-0.5 sm:after:h-full sm:after:absolute  sm:after:bg-neutral-800 sm:after:-left-3 sm:after:top-0`}
+    >
+      <div className="w-fit">
+        <span className="text-sm font-medium text-neutral-300 fit-content">
           {killParticipationPerCent(challenges.killParticipation)} kill
           participation
         </span>

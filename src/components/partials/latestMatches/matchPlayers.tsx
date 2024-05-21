@@ -6,11 +6,13 @@ import React from "react";
 interface MatchPlayersProps {
   participantsByMatchInfo: Participant[];
   searchUserPuiid: string;
+  className: string;
 }
 
 export default function MatchPlayers({
   participantsByMatchInfo,
   searchUserPuiid,
+  className,
 }: MatchPlayersProps) {
   const renderParticipant = (participant: Participant) => (
     <div
@@ -20,7 +22,7 @@ export default function MatchPlayers({
         participant.puuid === searchUserPuiid
           ? "text-white"
           : "text-neutral-400"
-      }  `}
+      } `}
       key={participant.summonerId}
     >
       <Image
@@ -41,7 +43,7 @@ export default function MatchPlayers({
   );
 
   return (
-    <div className="playersHolder flex gap-4 justify-between ">
+    <div className={`${className} playersHolder flex gap-4 justify-center`}>
       <div className="flex flex-col  gap-1 text-ellipsis overflow-hidden whitespace-nowrap">
         {participantsByMatchInfo
           .filter((participant) => participant.teamId === 100)

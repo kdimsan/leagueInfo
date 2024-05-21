@@ -14,8 +14,8 @@ export default function MatchSummonerInfos({
   matchUserInfo,
 }: MatchSummonerInfosProps) {
   return (
-    <div className="">
-      <div className="w-fit h-fit flex justify-center items-center gap-2">
+    <div className="w-full lg:w-1/3 flex flex-col items-center">
+      <div className=" w-fit flex justify-center items-center gap-2">
         <ChampionPlayed
           width={48}
           height={48}
@@ -36,9 +36,7 @@ export default function MatchSummonerInfos({
           kda={matchUserInfo.challenges.kda}
         />
       </div>
-      <div className="items mt-2 w-fit">
-        <SummonerItems userItems={matchUserInfo.items} />
-      </div>
+      <SummonerItems userItems={matchUserInfo.items} />
     </div>
   );
 }

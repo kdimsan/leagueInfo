@@ -5,7 +5,7 @@ import MatchesCard from "./partials/latestMatches/matchesCard";
 const SummonerLatestMatchesRender = () => {
   const { userData } = useUserData();
   return (
-    <div className="flex flex-col gap-4 px-12 xl:px-0 xl:max-w-none">
+    <div className="flex flex-col gap-4 xl:px-0 xl:max-w-none">
       {userData &&
         userData.summonerLatestMatchesData.map((matchData) => (
           <MatchesCard

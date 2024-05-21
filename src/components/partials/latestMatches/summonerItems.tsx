@@ -9,8 +9,8 @@ interface SummonerItemsProps {
 
 export default function SummonerItems({ userItems }: SummonerItemsProps) {
   return (
-    <div>
-      <dt className="flex gap-1">
+    <div className="items mt-2 w-fit">
+      <dt className="flex flex-wrap gap-1">
         {userItems.map((userItem, index) => (
           <dd className="w-6 h-6" key={index}>
             {userItem.toString() === "0" ? (

@@ -1,12 +1,12 @@
 import { api } from "@/app/utils/api/api";
 import { ChampionData } from "@/app/utils/@types/champions";
 import React, { useEffect, useState, useRef, Suspense } from "react";
-import Close from "../icons/close";
+import Close from "../../icons/close";
 import useOutsideClick from "@/hooks/useOutsideClick";
-import ChampionName from "./championModalComponents/championName";
-import ChampionLore from "./championModalComponents/championLore";
-import ChampionSkins from "./championModalComponents/championSkins";
-import ChampionInfo from "./championModalComponents/championInfo";
+import ChampionName from "../championModalComponents/championName";
+import ChampionLore from "../championModalComponents/championLore";
+import ChampionSkins from "../championModalComponents/championSkins";
+import ChampionInfo from "../championModalComponents/championInfo";
 
 interface ChampionDetailsProps {
   isOpen: boolean;
@@ -54,9 +54,9 @@ export default function ChampionDetailsModal({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden bg-black bg-opacity-80 overflow-y-hidden">
       <div
-        className="relative h-5/6 overflow-y-auto
-       max-w-lg mx-auto my-6 bg-costum-blue-950 bg-opacity-90 rounded-md py-7 px-3 animate-appearing-down
-       md:max-w-xl md:px-4 lg:w-2/4 lg:max-w-none"
+        className="relative h-5/6 overflow-y-auto flex flex-col items-center
+       max-w-lg mx-auto my-6 bg-costum-blue-950 bg-opacity-90 rounded-md pt-7 px-3 animate-appearing-down
+       md:max-w-xl md:px-4 lg:w-3/4 lg:max-w-none lg:pt-9 lg:px-24"
         ref={modalRef}
       >
         <img
@@ -67,7 +67,10 @@ export default function ChampionDetailsModal({
         />
         {championData &&
           Object.values(championData).map((championDetails: ChampionData) => (
-            <div key={championDetails.id} className="flex flex-col mt-4">
+            <div
+              key={championDetails.id}
+              className="flex flex-col mt-4 items-center"
+            >
               <ChampionName
                 championName={championDetails.name}
                 championTitle={championDetails.title}
@@ -80,7 +83,10 @@ export default function ChampionDetailsModal({
               />
             </div>
           ))}
-        <button className="absolute top-4 right-2" onClick={handleClose}>
+        <button
+          className="fixed top-11 right-2 lg:absolute lg:top-5 lg:right-7"
+          onClick={handleClose}
+        >
           {<Close />}
         </button>
       </div>

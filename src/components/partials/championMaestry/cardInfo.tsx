@@ -18,8 +18,8 @@ export default function CardInfo({ champion }: CardInfoProps) {
       xl:flex-col xl:gap-1 xl:justify-normal xl:items-start 
       2xl:flex-row 2xl:gap-2 2xl:justify-between 2xl:items-center"
       >
-        <div className="flex gap-1 items-center xl:justify-between">
-          <p>Maestry Level:</p>
+        <div className="flex gap-1 items-center justify-center xl:justify-between">
+          <p className="">Maestry Level:</p>
           <p className="font-semibold">{champion.championLevel}</p>
         </div>
         <div className="flex gap-1 items-center">

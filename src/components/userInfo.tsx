@@ -23,7 +23,7 @@ export default function UserInfo({ summonerData }: UserInfoProps) {
           <UserData />
 
           <TitleConfig
-            className={"mt-9 -mb-1 text-xl lg:text-2xl"}
+            className={"mt-9 -mb- tracking-wider text-xl lg:text-2xl"}
             title="Top 10 Champions by Maestry"
           />
           <ChampionMaestry />

@@ -38,7 +38,7 @@ export default function FindSummonerInput() {
   const handleValue = (value: string) => {
     setValue("region", value);
     setIsOpen(false);
-    setSelectedRegion(regions[value as keyof typeof regions]);
+    setSelectedRegion(value);
   };
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
@@ -53,19 +53,33 @@ export default function FindSummonerInput() {
   return (
     <div className="">
       <form
-        className="w-full  flex relative h-10 items-center bg-slate-300 justify-between rounded-md lg:w-96"
+        className="w-full  flex relative h-10 items-center bg-slate-300 justify-between rounded-md rounded-r-lg lg:w-96"
         onSubmit={handleSubmit(onSubmit)}
       >
         <button
           type="button"
           onClick={handleSelectRegionState}
-          className=" px-2 h-full w-1/3 relative overflow-hidden 
+          className="px-1 h-full w-1/3 relative overflow-hidden 
           text-neutral-600 font-semibold text-ellipsis whitespace-nowrap
           after:content[''] after:absolute after:w-px after:h-3 after:bg-black after:top-1/2 after:right-0 after:-mt-1.5"
           {...register("region")}
           value={"br1"}
         >
-          {selectedRegion != "" ? `${selectedRegion}` : regions.br1}
+          <div className="flex items-center justify-center gap-1">
+            <Image
+              src={`./regions/${selectedRegion}.svg`}
+              width={24}
+              height={24}
+              alt="server region"
+              quality={100}
+              className="hidden sm:block"
+            />
+            {selectedRegion
+              .split("")
+              .filter((char) => /[a-zA-Z]/.test(char))
+              .join("")
+              .toUpperCase()}
+          </div>
         </button>
         {isOpen && (
           <ul
@@ -93,7 +107,7 @@ export default function FindSummonerInput() {
           </ul>
         )}
         <input
-          className="w-full py-1 px-2 rounded-md text-neutral-950 font-normal bg-slate-300 outline-none"
+          className="w-full mx-1 py-1 px-2 rounded-md text-neutral-950 font-normal bg-slate-300 outline-none"
           {...register("riotId", {
             required: "Please write your GameName.",
             pattern: {
@@ -105,7 +119,7 @@ export default function FindSummonerInput() {
           type="text"
         />
         <button
-          className="bg-match-card-green-dark h-full p-1 rounded-r-md hover:brightness-150 transition-all"
+          className="bg-match-card-green-dark h-full p-2 rounded-r-md hover:brightness-150 transition-all"
           type="submit"
         >
           <Search />

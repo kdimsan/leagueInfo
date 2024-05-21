@@ -17,7 +17,7 @@ const FreeWeek = async () => {
 
 const Component = async () => {
   return (
-    <main className="flex flex-col justify-center bg-neutral-800 rounded-md mt-8 xl:py-2 xl:px-20">
+    <main className="flex flex-col justify-center bg-neutral-800 rounded-md mt-8 xl:py-2 xl:px-16">
       <FreeWeek />
     </main>
   );

@@ -25,7 +25,9 @@ export default function ChampionSquareCard({
         width={80}
         height={80}
       />
-      <span className="font-medium whitespace-nowrap w-fit">{data.name}</span>
+      <span className="font-medium text-sm lg:text-base whitespace-nowrap w-fit">
+        {data.name}
+      </span>
     </div>
   );
 }

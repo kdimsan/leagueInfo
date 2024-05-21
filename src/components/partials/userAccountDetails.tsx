@@ -27,8 +27,11 @@ export default function UserAccountDetails() {
               {accountInfo.summonerLevel}
             </span>
           </div>
-          <div>
-            <h4 className="text-lg font-bold">{accountInfo.name}</h4>
+          <div className="flex flex-col items-center lg:flex-row">
+            <h4 className="text-lg font-bold">{accountInfo.gameName}</h4>
+            <h4 className="text-lg font-bold italic text-neutral-400">
+              #{accountInfo.tagLine}
+            </h4>
           </div>
         </div>
       )}

@@ -14,10 +14,16 @@ const UserDataRender = () => {
       >
         <UserAccountDetails />
         <div className="flex flex-col gap-3 w-full">
-          {userData &&
+          {userData?.summonerRankedData.length == 0 ? (
+            <div className="flex items-center justify-center">
+              <span className="font-medium">No ranked info avaliable</span>
+            </div>
+          ) : (
+            userData &&
             userData.summonerRankedData.map((rankData) => (
               <UserRank key={rankData.leagueId} rankedsData={rankData} />
-            ))}
+            ))
+          )}
         </div>
       </div>
     </div>

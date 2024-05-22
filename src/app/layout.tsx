@@ -3,6 +3,7 @@ import { Acme, Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import { Providers } from "@/contexts/Providers";
+import Footer from "@/components/partials/footer/footer";
 
 const titleFont = Acme({
   subsets: ["latin"],
@@ -35,6 +36,7 @@ export default function RootLayout({
         <Providers>
           <Header />
           {children}
+          <Footer />
         </Providers>
       </body>
     </html>

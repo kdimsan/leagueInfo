@@ -28,7 +28,7 @@ export default function FindSummonerInput() {
   const ref = useRef<HTMLLIElement | null>(null);
 
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedRegion, setSelectedRegion] = useState("");
+  const [selectedRegion, setSelectedRegion] = useState("br1");
 
   const handleSelectRegionState = () => {
     setIsOpen(!isOpen);
@@ -45,7 +45,7 @@ export default function FindSummonerInput() {
     const [gameName, tagLine] = data.riotId.split("#");
     const region = data.region;
 
-    setUserName([gameName, tagLine, region]);
+    setUserName([gameName, tagLine]);
     router.push(`/${gameName}-${tagLine}-${region}/summoner`);
     resetField("riotId");
   };
@@ -67,7 +67,7 @@ export default function FindSummonerInput() {
         >
           <div className="flex items-center justify-center gap-1">
             <Image
-              src={`./regions/${selectedRegion}.svg`}
+              src={`/regions/${selectedRegion}.svg`}
               width={24}
               height={24}
               alt="server region"
@@ -89,13 +89,13 @@ export default function FindSummonerInput() {
             {Object.entries(regions).map(([key, region]) => (
               <li
                 className="flex items-center gap-1 p-1 border-b border-slate-500 bg-slate-300
-                last:rounded-b-md hover:brightness-75 transition-all"
+              last:rounded-b-md hover:brightness-75 transition-all"
                 ref={ref}
                 key={key}
                 onClick={() => handleValue(key)}
               >
                 <Image
-                  src={`./regions/${key}.svg`}
+                  src={`/regions/${key}.svg`}
                   width={24}
                   height={24}
                   alt="server region"

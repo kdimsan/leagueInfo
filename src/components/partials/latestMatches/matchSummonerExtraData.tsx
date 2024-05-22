@@ -23,8 +23,8 @@ export default function MatchSummonerExtraData({
 
   return (
     <div
-      className={` ${className} flex flex-col relative w-full lg:w-1/3 items-center justify-center
-      sm:after:content[''] sm:after:w-0.5 sm:after:h-full sm:after:absolute  sm:after:bg-neutral-800 sm:after:-left-3 sm:after:top-0`}
+      className={` ${className} flex flex-col relative w-full lg:w-1/2 items-center justify-center
+      `}
     >
       <div className="w-fit">
         <span className="text-sm font-medium text-neutral-300 fit-content">

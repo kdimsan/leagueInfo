@@ -6,13 +6,11 @@ import React from "react";
 interface MatchPlayersProps {
   participantsByMatchInfo: Participant[];
   searchUserPuiid: string;
-  className: string;
 }
 
 export default function MatchPlayers({
   participantsByMatchInfo,
   searchUserPuiid,
-  className,
 }: MatchPlayersProps) {
   const renderParticipant = (participant: Participant) => (
     <div
@@ -43,7 +41,7 @@ export default function MatchPlayers({
   );
 
   return (
-    <div className={`${className} playersHolder flex gap-4 justify-center`}>
+    <div className={`playersHolder flex gap-4 justify-center xl:mt-3 2xl:mt-0`}>
       <div className="flex flex-col  gap-1 text-ellipsis overflow-hidden whitespace-nowrap">
         {participantsByMatchInfo
           .filter((participant) => participant.teamId === 100)

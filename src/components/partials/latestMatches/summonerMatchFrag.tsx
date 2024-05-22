@@ -16,12 +16,12 @@ export default function SummonerMatchFrag({
   return (
     <div className="flex flex-col items-center">
       <div>
-        <span className="text-sm font-semibold">
+        <span className="text-sm font-semibold whitespace-nowrap">
           {kills} / {deaths} / {assists}
         </span>
       </div>
       <div
-        className={`text-sm font-medium ${
+        className={`text-sm font-medium whitespace-nowrap ${
           kda < 1
             ? "text-red-500"
             : kda < 2

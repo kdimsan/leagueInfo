@@ -9,8 +9,8 @@ import ChampionSkins from "../championModalComponents/championSkins";
 import ChampionInfo from "../championModalComponents/championInfo";
 
 interface ChampionDetailsProps {
-  isOpen: boolean;
-  onClose: () => void;
+  isOpen?: boolean;
+  onClose?: () => void;
   champion: string;
 }
 
@@ -24,8 +24,10 @@ export default function ChampionDetailsModal({
   const modalRef = useRef<HTMLDivElement>(null);
 
   const handleClose = () => {
-    onClose();
-    setChampionData(undefined);
+    if (onClose) {
+      onClose();
+      setChampionData(undefined);
+    }
   };
 
   useOutsideClick(modalRef, handleClose);

@@ -46,6 +46,10 @@ export default function ChampionPage({ championInfo }: ChampionPageProps) {
                 />
                 <ChampionInfo championData={championDetails} />
                 <ChampionLore championLore={championDetails.lore} />
+                <ChampionSkins
+                  championSkins={championDetails.skins}
+                  championId={championDetails.id}
+                />
               </div>
             )
           )}

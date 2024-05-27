@@ -23,10 +23,9 @@ export const metadata: Metadata = {
   description: "Find all you want",
 };
 
-export default function RootLayout({
-  children,
-}: {
+export default function RootLayout(props: {
   children: React.ReactNode;
+  parallel: React.ReactNode;
 }) {
   return (
     <html
@@ -42,7 +41,8 @@ export default function RootLayout({
       <body className="bg-neutral-900 text-zinc-100 px-5 py-4 lg:px-16 xl:px-32 font-main">
         <Providers>
           <Header />
-          {children}
+          {props.children}
+          {props.parallel}
           <Footer />
         </Providers>
       </body>

@@ -1,70 +1,35 @@
-"use client";
-import { ChampionData } from "@/app/utils/@types/champions";
-import React, { useEffect, useState, useRef, Suspense } from "react";
-import Close from "../../../components/icons/close";
-import useOutsideClick from "@/hooks/useOutsideClick";
-import ChampionName from "../../../components/partials/championModalComponents/championName";
-import ChampionLore from "../../../components/partials/championModalComponents/championLore";
-import ChampionSkins from "../../../components/partials/championModalComponents/championSkins";
-import ChampionInfo from "../../../components/partials/championModalComponents/championInfo";
-import Modal from "../../../components/partials/modal/modal";
 import { getChampionData } from "@/services/getChampionData";
+import ChampionPage from "@/components/partials/championModalComponents/championPage";
 
-interface Params {
+interface ChampionDetailsProps {
   params: { slug: string };
 }
 
-export default function ChampionDetailsModal({ params }: Params) {
-  const [championData, setChampionData] = useState<ChampionData>();
+const ChampionDetailsModal: React.FC<ChampionDetailsProps> = async ({
+  params,
+}) => {
+  const { slug: championName } = params;
 
-  const modalRef = useRef<HTMLDivElement>(null);
+  try {
+    const championData = await getChampionData(championName);
 
-  useEffect(() => {
-    const fetchChampionData = async () => {
-      try {
-        const response = await getChampionData(params.slug);
-        setChampionData(response);
-      } catch (err) {
-        console.error("error", err);
-      }
-    };
-    fetchChampionData();
-  }, [params.slug]);
+    if (!championData) {
+      return (
+        <div>
+          <h1>Could not get Champion Data</h1>
+        </div>
+      );
+    }
 
-  return (
-    <Modal>
-      <div
-        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-5/6 overflow-y-auto 
-        flex flex-col items-center max-w-lg mx-auto my-6 bg-costum-blue-950 bg-opacity-90 
-        rounded-md pt-7 px-3 z-[99]
-        md:max-w-xl md:px-4 lg:w-3/4 lg:max-w-none lg:pt-9 lg:px-24"
-        ref={modalRef}
-      >
-        <img
-          className="rounded-md mt-2"
-          src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${params.slug}_0.jpg`}
-          alt="Champion splash art"
-          width={"full"}
-        />
-        {championData &&
-          Object.values(championData).map((championDetails: ChampionData) => (
-            <div
-              key={championDetails.id}
-              className="flex flex-col mt-4 items-center"
-            >
-              <ChampionName
-                championName={championDetails.name}
-                championTitle={championDetails.title}
-              />
-              <ChampionInfo championData={championDetails} />
-              <ChampionLore championLore={championDetails.lore} />
-              <ChampionSkins
-                championSkins={championDetails.skins}
-                championId={championDetails.id}
-              />
-            </div>
-          ))}
+    return <ChampionPage championInfo={championData} />;
+  } catch (error) {
+    console.error("Error fetching champion data:", error);
+    return (
+      <div>
+        <h1>Error fetching champion data</h1>
       </div>
-    </Modal>
-  );
-}
+    );
+  }
+};
+
+export default ChampionDetailsModal;

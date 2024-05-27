@@ -1,4 +1,7 @@
-import { MatchInfo, Participant } from "@/app/utils/@types/summonerMatches";
+import type {
+  MatchInfo,
+  Participant,
+} from "@/app/utils/@types/summonerMatches";
 import {
   calcularDiferencaTempo,
   secondsToMinutes,

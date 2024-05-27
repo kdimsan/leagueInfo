@@ -1,3 +1,4 @@
+"use client";
 import { ChampionData } from "@/app/utils/@types/champions";
 import React from "react";
 import {

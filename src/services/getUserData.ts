@@ -17,6 +17,6 @@ export async function getUserData(userName: string) {
 
     return response;
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 }

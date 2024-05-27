@@ -1,7 +1,7 @@
 import { ChampionData } from "@/app/utils/@types/champions";
 import { api } from "@/app/utils/api/api";
 
-interface ChampionDataResponse {
+export interface ChampionDataResponse {
   data: ChampionData;
 }
 
@@ -11,7 +11,7 @@ export async function getChampionData(championName: string) {
       championName,
     });
 
-    return response.data;
+    return { championData: response.data, championName: championName };
   } catch (err) {
     console.error("err", err);
   }

@@ -1,23 +1,22 @@
 "use client";
 import { ChampionData } from "@/app/utils/@types/champions";
 import React, { useEffect, useState, useRef, Suspense } from "react";
-import Close from "../../../components/icons/close";
-import useOutsideClick from "@/hooks/useOutsideClick";
-import ChampionName from "../../../components/partials/championModalComponents/championName";
-import ChampionLore from "../../../components/partials/championModalComponents/championLore";
-import ChampionSkins from "../../../components/partials/championModalComponents/championSkins";
-import ChampionInfo from "../../../components/partials/championModalComponents/championInfo";
-import Modal from "../../../components/partials/modal/modal";
+import Close from "../../../../components/icons/close";
+
+import ChampionName from "../../../../components/partials/championModalComponents/championName";
+import ChampionLore from "../../../../components/partials/championModalComponents/championLore";
+import ChampionSkins from "../../../../components/partials/championModalComponents/championSkins";
+import ChampionInfo from "../../../../components/partials/championModalComponents/championInfo";
+import Modal from "../../../../components/partials/modal/modal";
+import Image from "next/image";
 import { getChampionData } from "@/services/getChampionData";
 
-interface Params {
+interface Props {
   params: { slug: string };
 }
 
-export default function ChampionDetailsModal({ params }: Params) {
+export default function ChampionDetailsModal({ params }: Props) {
   const [championData, setChampionData] = useState<ChampionData>();
-
-  const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const fetchChampionData = async () => {
@@ -38,13 +37,15 @@ export default function ChampionDetailsModal({ params }: Params) {
         flex flex-col items-center max-w-lg mx-auto my-6 bg-costum-blue-950 bg-opacity-90 
         rounded-md pt-7 px-3 z-[99]
         md:max-w-xl md:px-4 lg:w-3/4 lg:max-w-none lg:pt-9 lg:px-24"
-        ref={modalRef}
       >
-        <img
+        <Image
           className="rounded-md mt-2"
           src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${params.slug}_0.jpg`}
           alt="Champion splash art"
-          width={"full"}
+          style={{ width: "100%", height: "auto" }}
+          quality={100}
+          width={500}
+          height={300}
         />
         {championData &&
           Object.values(championData).map((championDetails: ChampionData) => (

@@ -80,7 +80,7 @@ export default function ChampionInfo({ championData }: ChampionInfoProps) {
   };
 
   return (
-    <div className="w-full h-64 my-5 md:h-96">
+    <div className="w-full h-60 md:h-80 lg:h-72">
       <ResponsiveContainer width="100%" height="100%">
         <RadarChart
           cx="50%"
@@ -94,8 +94,8 @@ export default function ChampionInfo({ championData }: ChampionInfoProps) {
           <Radar
             name={championData.name}
             dataKey="A"
-            stroke="#82ca9d"
-            fill="#82ca9d"
+            stroke="#ffd60a"
+            fill="#ffc300"
             fillOpacity={0.6}
           />
         </RadarChart>

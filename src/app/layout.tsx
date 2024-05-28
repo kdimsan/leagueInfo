@@ -42,7 +42,6 @@ export default function RootLayout(props: {
         <Providers>
           <Header />
           {props.children}
-          {props.parallel}
           <Footer />
         </Providers>
       </body>

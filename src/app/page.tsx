@@ -17,7 +17,7 @@ const FreeWeek = async () => {
 
 const Component = async () => {
   return (
-    <main className="flex flex-col justify-center  mt-8 ">
+    <main className="flex flex-col justify-center gap-12 mt-8 ">
       <FreeWeek />
     </main>
   );

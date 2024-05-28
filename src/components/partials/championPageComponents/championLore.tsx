@@ -7,7 +7,7 @@ interface ChampionLoreProps {
 export default function ChampionLore({ championLore }: ChampionLoreProps) {
   return (
     <div>
-      <div className="my-4 bg-costum-blue-800 py-2 px-3 rounded-md">
+      <div className="my-4 border-4 border-neutral-900 py-2 px-3 rounded-md">
         <div>
           <span className="mt-3 font-semibold text-lg lg:text-xl">Lore:</span>
         </div>

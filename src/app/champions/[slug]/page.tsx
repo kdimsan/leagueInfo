@@ -1,5 +1,5 @@
 import { getChampionData } from "@/services/getChampionData";
-import ChampionPage from "@/components/partials/championModalComponents/championPage";
+import ChampionPage from "@/components/partials/championPageComponents/championPage";
 
 interface ChampionDetailsProps {
   params: { slug: string };
@@ -19,7 +19,11 @@ const ChampionDetailsModal = async ({ params }: ChampionDetailsProps) => {
       );
     }
 
-    return <ChampionPage championInfo={championData} />;
+    return (
+      <main className="default-bg mt-16">
+        <ChampionPage championInfo={championData} />
+      </main>
+    );
   } catch (error) {
     console.error("Error fetching champion data:", error);
     return (

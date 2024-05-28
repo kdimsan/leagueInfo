@@ -10,15 +10,24 @@ export default async function ChampionDetailsModal({
 }: ChampionDetailsProps) {
   const championName = params.slug;
 
-  const championData = await getChampionData(championName);
+  try {
+    const championData = await getChampionData(championName);
 
-  if (!championData) {
+    if (!championData) {
+      return (
+        <div>
+          <h1>Could not get Champion data.</h1>
+        </div>
+      );
+    }
+
+    return <ChampionPage championInfo={championData} />;
+  } catch (err) {
+    console.error(err);
     return (
       <div>
-        <h1>Could not get Champion Data</h1>
+        <h1>Error trying to get champion data</h1>
       </div>
     );
   }
-
-  return <ChampionPage championInfo={championData} />;
 }

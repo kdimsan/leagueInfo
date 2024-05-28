@@ -5,9 +5,7 @@ interface ChampionDetailsProps {
   params: { slug: string };
 }
 
-const ChampionDetailsModal: React.FC<ChampionDetailsProps> = async ({
-  params,
-}) => {
+const ChampionDetailsModal = async ({ params }: ChampionDetailsProps) => {
   const { slug: championName } = params;
 
   try {

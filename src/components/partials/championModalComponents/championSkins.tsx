@@ -16,14 +16,20 @@ export default function ChampionSkins({
       <h3 className="mt-3 font-semibold text-lg">SKINS</h3>
       {championSkins.map((skins) => (
         <div key={skins.id} className="flex flex-col items-center my-7">
-          <div>
-            <img
-              className="rounded-md shadow-costum-box-shadow-1"
-              src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championId}_${skins.num}.jpg`}
-              alt={`Champion ${championId} skin ${skins.name}`}
-            />
-            <h4 className="font-semibold mt-1 w-full">{skins.name}</h4>
-          </div>
+          <Image
+            className="rounded-md shadow-costum-box-shadow-1"
+            src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championId}_${skins.num}.jpg`}
+            alt={`Champion ${championId} skin ${skins.name}`}
+            quality={100}
+            width={900}
+            height={300}
+            sizes="100vw"
+            style={{
+              width: "100%",
+              height: "auto",
+            }}
+          />
+          <h4 className="font-semibold mt-1 w-full">{skins.name}</h4>
         </div>
       ))}
     </div>

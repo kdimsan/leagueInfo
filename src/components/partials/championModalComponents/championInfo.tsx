@@ -45,17 +45,24 @@ export default function ChampionInfo({ championData }: ChampionInfoProps) {
     },
   ];
 
+  const renderFontSize = () => {
+    const screenSize = window.innerWidth;
+    const fontSize = screenSize <= 425 ? "10px" : "14px";
+
+    return fontSize;
+  };
+
   const renderCustomTick = ({ payload, x, y, textAnchor }: CustomTickProps) => {
     const RADIAN = Math.PI / 180;
     const radius = 10;
     const angle = payload.coordinate;
     const cx = 200;
     const cy = 150;
-    const screenSize = screen.width;
+    const screenSize = window.innerWidth;
 
     const adjustedX =
       screenSize <= 1024
-        ? cx + (x - cx) * (0.93 + radius / 400)
+        ? cx + (x - cx) * (0.9 + radius / 400)
         : cx + (x - cx) * (0.93 + radius / 150);
     const adjustedY = cy + (y - cy) * (1.02 + radius / 150);
 
@@ -75,7 +82,12 @@ export default function ChampionInfo({ championData }: ChampionInfoProps) {
   return (
     <div className="w-full h-64 my-5 md:h-96">
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart cx="50%" cy="52%" data={GraphData}>
+        <RadarChart
+          cx="50%"
+          cy="52%"
+          style={{ fontSize: renderFontSize() }}
+          data={GraphData}
+        >
           <PolarGrid />
           <PolarAngleAxis dataKey="subject" tick={renderCustomTick} />
           <PolarRadiusAxis angle={90} domain={[0, 10]} />

@@ -13,11 +13,11 @@ export default function ChampionSquareCard({ data }: ChampionSquareCardProps) {
     <Link
       href={`/champions/${data.id}`}
       className="flex flex-col items-center w-32 justify-center cursor-pointer tracking-wide
-      hover:-translate-x-2 hover:-translate-y-2 transition-all hover:drop-shadow-costum1 hover:brightness-125"
+      hover:-translate-x-1 hover:-translate-y-1 transition-all hover:drop-shadow-costum1 hover:brightness-125"
       scroll={false}
     >
       <Image
-        className="rounded-md"
+        className="rounded-md shadow-[0px_0px_6px_2px_rgba(0,0,0,0.4)]"
         src={`https://ddragon.leagueoflegends.com/cdn/${patch}/img/champion/${data.id}.png`}
         alt="Free week champion image"
         width={80}

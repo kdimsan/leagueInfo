@@ -1,6 +1,6 @@
 "use client";
 import { ChampionData } from "@/app/utils/@types/champions";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Radar,
   RadarChart,
@@ -22,6 +22,8 @@ type CustomTickProps = {
 };
 
 export default function ChampionInfo({ championData }: ChampionInfoProps) {
+  const [windowSize, setWindowSize] = useState<number>(window.innerWidth);
+
   const GraphData = [
     {
       subject: "Attack",
@@ -46,8 +48,7 @@ export default function ChampionInfo({ championData }: ChampionInfoProps) {
   ];
 
   const renderFontSize = () => {
-    const screenSize = window.innerWidth;
-    const fontSize = screenSize <= 425 ? "10px" : "14px";
+    const fontSize = windowSize <= 425 ? "10px" : "14px";
 
     return fontSize;
   };
@@ -58,10 +59,9 @@ export default function ChampionInfo({ championData }: ChampionInfoProps) {
     const angle = payload.coordinate;
     const cx = 200;
     const cy = 150;
-    const screenSize = window.innerWidth;
 
     const adjustedX =
-      screenSize <= 1024
+      windowSize <= 1024
         ? cx + (x - cx) * (0.9 + radius / 400)
         : cx + (x - cx) * (0.93 + radius / 150);
     const adjustedY = cy + (y - cy) * (1.02 + radius / 150);
@@ -79,8 +79,18 @@ export default function ChampionInfo({ championData }: ChampionInfoProps) {
     );
   };
 
+  useEffect(() => {
+    const handleWindowSize = () => {
+      setWindowSize(window.innerWidth);
+    };
+    window.addEventListener("resize", handleWindowSize);
+    return () => {
+      window.removeEventListener("resize", handleWindowSize);
+    };
+  }, []);
+
   return (
-    <div className="w-full h-64 my-5 md:h-96">
+    <div className="w-full h-60 md:h-80 lg:h-72">
       <ResponsiveContainer width="100%" height="100%">
         <RadarChart
           cx="50%"
@@ -94,8 +104,8 @@ export default function ChampionInfo({ championData }: ChampionInfoProps) {
           <Radar
             name={championData.name}
             dataKey="A"
-            stroke="#82ca9d"
-            fill="#82ca9d"
+            stroke="#ffd60a"
+            fill="#ffc300"
             fillOpacity={0.6}
           />
         </RadarChart>

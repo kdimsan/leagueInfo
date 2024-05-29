@@ -11,7 +11,7 @@ interface FreeWeekSectionProps {
 
 export default function FreeWeekSection({ data }: FreeWeekSectionProps) {
   return (
-    <div className="flex flex-col justify-center items-center py-6 bg-neutral-800 rounded-md xl:py-6 xl:px-16">
+    <div className="flex flex-col justify-center items-center py-6 default-bg xl:py-6 xl:px-16">
       <TitleConfig
         className={"text-2xl tracking-wider md:text-3xl"}
         title={"Free Week Rotation"}

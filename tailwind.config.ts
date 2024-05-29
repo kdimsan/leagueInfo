@@ -37,6 +37,7 @@ const config: Config = {
         "costum-blue-700": "#003566",
         "costum-yellow-500": "#ffc300",
         "costum-yellow-400": "#ffd60a",
+        "costum-yellow-300": "#c6aa6f",
       },
       backgroundColor: {
         "blue-team": "#0E1829",

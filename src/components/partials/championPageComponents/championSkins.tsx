@@ -1,4 +1,5 @@
 import { SkinsProps } from "@/app/utils/@types/champions";
+import { capitalizeFirstLetter } from "@/app/utils/formatters/capitalizeFirstLetter";
 import Image from "next/image";
 import React from "react";
 
@@ -17,7 +18,7 @@ export default function ChampionSkins({
       {championSkins.map((skins) => (
         <div key={skins.id} className="flex flex-col items-center my-7">
           <Image
-            className="rounded-md shadow-costum-box-shadow-1"
+            className="rounded-md shadow-[1px_2px_10px_4px_rgba(0,0,0,0.6)]"
             src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championId}_${skins.num}.jpg`}
             alt={`Champion ${championId} skin ${skins.name}`}
             quality={100}
@@ -29,7 +30,9 @@ export default function ChampionSkins({
               height: "auto",
             }}
           />
-          <h4 className="font-semibold mt-1 w-full">{skins.name}</h4>
+          <h4 className="font-semibold mt-1 w-full">
+            {capitalizeFirstLetter(skins.name)}
+          </h4>
         </div>
       ))}
     </div>

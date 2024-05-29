@@ -23,12 +23,12 @@ export default function ChampionPage({ championInfo }: ChampionPageProps) {
           (championDetails: ChampionData) => (
             <div
               key={championDetails.id}
-              className="flex flex-col items-center"
+              className="flex flex-col items-center gap-3"
             >
-              <div className="flex flex-col items-center gap-2 lg:flex-row lg:items-start lg:justify-center">
+              <div className="flex flex-col items-center gap-2 w-full lg:flex-row lg:items-start lg:justify-center">
                 <div className="w-full lg:w-1/2">
                   <Image
-                    className="rounded-md"
+                    className="rounded-md shadow-[1px_2px_10px_4px_rgba(0,0,0,0.6)]"
                     src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championDetails.id}_0.jpg`}
                     alt="Champion splash art"
                     quality={100}

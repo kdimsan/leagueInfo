@@ -17,10 +17,10 @@ export default function ChampionName({
       <h3 className="text-xl font-title tracking-wide font-semibold lg:text-3xl">
         {championName}, {championTitle}
       </h3>
-      <div className="mt-2 flex items-center gap-2">
+      <div className="m-3 flex items-center gap-2">
         {championTags.map((tags, index) => (
           <span
-            className="bg-neutral-900 rounded-md p-2 font-semibold italic"
+            className="bg-neutral-900 rounded-md p-2 text-sm lg:text-base font-semibold italic"
             key={index}
           >
             {tags}

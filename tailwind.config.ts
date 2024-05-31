@@ -8,21 +8,20 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        title: ["var(--font-title)"],
-        main: ["var(--font-main)"],
+      animation: {
+        "appearing-down": "appearing 300ms linear",
+        dropdown: "dropdown 250ms cubic-bezier(0.4, 0, 0.2, 1)",
+        colorSkeleton: "colorSkeleton 2s infinite linear",
       },
-      dropShadow: {
-        costum1: "8px 10px 6px #000",
-        costum2: "2px 12px 6px #000",
+      backgroundColor: {
+        "blue-team": "#0E1829",
+        "red-team": "#340a0a",
       },
-      maxWidth: {
-        "costum-mw-1": "90px",
+      backgroundImage: {
+        "linear-skeleton":
+          "linear-gradient(90deg, hsl(0, 0%, 20%) 0%, hsl(0, 0%, 48%) 50%, hsl(0, 0%, 20%) 100%)",
       },
-      gap: {
-        "costum-gap-1": "1px",
-        "costum-gap-2": "2px",
-      },
+      backgroundSize: { "skeleton-size": "300% 100%" },
       colors: {
         "match-card-green-dark": "#013900",
         "match-card-green-light": "#036F00",
@@ -39,24 +38,18 @@ const config: Config = {
         "costum-yellow-400": "#ffd60a",
         "costum-yellow-300": "#c6aa6f",
       },
-      backgroundColor: {
-        "blue-team": "#0E1829",
-        "red-team": "#340a0a",
+      dropShadow: {
+        costum1: "8px 10px 6px #000",
+        costum2: "2px 12px 6px #000",
       },
-      padding: {
-        "costum-icon-padding": "2px 6px",
+      fontFamily: {
+        title: ["var(--font-title)"],
+        main: ["var(--font-main)"],
       },
-      textColor: {
-        "legend-collor": "#C67322",
-        "ultrarare-collor": "#A45CD0",
-        "rare-color": "#6CABF1",
-        "common-color": "#2FB435",
+      gap: {
+        "costum-gap-1": "1px",
+        "costum-gap-2": "2px",
       },
-      backgroundImage: {
-        "linear-skeleton":
-          "linear-gradient(90deg, hsl(0, 0%, 20%) 0%, hsl(0, 0%, 48%) 50%, hsl(0, 0%, 20%) 100%)",
-      },
-      backgroundSize: { "skeleton-size": "300% 100%" },
       keyframes: {
         appearing: {
           "0%": { transform: "translateY(-60px)", opacity: "0" },
@@ -72,10 +65,20 @@ const config: Config = {
           "100%": { backgroundPosition: "0% 50%" },
         },
       },
-      animation: {
-        "appearing-down": "appearing 300ms linear",
-        dropdown: "dropdown 250ms cubic-bezier(0.4, 0, 0.2, 1)",
-        colorSkeleton: "colorSkeleton 2s infinite linear",
+      maxWidth: {
+        "costum-mw-1": "90px",
+      },
+      padding: {
+        "costum-icon-padding": "2px 6px",
+      },
+      screens: {
+        xs: "400",
+      },
+      textColor: {
+        "legend-collor": "#C67322",
+        "ultrarare-collor": "#A45CD0",
+        "rare-color": "#6CABF1",
+        "common-color": "#2FB435",
       },
     },
   },

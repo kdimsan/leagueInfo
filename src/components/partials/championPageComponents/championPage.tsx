@@ -1,6 +1,6 @@
 import React from "react";
 import ChampionName from "./championName";
-import ChampionInfo from "./championInfo";
+import ChampionInfo from "./championGraphics";
 import ChampionLore from "./championLore";
 import ChampionSkins from "./championSkins";
 import Image from "next/image";

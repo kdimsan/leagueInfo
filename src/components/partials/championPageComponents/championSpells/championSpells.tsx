@@ -25,6 +25,7 @@ export default function ChampionSpells({
     });
   };
   const mappedSpellsWithCommands = mapSpellsWithButtons(championSpells);
+  console.log(isHovered);
 
   return (
     <div className="flex flex-col items-center">
@@ -32,25 +33,38 @@ export default function ChampionSpells({
         <h3>Spells</h3>
       </div>
       <div className="flex gap-1">
-        <div className="passive relative">
-          <Image
-            width={40}
-            height={40}
-            src={`https://ddragon.leagueoflegends.com/cdn/14.10.1/img/passive/${championPassive.image.full}`}
-            alt={`champion passive`}
-          />
-          <div className="absolute left-0 top-0 rounded-full bg-costum-blue-950 w-4 h-4 border border-costum-yellow-300">
-            <div className="flex items-center justify-center text-[10px]">
-              P
+        <div className="passive">
+          <div
+            className="relative"
+            onMouseEnter={() => setIsHovered(championPassive.name)}
+            onMouseLeave={() => setIsHovered(null)}
+          >
+            <Image
+              width={40}
+              height={40}
+              src={`https://ddragon.leagueoflegends.com/cdn/14.10.1/img/passive/${championPassive.image.full}`}
+              alt={`champion passive`}
+            />
+            <div className="absolute left-0 top-0 rounded-full bg-costum-blue-950 w-4 h-4 border border-costum-yellow-300">
+              <div className="flex items-center justify-center text-[10px]">
+                P
+              </div>
             </div>
+            {isHovered && isHovered === championPassive.name && (
+              <SpellDescription passive={championPassive} />
+            )}
           </div>
         </div>
+
         <div className="spells flex gap-1">
           {mappedSpellsWithCommands.map((spell, index) => (
-            <div key={index} className="relative">
+            <div
+              key={index}
+              className="relative"
+              onMouseEnter={() => setIsHovered(spell.id)}
+              onMouseLeave={() => setIsHovered(null)}
+            >
               <Image
-                onMouseEnter={() => setIsHovered(spell.id)}
-                onMouseLeave={() => setIsHovered(null)}
                 width={40}
                 height={40}
                 src={`https://ddragon.leagueoflegends.com/cdn/14.10.1/img/spell/${spell.image.full}`}

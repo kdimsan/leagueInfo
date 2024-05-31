@@ -90,7 +90,7 @@ export default function ChampionInfo({ championData }: ChampionInfoProps) {
   }, []);
 
   return (
-    <div className="w-full h-60 md:h-80 lg:h-72">
+    <div className="w-full h-60 md:h-80 lg:h-64 2xl:h-80">
       <ResponsiveContainer width="100%" height="100%">
         <RadarChart
           cx="50%"

@@ -36,7 +36,14 @@ export interface ChampionData {
   tags: string[];
   info: ChampionInfo;
   stats: ChampionStats;
-  spells: SpellsProps;
+  spells: SpellsProps[];
+  passive: ChampionPassive;
+}
+
+export interface ChampionPassive {
+  name: string;
+  description: string;
+  image: ChampionImages;
 }
 
 export interface ChampionInfo {
@@ -50,6 +57,27 @@ export interface SpellsProps {
   id: string;
   name: string;
   description: string;
+  tooltip: string;
+  leveltip: Leveltip;
+  maxrank: number;
+  cooldown: number[];
+  cooldownBurn: string;
+  cost: number[];
+  costBurn: string;
+  effect: number[] | undefined[];
+  effectBurn: string | undefined[];
+  vars: any[];
+  costType: string;
+  maxammo: string;
+  range: number[];
+  rangeBurn: string;
+  image: ChampionImages;
+  resource: string;
+}
+
+export interface Leveltip {
+  label: string[];
+  effect: string[];
 }
 
 export interface SkinsProps {

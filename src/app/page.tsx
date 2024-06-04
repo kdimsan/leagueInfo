@@ -1,5 +1,5 @@
-import AllChampionsSection from "@/components/allChampionsSection";
-import FreeWeekSection from "@/components/partials/freeWeekSection";
+import ChampionSection from "@/components/championsSection/championSection";
+
 import { getFreeWeek } from "@/services/getFreeWeek";
 
 const FreeWeek = async () => {
@@ -9,15 +9,17 @@ const FreeWeek = async () => {
 
   return (
     <>
-      <FreeWeekSection data={freeWeekChampionsData} />
-      <AllChampionsSection data={allChampionsRes} />
+      <ChampionSection
+        allChampionsRes={allChampionsRes}
+        freeWeekChampionsData={freeWeekChampionsData}
+      />
     </>
   );
 };
 
-const Component = async () => {
+const Component = () => {
   return (
-    <main className="flex flex-col justify-center gap-12 mt-8 ">
+    <main className="">
       <FreeWeek />
     </main>
   );

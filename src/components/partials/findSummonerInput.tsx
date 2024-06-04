@@ -51,7 +51,7 @@ export default function FindSummonerInput() {
   };
 
   return (
-    <div className="">
+    <div className=" z-[99999]">
       <form
         className="w-full  flex relative h-10 items-center bg-slate-300 justify-between rounded-md rounded-r-lg lg:w-96"
         onSubmit={handleSubmit(onSubmit)}

@@ -38,7 +38,7 @@ export default function RootLayout(props: {
           content="upgrade-insecure-requests"
         />
       </Head>
-      <body className="bg-neutral-900 text-zinc-100 px-5 py-4 lg:px-16 xl:px-32 font-main">
+      <body className="bg-[#090909] text-zinc-100 px-5 py-4 w-full font-main">
         <Providers>
           <Header />
           {props.children}

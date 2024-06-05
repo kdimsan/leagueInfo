@@ -23,6 +23,6 @@
 
 @layer components {
   .default-bg {
-    @apply bg-neutral-800 rounded-md
+    @apply bg-[#101015] rounded-md
   }
 }

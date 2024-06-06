@@ -5,7 +5,7 @@ export default function Loading() {
   const skeletonArrayMaestry = new Array(10).fill({});
   const skeletonArrayMatches = new Array(20).fill({});
   return (
-    <div className="flex flex-col px-3 bg-neutral-800 xl:p-5 xl:rounded-lg xl:flex-row xl:justify-between xl:gap-6">
+    <div className="flex flex-col px-3 bg-neutral-800 xl:p-5 xl:rounded-lg xl:flex-row xl:justify-center xl:gap-6">
       <div className="user-area flex flex-col h-full flex-1">
         <div
           className="summoner-info flex m-auto flex-col items-center justify-center w-full gap-5 bg-neutral-600 py-4 rounded-md mt-8

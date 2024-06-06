@@ -25,7 +25,6 @@ export default function ChampionSpells({
     });
   };
   const mappedSpellsWithCommands = mapSpellsWithButtons(championSpells);
-  console.log(isHovered);
 
   return (
     <div className="flex flex-col items-center">
@@ -45,7 +44,7 @@ export default function ChampionSpells({
               src={`https://ddragon.leagueoflegends.com/cdn/14.10.1/img/passive/${championPassive.image.full}`}
               alt={`champion passive`}
             />
-            <div className="absolute left-0 top-0 rounded-full bg-costum-blue-950 w-4 h-4 border border-costum-yellow-300">
+            <div className="absolute left-0 top-0 rounded-full bg-costum-blue-950 w-4 h-4 border border-costum-pallete-cyan-700">
               <div className="flex items-center justify-center text-[10px]">
                 P
               </div>
@@ -70,7 +69,7 @@ export default function ChampionSpells({
                 src={`https://ddragon.leagueoflegends.com/cdn/14.10.1/img/spell/${spell.image.full}`}
                 alt={`champion skill`}
               />
-              <div className="cast-button absolute top-0 left-0 rounded-full border border-costum-yellow-300 bg-costum-blue-950 w-4 h-4">
+              <div className="cast-button absolute top-0 left-0 rounded-full border border-costum-pallete-cyan-700 bg-costum-blue-950 w-4 h-4">
                 <div className="flex items-center justify-center text-[10px]">
                   {spell.button}
                 </div>

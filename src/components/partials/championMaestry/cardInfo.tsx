@@ -9,7 +9,7 @@ type CardInfoProps = {
 
 export default function CardInfo({ champion }: CardInfoProps) {
   return (
-    <div className="">
+    <div className="w-full">
       <h4 className="border-b border-zinc-900 m-auto text-center font-semibold mb-2">
         {champion.championName}
       </h4>

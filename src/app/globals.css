@@ -23,6 +23,18 @@
 
 @layer components {
   .default-bg {
-    @apply bg-[#101015] rounded-md
+    @apply bg-[#1B1D25] bg-opacity-85 rounded-md
   }
 }
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+

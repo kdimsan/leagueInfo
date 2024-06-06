@@ -4,7 +4,7 @@ import Github from "@/components/icons/github";
 
 export default function Footer() {
   return (
-    <div className="w-full mt-9 bg-neutral-800 rounded-md xl:px-20 xl:py-2">
+    <div className="w-full mt-9 default-bg xl:px-20 xl:py-2">
       <div className="flex flex-col items-center justify-between gap-5 p-2 md:flex-row md:items-start">
         <div>
           <Faq />

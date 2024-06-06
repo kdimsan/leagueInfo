@@ -17,20 +17,18 @@ export default function UserInfo({ summonerData }: UserInfoProps) {
   setUserData(summonerData);
 
   return (
-    <div>
-      <div className="flex flex-col px-3 bg-neutral-800 xl:p-5 xl:rounded-lg xl:flex-row xl:justify-between xl:gap-6">
-        <div className="flex flex-col items-center mt-8 lg:mt-0">
-          <UserData />
+    <div className="flex flex-col w-full px-3 default-bg md:w-9/12 xl:p-5 xl:flex-row xl:justify-center xl:gap-9">
+      <div className="flex flex-col items-center mt-8 lg:mt-1">
+        <UserData />
 
-          <TitleConfig
-            className={"mt-9 -mb- tracking-wider text-xl lg:text-2xl"}
-            title="Top 10 Champions by Maestry"
-          />
-          <ChampionMaestry />
-        </div>
-        <div className="m-auto w-full py-2 xl:m-0 xl:w-1/2">
-          <SummonerLatestMatches />
-        </div>
+        <TitleConfig
+          className={"mt-9 -mb- tracking-wider text-xl lg:text-2xl"}
+          title="Top 10 Champions by Maestry"
+        />
+        <ChampionMaestry />
+      </div>
+      <div className="m-auto w-full xl:m-0 xl:w-1/2">
+        <SummonerLatestMatches />
       </div>
     </div>
   );

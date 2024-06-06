@@ -15,7 +15,7 @@ export default function ChampionMaestryCard({
     .replace(/[ -']/g, "");
 
   return (
-    <div className="flex gap-3 bg-neutral-700 rounded-md py-2 px-3 lg:max-w-none">
+    <div className="flex items-center gap-3 bg-[#262A3B] shadow-[0px_0px_5px_1px_rgba(17,17,17,1)] rounded-md py-2 px-3 lg:max-w-none">
       <ChampionMaestryImg championName={championName} />
       <CardInfo champion={champion} />
     </div>

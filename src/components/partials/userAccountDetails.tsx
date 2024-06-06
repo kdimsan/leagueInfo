@@ -12,7 +12,7 @@ export default function UserAccountDetails() {
      lg:after:content-[''] lg:after:-right-2.5 lg:after:top-0 lg:after:w-0.5 lg:after:h-full after:bg-neutral-800"
     >
       {accountInfo && (
-        <div className="flex flex-col items-center justify-center w-full gap-5">
+        <div className="flex flex-col items-center justify-center w-full gap-4">
           <div className="relative ">
             <Image
               className="border-2 border-yellow-400 rounded-md"

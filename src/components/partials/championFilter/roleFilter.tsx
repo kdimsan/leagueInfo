@@ -1,36 +1,70 @@
-import { championTags } from "@/app/utils/championRoles";
+import { championRolesOptions } from "@/app/utils/championRoles";
 import useChampionTagFilter from "@/hooks/useChampionTagFilter";
+import Select, { SingleValue, StylesConfig } from "react-select";
 import React from "react";
 
-export default function ChampionTagFilter() {
-  const { championTagFilter, setChampionTagFilter } = useChampionTagFilter();
+type ChampionRolesOption = {
+  value: string;
+  label: string;
+};
 
-  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setChampionTagFilter(e.target.value);
+const customStyles: StylesConfig<ChampionRolesOption, false> = {
+  control: (provided: any) => ({
+    ...provided,
+    backgroundColor: "transparent",
+    backgroundImage: "linear-gradient(25deg, #00ADB5, #71C9CE)",
+    color: "white",
+    fontSize: "14px",
+    minHeight: "40px",
+    borderColor: "#6a6b70",
+    cursor: "pointer",
+  }),
+  option: (provided, state) => ({
+    ...provided,
+    backgroundColor: state.isFocused
+      ? "#61dafb"
+      : state.isSelected
+      ? "#61dafb"
+      : "#282c34",
+    color: state.isFocused ? "white" : state.isSelected ? "#282c34" : "white",
+    padding: 5,
+    fontWeight: "500",
+    cursor: "pointer",
+  }),
+  singleValue: (provided) => ({
+    ...provided,
+    color: "white",
+    fontWeight: "500",
+  }),
+  menu: (provided) => ({
+    ...provided,
+    backgroundColor: "#282c34",
+  }),
+  placeholder: (provided) => ({
+    ...provided,
+    color: "white",
+  }),
+};
+
+export default function ChampionTagFilter() {
+  const { setChampionTagFilter } = useChampionTagFilter();
+
+  const handleChange = (selectedOption: SingleValue<ChampionRolesOption>) => {
+    if (selectedOption) {
+      return setChampionTagFilter(selectedOption.value);
+    }
   };
 
   return (
-    <div className="text-neutral-900 font-medium">
-      <form className="">
-        <label htmlFor="champion_tag">Champion Role:</label>
-        <select
-          className="appearance-none bg-transparent px-2 focus:outline-none animate-dropdown cursor-pointer"
-          name="champion_tag"
-          id="champion_tag"
-          value={championTagFilter}
-          onChange={handleChange}
-        >
-          {Object.values(championTags).map((tag, index) => (
-            <option
-              className="font-medium bg-costum-yellow-500 brightness-110 cursor-pointer"
-              value={tag}
-              key={index}
-            >
-              {tag}
-            </option>
-          ))}
-        </select>
-      </form>
-    </div>
+    <>
+      <Select<ChampionRolesOption>
+        className="w-52 cursor-pointer"
+        defaultValue={championRolesOptions[0]}
+        onChange={handleChange}
+        options={championRolesOptions}
+        styles={customStyles}
+        placeholder={"Text"}
+      />
+    </>
   );
 }

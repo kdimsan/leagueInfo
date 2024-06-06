@@ -20,7 +20,7 @@ export default async function Summoner({ params }: SummonerProps) {
   }
 
   return (
-    <main className="mt-5">
+    <main className="mt-5 flex justify-center items-center">
       <UserInfo summonerData={summonerData} />
     </main>
   );

@@ -104,8 +104,8 @@ export default function ChampionInfo({ championData }: ChampionInfoProps) {
           <Radar
             name={championData.name}
             dataKey="A"
-            stroke="#ffd60a"
-            fill="#ffc300"
+            stroke="#61dafb"
+            fill="#00ADB5"
             fillOpacity={0.6}
           />
         </RadarChart>

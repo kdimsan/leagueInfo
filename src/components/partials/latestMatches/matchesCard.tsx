@@ -26,36 +26,45 @@ export default function MatchesCard({
     <div>
       <div
         onClick={() => setMatchDetailsStatus(!matchDetailsStatus)}
-        className={`card-container flex flex-col gap-4 px-4 py-3 rounded-lg 
+        className={`card-container p-0.5 rounded-3xl 
         ${matchDetailsStatus ? "rounded-b-none" : ""}
         ${
           userDataByMatch.win
-            ? "bg-gradient-to-b from-match-card-green-dark to-match-card-green-light"
-            : "bg-gradient-to-b from-match-card-red-dark to-match-card-red-light"
+            ? "bg-gradient-to-b from-match-card-green-light to-transparent"
+            : "bg-gradient-to-b from-match-card-red-light to-transparent"
         }`}
       >
-        <MatchInfo
-          userDataByMatch={userDataByMatch}
-          matchInfo={matchData.matchInfo}
-        />
         <div
-          className="flex flex-wrap items-start justify-center w-full gap-4 lg:flex-nowrap lg:gap-0 xl:flex-wrap 
-        2xl:flex-nowrap 2xl:justify-start"
+          className={`flex flex-col gap-4 p-2 rounded-[calc(1.5rem-2px)] 
+        ${
+          userDataByMatch.win
+            ? "bg-gradient-to-b from-match-card-green-dark to-transparent"
+            : "bg-gradient-to-b from-match-card-red-dark to-transparent"
+        }`}
         >
-          <div className="flex flex-col items-center sm:flex-row sm:items-start justify-around w-full">
-            <MatchSummonerInfos matchUserInfo={userDataByMatch} />
-            <MatchSummonerExtraData
-              className="w-full lg:w-1/2 items-center"
-              challenges={userDataByMatch.challenges}
-              visionScore={userDataByMatch.visionScore}
-              totalFarm={userDataByMatch.totalFarm}
-              totalDamage={userDataByMatch.totalDamageDealtToChampions}
+          <MatchInfo
+            userDataByMatch={userDataByMatch}
+            matchInfo={matchData.matchInfo}
+          />
+          <div
+            className="flex flex-wrap items-start justify-center w-full gap-4 lg:flex-nowrap lg:gap-0 xl:flex-wrap 
+          2xl:flex-nowrap 2xl:justify-start"
+          >
+            <div className="flex flex-col items-center sm:flex-row sm:items-start justify-around w-full">
+              <MatchSummonerInfos matchUserInfo={userDataByMatch} />
+              <MatchSummonerExtraData
+                className="w-full lg:w-1/2 items-center"
+                challenges={userDataByMatch.challenges}
+                visionScore={userDataByMatch.visionScore}
+                totalFarm={userDataByMatch.totalFarm}
+                totalDamage={userDataByMatch.totalDamageDealtToChampions}
+              />
+            </div>
+            <MatchPlayers
+              participantsByMatchInfo={participantsArray}
+              searchUserPuiid={userDataByMatch.puuid}
             />
           </div>
-          <MatchPlayers
-            participantsByMatchInfo={participantsArray}
-            searchUserPuiid={userDataByMatch.puuid}
-          />
         </div>
       </div>
       {matchDetailsStatus && (

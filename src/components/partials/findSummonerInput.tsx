@@ -119,7 +119,7 @@ export default function FindSummonerInput() {
           type="text"
         />
         <button
-          className="bg-gradient-to-t from-costum-yellow-300 to-costum-yellow-500 h-full p-2 rounded-r-md hover:brightness-90 transition-all"
+          className="bg-gradient-to-t from-costum-pallete-cyan-500 to-costum-pallete-cyan-700 h-full p-2 rounded-r-md hover:brightness-90 transition-all"
           type="submit"
         >
           <Search />

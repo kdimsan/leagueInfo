@@ -1,9 +1,14 @@
-export const championTags = {
-  All: "All",
-  Fighter: "Fighter",
-  Mage: "Mage",
-  Marksman: "Marksman",
-  Assassin: "Assassin",
-  Support: "Support",
-  Tank: "Tank",
-};
+export interface ChampionRolesOption {
+  readonly value: string;
+  readonly label: string;
+}
+
+export const championRolesOptions: readonly ChampionRolesOption[] = [
+  { value: "All", label: "All" },
+  { value: "Assassin", label: "Assassin" },
+  { value: "Fighter", label: "Fighter" },
+  { value: "Mage", label: "Mage" },
+  { value: "Marksman", label: "Marksman" },
+  { value: "Support", label: "Support" },
+  { value: "Tank", label: "Tank" },
+];

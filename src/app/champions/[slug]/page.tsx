@@ -20,7 +20,7 @@ const ChampionDetailsModal = async ({ params }: ChampionDetailsProps) => {
     }
 
     return (
-      <main className="default-bg mt-16">
+      <main className="flex items-center justify-center py-5">
         <ChampionPage championInfo={championData} />
       </main>
     );

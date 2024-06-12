@@ -2,6 +2,7 @@ import React from "react";
 
 import { MatchInfo } from "@/app/utils/@types/summonerMatches";
 import TeamsObjectives from "./teamsObjectives";
+import Warning from "@/images/warning";
 
 interface MatchGraphicsProps {
   matchDetails: MatchInfo;
@@ -20,8 +21,10 @@ export default function MatchGraphics({ matchDetails }: MatchGraphicsProps) {
           <span>Red Team</span>
         </div>
       </div>
-      <div>
-        <TeamsObjectives matchDetails={matchDetails} />
+      <div className="flex justify-center items-center gap-1">
+        <Warning />
+        Developing...
+        {/* <TeamsObjectives matchDetails={matchDetails} /> */}
       </div>
     </div>
   );

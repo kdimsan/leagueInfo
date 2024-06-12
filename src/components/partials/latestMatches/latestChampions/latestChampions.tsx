@@ -48,29 +48,29 @@ export default function LatestChampions() {
 
   const initializer = counter(lastChampions).map((champion, index) => {
     return (
-      <div key={index} className="flex items-center gap-1 w-fit xl">
-        <div className="champion image w-12 h-auto">
+      <div key={index} className="flex items-center gap-1 w-fit">
+        <div className="champion image w-11 h-11">
           <Image
             src={`https://ddragon.leagueoflegends.com/cdn/14.11.1/img/champion/${champion.champion}.png`}
             alt="Champion Image"
             width={120}
             height={120}
-            style={{ width: "100%", height: "auto", borderRadius: "15%" }}
+            style={{ width: "100%", height: "auto", borderRadius: "12%" }}
             quality={100}
           />
         </div>
-        <div className="champion info flex gap-1 text-xs">
+        <div className="champion info flex flex-col text-xs">
           <div>
             <span
               className={`${
                 champion.winRate < 50 ? "text-red-600" : "text-green-600"
-              } font-medium`}
+              } font-bold`}
             >
               {champion.winRate}%
             </span>
           </div>
           <div>
-            <span className="text-gray-500">
+            <span className="text-gray-500 text-nowrap">
               ({champion.win}V / {champion.losses}L)
             </span>
           </div>

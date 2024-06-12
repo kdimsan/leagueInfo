@@ -2,7 +2,6 @@ import useUserData from "@/hooks/useUserData";
 import React from "react";
 import MatchesCard from "./partials/latestMatches/matchesCard";
 import TitleConfig from "./titleConfig";
-import LatestChampions from "./partials/latestMatches/latestChampions/latestChampions";
 
 const SummonerLatestMatchesRender = () => {
   const { userData } = useUserData();

@@ -32,20 +32,20 @@ export default function RootLayout(props: {
       lang="en"
       className={`${titleFont.variable} ${mainFontFamily.variable}`}
     >
+      <meta
+        name="google-adsense-account"
+        content="ca-pub-6752140548955710"
+      ></meta>
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6752140548955710"
+        crossOrigin="anonymous"
+      ></script>
       <Head>
         <meta
           http-equiv="Content-Security-Policy"
           content="upgrade-insecure-requests"
         />
-        <meta
-          name="google-adsense-account"
-          content="ca-pub-6752140548955710"
-        ></meta>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6752140548955710"
-          crossOrigin="anonymous"
-        ></script>
       </Head>
       <body className="bg-[#131418] text-zinc-100 px-5 py-4 w-full font-main">
         <Providers>

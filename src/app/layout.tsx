@@ -37,6 +37,10 @@ export default function RootLayout(props: {
           http-equiv="Content-Security-Policy"
           content="upgrade-insecure-requests"
         />
+        <meta
+          name="google-adsense-account"
+          content="ca-pub-6752140548955710"
+        ></meta>
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6752140548955710"

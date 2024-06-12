@@ -15,6 +15,7 @@ export interface MatchInfo {
   participantsData: Participant[];
   queueId: number;
   teams: Team[];
+  searchSummonerData: SearchSummonerData;
 }
 
 export interface Participant {
@@ -96,4 +97,12 @@ export interface Team {
 export interface Objectives {
   name: string;
   kills: number;
+}
+
+export interface SearchSummonerData {
+  puiid: string;
+  championName: string;
+  win: boolean;
+  lane: string;
+  role: string;
 }

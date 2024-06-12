@@ -37,6 +37,14 @@ const config: Config = {
         "costum-yellow-500": "#ffc300",
         "costum-yellow-400": "#ffd60a",
         "costum-yellow-300": "#c6aa6f",
+        "costum-pallete-cyan-700": "#00ADB5",
+        "costum-pallete-cyan-600": "#71C9CE",
+        "costum-pallete-cyan-500": "#A6E3E9",
+        "costum-pallete-cyan-400": "#CBF1F5",
+        "costum-pallete-cyan-300": "#E3FDFD",
+        "costum-pallete-grey": "#393E46",
+        "costum-pallete-dark-blue": "#222831",
+        "costum-pallete-white-300": "#EEEEEE",
       },
       dropShadow: {
         costum1: "8px 10px 6px #000",
@@ -80,8 +88,12 @@ const config: Config = {
         "rare-color": "#6CABF1",
         "common-color": "#2FB435",
       },
+      textShadow: {
+        "costum-shadow": "4px 4px 6px rgba(0,0,0)",
+        "costum-shadow-small": "3px 2px 4px rgba(0,0,0)",
+      },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-textshadow")],
 };
 export default config;

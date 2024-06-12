@@ -5,7 +5,6 @@ import Inhibitor from "@/images/Inhibitor";
 import RiftHerald from "@/images/riftHerald";
 import Tower from "@/images/tower";
 import Horde from "@/images/horde";
-import Champion from "@/images/champion";
 
 import React from "react";
 import TeamGraphics from "./teamGraphics";

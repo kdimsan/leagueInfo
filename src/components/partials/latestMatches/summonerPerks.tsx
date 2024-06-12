@@ -35,7 +35,7 @@ export default function SummonerPerks({
           />
         ))}
       </div>
-      <div className="flex gap-1">
+      <div className={`${runes.mainRune === 0 ? "hidden" : "flex gap-1"}`}>
         <Image
           className="flex justify-center items-center bg-neutral-800 rounded-full"
           src={`https://opgg-static.akamaized.net/meta/images/lol/${patch}/perk/${runes.mainRune}.png?image=q_auto,f_webp,w_64,h_64&v=1705466001567`}

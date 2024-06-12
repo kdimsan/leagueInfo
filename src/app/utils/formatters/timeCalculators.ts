@@ -1,7 +1,9 @@
 export const lastTimePlayedConverter = (unixDate: number) => {
   var date = new Date(unixDate);
   const formatted = date.toLocaleString();
-  return formatted;
+  const onlyDate = formatted.split(",");
+
+  return onlyDate[0];
 };
 
 export function calcularDiferencaTempo(gameEndTimestamp: number) {

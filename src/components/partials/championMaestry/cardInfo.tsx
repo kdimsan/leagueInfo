@@ -13,27 +13,23 @@ export default function CardInfo({ champion }: CardInfoProps) {
       <h4 className="border-b border-zinc-900 m-auto text-center font-semibold mb-2">
         {champion.championName}
       </h4>
-      <div
-        className="flex gap-2 items-center justify-between text-xs 
-      xl:flex-col xl:gap-1 xl:justify-normal xl:items-start 
-      2xl:flex-row 2xl:gap-2 2xl:justify-between 2xl:items-center"
-      >
-        <div className="flex gap-1 items-center justify-center xl:justify-between">
-          <p className="">Maestry Level:</p>
-          <p className="font-semibold">{champion.championLevel}</p>
+      <div className="flex flex-col gap-1 text-xs">
+        <div className="flex items-center gap-1">
+          <span className="">Maestry Level:</span>
+          <span className="font-semibold">{champion.championLevel}</span>
         </div>
-        <div className="flex gap-1 items-center">
-          <p>Points:</p>
-          <p className="font-semibold">
+        <div className="flex items-center gap-1">
+          <span>Points:</span>
+          <span className="font-semibold">
             {formatMaestryValue(champion.championPoints)}
-          </p>
+          </span>
         </div>
-      </div>
-      <div className="flex gap-1 items-center justify-between mt-1 text-xs">
-        <p>Last played: </p>
-        <p className="font-semibold">
-          {lastTimePlayedConverter(champion.lastPlayTime)}
-        </p>
+        <div className="flex items-center gap-1">
+          <span className="text-nowrap">Last played:</span>
+          <span className="font-semibold">
+            {lastTimePlayedConverter(champion.lastPlayTime)}
+          </span>
+        </div>
       </div>
     </div>
   );

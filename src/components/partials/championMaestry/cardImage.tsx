@@ -10,14 +10,15 @@ export default function ChampionMaestryImg({
   championName,
 }: ChampionMaestryImgProps) {
   return (
-    <div className="flex items-center w-16 h-fit sm:w-fit">
+    <div className="flex items-center w-20 h-fit">
       <Image
         className="rounded-md"
         src={`https://ddragon.leagueoflegends.com/cdn/${patch}/img/champion/${championName}.png`}
         alt="Champion image"
-        width={80}
+        width={70}
         height={70}
         quality={100}
+        style={{ width: "100%", height: "100%" }}
       />
     </div>
   );

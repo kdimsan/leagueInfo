@@ -24,7 +24,7 @@ export default function ChampionPlayed({
         alt={`${championName} image`}
         width={width}
         height={height}
-        quality={100}
+        unoptimized
       />
       <span className="flex items-center justify-center bg-neutral-800 rounded-full absolute w-5 h-5 -bottom-1 -right-0.5 text-xs">
         {championLevel}

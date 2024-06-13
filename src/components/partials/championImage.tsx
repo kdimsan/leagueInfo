@@ -20,7 +20,7 @@ export default function ChampionImage({
       width={18}
       height={18}
       alt={`${championName}`}
-      quality={100}
+      unoptimized
     />
   );
 }

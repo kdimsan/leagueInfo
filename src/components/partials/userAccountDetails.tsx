@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 
 import useUserData from "@/hooks/useUserData";
+import { patch } from "@/app/utils/patch";
 
 export default function UserAccountDetails() {
   const { userData } = useUserData();
@@ -18,9 +19,9 @@ export default function UserAccountDetails() {
               className="border-2 border-yellow-400 rounded-md"
               width={100}
               height={100}
-              src={`https://ddragon.leagueoflegends.com/cdn/13.23.1/img/profileicon/${accountInfo.profileIconId}.png`}
+              src={`https://ddragon.leagueoflegends.com/cdn/${patch}/img/profileicon/${accountInfo.profileIconId}.png`}
               alt="Profile icon"
-              quality={100}
+              unoptimized
             />
 
             <span className="absolute -bottom-3 left-8 text-sm p-costum-icon-padding bg-amber-400 rounded-full font-semibold">

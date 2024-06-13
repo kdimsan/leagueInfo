@@ -1,7 +1,6 @@
 import { patch } from "@/app/utils/patch";
 import Image from "next/image";
-import React, { useState } from "react";
-//Caso o item não seja comprado, sele será 0.
+import React from "react";
 
 interface SummonerItemsProps {
   userItems: number[];
@@ -22,6 +21,7 @@ export default function SummonerItems({ userItems }: SummonerItemsProps) {
                 alt="user item"
                 width={24}
                 height={24}
+                unoptimized
               />
             )}
           </dd>

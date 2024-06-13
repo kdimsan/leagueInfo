@@ -21,6 +21,7 @@ export default function TeamBans({ championsBans }: TeamBansProps) {
             <Image
               className="rounded-md"
               alt="Champion square art."
+              unoptimized
               width={20}
               height={20}
               src={`https://opgg-static.akamaized.net/meta/images/lol/14.2.1/champion/${championBan.championId}.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_160,h_160&v=1705466001567`}

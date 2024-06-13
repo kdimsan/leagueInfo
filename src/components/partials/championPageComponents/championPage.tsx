@@ -17,7 +17,7 @@ interface ChampionPageProps {
 
 export default function ChampionPage({ championInfo }: ChampionPageProps) {
   return (
-    <div className="w-full px-8 sm:w-5/6 md:w-3/4 default-bg">
+    <div className="w-full p-4 md:px-8 md:py-5 sm:w-5/6 md:w-3/4 default-bg">
       <BackButton />
       {championInfo.championData &&
         Object.values(championInfo.championData).map(
@@ -32,7 +32,7 @@ export default function ChampionPage({ championInfo }: ChampionPageProps) {
                     className="rounded-md shadow-[1px_2px_10px_4px_rgba(0,0,0,0.6)]"
                     src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championDetails.id}_0.jpg`}
                     alt="Champion splash art"
-                    quality={100}
+                    unoptimized
                     width={500}
                     height={300}
                     sizes="100vw"

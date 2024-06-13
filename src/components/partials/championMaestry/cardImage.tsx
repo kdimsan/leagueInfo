@@ -17,7 +17,7 @@ export default function ChampionMaestryImg({
         alt="Champion image"
         width={70}
         height={70}
-        quality={100}
+        unoptimized
         style={{ width: "100%", height: "100%" }}
       />
     </div>

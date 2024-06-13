@@ -32,6 +32,7 @@ export default function SummonerPerks({
             width={width}
             height={22}
             alt={`summoner spell ${spell}`}
+            unoptimized
           />
         ))}
       </div>
@@ -42,6 +43,7 @@ export default function SummonerPerks({
           width={width}
           height={height}
           alt="Summoner Rune"
+          unoptimized
         />
 
         <Image
@@ -50,6 +52,7 @@ export default function SummonerPerks({
           width={width}
           height={height}
           alt="Summoner Rune Style"
+          unoptimized
         />
       </div>
     </div>

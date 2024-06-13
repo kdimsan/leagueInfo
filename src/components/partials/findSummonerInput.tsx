@@ -73,6 +73,7 @@ export default function FindSummonerInput() {
               alt="server region"
               quality={100}
               className="hidden sm:block"
+              unoptimized
             />
             {selectedRegion
               .split("")
@@ -99,7 +100,7 @@ export default function FindSummonerInput() {
                   width={24}
                   height={24}
                   alt="server region"
-                  quality={100}
+                  unoptimized
                 />
                 <span className="font-semibold text-neutral-800">{region}</span>
               </li>

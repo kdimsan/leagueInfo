@@ -56,7 +56,7 @@ export default function LatestChampions() {
             width={120}
             height={120}
             style={{ width: "100%", height: "auto", borderRadius: "12%" }}
-            quality={100}
+            unoptimized
           />
         </div>
         <div className="champion info flex flex-col text-xs">
@@ -66,7 +66,7 @@ export default function LatestChampions() {
                 champion.winRate < 50 ? "text-red-600" : "text-green-600"
               } font-bold`}
             >
-              {champion.winRate}%
+              {champion.winRate.toFixed(0)}%
             </span>
           </div>
           <div>

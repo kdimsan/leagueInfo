@@ -43,6 +43,7 @@ export default function ChampionSpells({
               height={40}
               src={`https://ddragon.leagueoflegends.com/cdn/14.10.1/img/passive/${championPassive.image.full}`}
               alt={`champion passive`}
+              unoptimized
             />
             <div className="absolute left-0 top-0 rounded-full bg-costum-blue-950 w-4 h-4 border border-costum-pallete-cyan-700">
               <div className="flex items-center justify-center text-[10px]">
@@ -68,6 +69,7 @@ export default function ChampionSpells({
                 height={40}
                 src={`https://ddragon.leagueoflegends.com/cdn/14.10.1/img/spell/${spell.image.full}`}
                 alt={`champion skill`}
+                unoptimized
               />
               <div className="cast-button absolute top-0 left-0 rounded-full border border-costum-pallete-cyan-700 bg-costum-blue-950 w-4 h-4">
                 <div className="flex items-center justify-center text-[10px]">

@@ -21,6 +21,7 @@ export default function ChampionSquareCard({ data }: ChampionSquareCardProps) {
         alt="Free week champion image"
         width={80}
         height={80}
+        unoptimized
       />
       <span className="font-medium text-sm lg:text-base whitespace-nowrap w-fit text-shadow-costum-shadow-small">
         {data.name}

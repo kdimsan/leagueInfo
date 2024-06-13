@@ -20,6 +20,7 @@ export default function SummonersItems({ items }: SummonerItemsProps) {
                 src={`https://ddragon.leagueoflegends.com/cdn/${patch}/img/item/${item}.png`}
                 alt="user item"
                 width={20}
+                unoptimized
                 height={20}
               />
             )}

@@ -29,6 +29,7 @@ export default function MatchPlayers({
         width={18}
         height={18}
         alt={`${participant.riotIdGameName} played as ${participant.championName}`}
+        unoptimized
       />
       <span
         className={`text-ellipsis text-xs overflow-hidden w-20  ${

@@ -41,6 +41,11 @@ export default function RootLayout(props: {
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6752140548955710"
         crossOrigin="anonymous"
       ></script>
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6752140548955710"
+        crossOrigin="anonymous"
+      ></script>
       <Head>
         <meta
           http-equiv="Content-Security-Policy"

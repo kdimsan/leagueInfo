@@ -2,8 +2,10 @@
 import { SkinsProps } from "@/app/utils/@types/champions";
 import { capitalizeFirstLetter } from "@/app/utils/formatters/capitalizeFirstLetter";
 import Image from "next/image";
-import React from "react";
+import React, { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import Next from "@/images/next";
+import Previous from "@/images/previous";
 
 interface ChampionSkinsData {
   championSkins: SkinsProps[];
@@ -14,22 +16,29 @@ export default function ChampionSkins({
   championSkins,
   championId,
 }: ChampionSkinsData) {
-  const [emblaRef] = useEmblaCarousel({ loop: true });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
   return (
-    <div className="w-full">
+    <div className="w-full flex flex-col gap-3">
       <h3 className="mt-3 font-semibold text-lg">SKINS</h3>
-      <div className="embla" ref={emblaRef}>
+      <div className="embla  relative" ref={emblaRef}>
         <div className="embla__container">
           {championSkins.map((skins) => (
             <div
               key={skins.id}
-              className="flex flex-col items-center gap-2 my-3 embla__slide"
+              className="flex flex-col items-center gap-2 embla__slide"
             >
               <Image
                 className="rounded-[calc(0.75rem-1px)]"
                 src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championId}_${skins.num}.jpg`}
                 alt={`Champion ${championId} skin ${skins.name}`}
-                quality={100}
+                unoptimized
                 width={900}
                 height={300}
                 sizes="100vw"
@@ -38,11 +47,20 @@ export default function ChampionSkins({
                   height: "auto",
                 }}
               />
-              <h4 className="font-semibold w-full text-lg">
+              <h4 className="font-semibold w-full text-lg px-4 z-50">
                 {capitalizeFirstLetter(skins.name)}
               </h4>
             </div>
           ))}
+        </div>
+
+        <div className="w-full absolute -left-4 bottom-px flex items-center justify-end gap-4">
+          <button className="embla__prev" onClick={scrollPrev}>
+            <Previous />
+          </button>
+          <button className="embla__next" onClick={scrollNext}>
+            <Next />
+          </button>
         </div>
       </div>
     </div>

@@ -14,7 +14,7 @@ export default function ChampionSection({
   allChampionsRes,
 }: ChampionSectionProps) {
   return (
-    <div className="relative h-full">
+    <div className="relative h-full w-full xs:w-fit m-auto">
       <ChampionFilter />
       <div className="flex flex-col gap-12 mt-4 md:gap-16 ">
         <FreeWeekSection data={freeWeekChampionsData} />

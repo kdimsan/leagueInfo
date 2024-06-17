@@ -52,7 +52,7 @@ export default function RootLayout(props: {
           content="upgrade-insecure-requests"
         />
       </Head>
-      <body className="bg-[#131418] text-zinc-100 px-5 py-4 w-full font-main">
+      <body className="bg-[#131418] text-zinc-100 px-1 py-4 w-full font-main">
         <Providers>
           <Header />
           {props.children}

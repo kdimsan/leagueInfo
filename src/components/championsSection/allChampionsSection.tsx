@@ -31,8 +31,8 @@ export default function AllChampionsSection({
         title={"League of Legends Champions"}
       />
       <div
-        className="grid grid-cols-2 justify-center items-center gap-7 mt-5
-      sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-9 xl:gap-x-2 2xl:grid-cols-11"
+        className="grid grid-cols-3 justify-center items-center gap-4 mt-5 xs:px-4 xs:grid-cols-4
+      sm:grid-cols-5 sm:gap-8 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-9 xl:gap-x-5 2xl:grid-cols-11"
       >
         {filteredChampions.map((champion, index) => {
           return <ChampionSquareCard key={index} data={champion} />;

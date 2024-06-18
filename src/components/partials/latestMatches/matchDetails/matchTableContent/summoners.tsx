@@ -28,7 +28,7 @@ export default function Summoner({ participant }: SummonerProps) {
             />
           </div>
         </div>
-        <div className="max-w-costum-mw-1 flex items-center gap-1 text-xs text-ellipsis overflow-hidden whitespace-nowrap">
+        <div className="flex flex-col items-start text-2xs text-ellipsis overflow-hidden whitespace-nowrap sm:text-xs">
           <span className={`font-medium text-neutral-300`}>
             {participant.riotIdGameName}
           </span>

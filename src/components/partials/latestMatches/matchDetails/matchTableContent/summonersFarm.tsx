@@ -22,11 +22,10 @@ export default function SummonersFarm({
         : "text-common-color"
       : "text-neutral-400";
   return (
-    <td className="text-xs font-medium text-neutral-300">
+    <td className="text-2xs font-medium text-neutral-300 sm:text-xs">
       <div className="flex flex-col justify-center items-center">
         <span>{totalFarm}</span>
         <span className={`italic font-bold ${farmPerMinColors}`}>
-          {" "}
           {farmPerMin} /min
         </span>
       </div>

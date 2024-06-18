@@ -31,7 +31,7 @@ export default function ChampionSquareCard({ data }: ChampionSquareCardProps) {
     <Link
       href={`/champions/${data.id}`}
       className="flex flex-col items-center justify-center cursor-pointer tracking-wide gap-0.5
-      hover:-translate-x-1 hover:-translate-y-1 transition-all hover:drop-shadow-costum1 hover:brightness-125"
+      hover:-translate-x-1 hover:-translate-y-1 transition-all hover:drop-shadow-custom1 hover:brightness-125"
     >
       <Image
         className="rounded-md shadow-[0px_0px_6px_2px_rgba(0,0,0,0.4)]"
@@ -41,7 +41,7 @@ export default function ChampionSquareCard({ data }: ChampionSquareCardProps) {
         height={imageSize.height}
         unoptimized
       />
-      <span className="font-medium text-[10px] sm:text-xs whitespace-nowrap w-fit text-shadow-costum-shadow-small">
+      <span className="font-medium text-[10px] sm:text-xs whitespace-nowrap w-fit text-shadow-custom-shadow-small">
         {data.name}
       </span>
     </Link>

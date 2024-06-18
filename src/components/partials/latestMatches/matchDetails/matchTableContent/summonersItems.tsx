@@ -9,7 +9,7 @@ interface SummonerItemsProps {
 export default function SummonersItems({ items }: SummonerItemsProps) {
   return (
     <td className="text-center">
-      <div className="flex items-center justify-center gap-costum-gap-1">
+      <div className="flex flex-wrap items-center justify-center gap-px">
         {items.map((item, index) => (
           <dd className="w-5 h-5" key={index}>
             {item.toString() === "0" ? (

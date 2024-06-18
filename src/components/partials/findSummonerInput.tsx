@@ -85,7 +85,7 @@ export default function FindSummonerInput() {
         {isOpen && (
           <ul
             className="absolute top-8 rounded-b-md 
-          cursor-pointer animate-dropdown transition-all drop-shadow-costum2"
+          cursor-pointer animate-dropdown transition-all drop-shadow-custom2"
           >
             {Object.entries(regions).map(([key, region]) => (
               <li

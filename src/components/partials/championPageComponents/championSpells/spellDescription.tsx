@@ -16,7 +16,7 @@ export default function SpellDescription({
 
   return (
     <div
-      className={`absolute top-full -right-6 overflow-hidden w-40 bg-neutral-900 border border-costum-pallete-cyan-700 z-[100000] p-2 mt-2 text-white rounded-md text-xs xs:w-44 sm:w-48
+      className={`absolute top-full -right-6 overflow-hidden w-40 bg-neutral-900 border border-custom-pallete-cyan-700 z-[100000] p-2 mt-2 text-white rounded-md text-xs xs:w-44 sm:w-48
         ${passive ? "left-3" : ""}`}
     >
       <div className="flex flex-col gap-1">

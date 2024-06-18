@@ -24,7 +24,7 @@ export default function UserAccountDetails() {
               unoptimized
             />
 
-            <span className="absolute -bottom-3 left-8 text-sm p-costum-icon-padding bg-amber-400 rounded-full font-semibold">
+            <span className="absolute -bottom-3 left-8 text-sm p-custom-icon-padding bg-amber-400 rounded-full font-semibold">
               {accountInfo.summonerLevel}
             </span>
           </div>

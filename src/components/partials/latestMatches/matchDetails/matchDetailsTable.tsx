@@ -6,6 +6,7 @@ import SummonersFarm from "./matchTableContent/summonersFarm";
 import SummonersDamages from "./matchTableContent/summonersDamages";
 import SummonersItems from "./matchTableContent/summonersItems";
 import TableHeader from "./matchTableContent/tableHeader";
+import SummonersStats from "./matchTableContent/summonersStats";
 
 interface MatchDetailsTableProps {
   participants: Participant[];
@@ -41,11 +42,12 @@ export default function MatchDetailsTable({
                   totalFarm={participant.totalFarm}
                   gameDuration={participant.challenges.gameLength}
                 />
-                <SummonersDamages
+
+                <SummonersStats
                   damageDealt={participant.totalDamageDealtToChampions}
                   damageTaken={participant.totalDamageTaken}
+                  summonerItems={participant.items}
                 />
-                <SummonersItems items={participant.items} />
               </tr>
             )
           );

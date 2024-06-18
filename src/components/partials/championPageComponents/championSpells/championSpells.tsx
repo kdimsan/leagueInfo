@@ -45,7 +45,7 @@ export default function ChampionSpells({
               alt={`champion passive`}
               unoptimized
             />
-            <div className="absolute left-0 top-0 rounded-full bg-costum-blue-950 w-4 h-4 border border-costum-pallete-cyan-700">
+            <div className="absolute left-0 top-0 rounded-full bg-custom-blue-950 w-4 h-4 border border-custom-pallete-cyan-700">
               <div className="flex items-center justify-center text-[10px]">
                 P
               </div>
@@ -71,7 +71,7 @@ export default function ChampionSpells({
                 alt={`champion skill`}
                 unoptimized
               />
-              <div className="cast-button absolute top-0 left-0 rounded-full border border-costum-pallete-cyan-700 bg-costum-blue-950 w-4 h-4">
+              <div className="cast-button absolute top-0 left-0 rounded-full border border-custom-pallete-cyan-700 bg-custom-blue-950 w-4 h-4">
                 <div className="flex items-center justify-center text-[10px]">
                   {spell.button}
                 </div>

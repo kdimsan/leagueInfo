@@ -2,7 +2,7 @@ import { SummonerProps } from "@/app/utils/@types/summonerInfo";
 import { api } from "@/app/utils/api/api";
 
 export async function getUserData(userName: string) {
-  const [gameName, tagLine, region] = userName.split("-");
+  const [gameName, tagLine, accountRegion] = userName.split("-");
 
   try {
     const response: SummonerProps = (
@@ -10,7 +10,7 @@ export async function getUserData(userName: string) {
         params: {
           gameName: gameName,
           tagLine: tagLine,
-          region: region,
+          accountRegion: accountRegion,
         },
       })
     ).data;

@@ -22,7 +22,7 @@ export interface SummonerRankedProps {
   hotStreak?: boolean;
 }
 
-export interface SummonerMaestryChampionsProps {
+export interface SummonerMasteryChampionsProps {
   championId: number;
   championName: string;
   championLevel: number;
@@ -34,6 +34,6 @@ export interface SummonerMaestryChampionsProps {
 export interface SummonerProps {
   summonerData: SummonerAccountProps;
   summonerRankedData: SummonerRankedProps[];
-  summonerMaestryChampionsData: SummonerMaestryChampionsProps[];
+  summonerMasteryChampionsData: SummonerMasteryChampionsProps[];
   summonerLatestMatchesData: SummonerLatestMatchesProps[];
 }

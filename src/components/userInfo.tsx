@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
 import UserData from "./partials/userData";
-import ChampionMaestry from "./partials/championMaestry/championMaestry";
-import TitleConfig from "./titleConfig";
+import ChampionMastery from "./partials/championMastery/championMastery";
 import SummonerLatestMatches from "./summonerLatestMatches";
 import { SummonerProps } from "@/app/utils/@types/summonerInfo";
 import useUserData from "@/hooks/useUserData";
@@ -22,7 +21,7 @@ export default function UserInfo({ summonerData }: UserInfoProps) {
       <div className="flex flex-col items-center mt-8 gap-3 lg:mt-1 xl:w-1/2 2xl:w-2/5">
         <UserData />
 
-        <ChampionMaestry />
+        <ChampionMastery />
         <LatestChampions />
       </div>
       <div className="m-auto w-full xl:m-0 xl:w-1/2">

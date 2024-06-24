@@ -2,7 +2,7 @@ import TitleConfig from "@/components/titleConfig";
 import React from "react";
 
 export default function Loading() {
-  const skeletonArrayMaestry = new Array(10).fill({});
+  const skeletonArrayMastery = new Array(10).fill({});
   const skeletonArrayMatches = new Array(20).fill({});
   return (
     <div className="flex flex-col px-3 bg-neutral-800 xl:p-5 xl:rounded-lg xl:flex-row xl:justify-center xl:gap-6">
@@ -27,14 +27,14 @@ export default function Loading() {
             </div>
           </div>
         </div>
-        <div className="maestry-info">
+        <div className="mastery-info">
           <TitleConfig
             className={"mt-9 -mb-1 text-xl lg:text-2xl"}
-            title="Top 10 Champions by Maestry"
+            title="Top 10 Champions by Mastery"
           />
           <div>
             <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-x-4">
-              {skeletonArrayMaestry.map((data, i) => (
+              {skeletonArrayMastery.map((data, i) => (
                 <div key={i} className="">
                   <div className="flex flex-col items-center mt-4">
                     <div className="w-full max-w-xs flex gap-3 bg-neutral-700 rounded-md py-2 px-3 lg:max-w-sm">
@@ -45,7 +45,7 @@ export default function Loading() {
                         </div>
                         <div className="flex gap-2 items-center justify-between text-xs">
                           <div className="flex gap-1 items-center">
-                            <p className="whitespace-nowrap">Maestry Level:</p>
+                            <p className="whitespace-nowrap">Mastery Level:</p>
                             <div className="animate-colorSkeleton bg-linear-skeleton bg-skeleton-size h-3 w-12"></div>
                           </div>
                           <div className="flex gap-1 items-center">

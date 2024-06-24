@@ -2,13 +2,13 @@ import { patch } from "@/app/utils/patch";
 import Image from "next/image";
 import React from "react";
 
-type ChampionMaestryImgProps = {
+type ChampionMasteryImgProps = {
   championName: string;
 };
 
-export default function ChampionMaestryImg({
+export default function ChampionMasteryImg({
   championName,
-}: ChampionMaestryImgProps) {
+}: ChampionMasteryImgProps) {
   return (
     <div className="flex items-center w-20 h-fit">
       <Image

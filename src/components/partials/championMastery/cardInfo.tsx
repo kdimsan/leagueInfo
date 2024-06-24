@@ -1,10 +1,10 @@
 import { lastTimePlayedConverter } from "@/app/utils/formatters/timeCalculators";
-import { formatMaestryValue } from "@/app/utils/formatters/maestryValue";
-import { SummonerMaestryChampionsProps } from "@/app/utils/@types/summonerInfo";
+import { formatMasteryValue } from "@/app/utils/formatters/masteryValue";
+import { SummonerMasteryChampionsProps } from "@/app/utils/@types/summonerInfo";
 import React from "react";
 
 type CardInfoProps = {
-  champion: SummonerMaestryChampionsProps;
+  champion: SummonerMasteryChampionsProps;
 };
 
 export default function CardInfo({ champion }: CardInfoProps) {
@@ -15,13 +15,13 @@ export default function CardInfo({ champion }: CardInfoProps) {
       </h4>
       <div className="flex flex-col gap-1 text-xs">
         <div className="flex items-center gap-1">
-          <span className="">Maestry Level:</span>
+          <span className="">Mastery Level:</span>
           <span className="font-semibold">{champion.championLevel}</span>
         </div>
         <div className="flex items-center gap-1">
           <span>Points:</span>
           <span className="font-semibold">
-            {formatMaestryValue(champion.championPoints)}
+            {formatMasteryValue(champion.championPoints)}
           </span>
         </div>
         <div className="flex items-center gap-1">

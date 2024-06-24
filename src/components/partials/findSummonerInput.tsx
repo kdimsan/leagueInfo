@@ -43,10 +43,10 @@ export default function FindSummonerInput() {
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     const [gameName, tagLine] = data.riotId.split("#");
-    const region = data.region;
+    const accountRegion = data.region;
 
     setUserName([gameName, tagLine]);
-    router.push(`/${gameName}-${tagLine}-${region}/summoner`);
+    router.push(`/${gameName}-${tagLine}-${accountRegion}/summoner`);
     resetField("riotId");
   };
 

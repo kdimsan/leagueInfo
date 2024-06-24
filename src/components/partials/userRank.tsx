@@ -32,11 +32,9 @@ export default function UserRank({ rankedsData }: UserRankProps) {
             unoptimized
             alt="summoner rank"
           />
-          <span className="font-title text-lg tracking-wide">
-            {rankedsData.rank}
-          </span>
+          <span className="font-title tracking-wide">{rankedsData.rank}</span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-sm">
           <span>
             {rankedsData.wins}W/{rankedsData.losses}L
           </span>

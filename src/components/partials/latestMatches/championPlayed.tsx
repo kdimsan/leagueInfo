@@ -15,12 +15,13 @@ export default function ChampionPlayed({
   width,
   height,
 }: ChampionPlayedProps) {
+  const route = `https://opgg-static.akamaized.net/meta/images/lol/${patch}/champion/${championName}.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_160,h_160&v=1705466001567`;
   //https://ddragon.leagueoflegends.com/cdn/${patch}/img/champion/${championName}.png
   return (
     <div className="relative w-fit flex">
       <Image
         className="rounded-full relative overflow-hidden"
-        src={`https://opgg-static.akamaized.net/meta/images/lol/${patch}/champion/${championName}.png?image=c_crop,h_103,w_103,x_9,y_9/q_auto,f_webp,w_160,h_160&v=1705466001567`}
+        src={route}
         alt={`${championName} image`}
         width={width}
         height={height}

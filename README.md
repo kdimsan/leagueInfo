@@ -3,10 +3,11 @@
 ## Getting Started
 
 Get the free week information and click on the champion to learn more about it. Search for your nickname
-to get your best champions by maestry and your ranked elo.
+to get your best champions by mastery and your ranked elo.
 
 ## Project Details
 
 The project is made with Next using typescript and tailwind. Also includes the server
-that makes the API calls, please check it out at: 
+that makes the API calls, please check it out at:
+
 #### https://github.com/kdimsan/League-Info-Server/tree/main

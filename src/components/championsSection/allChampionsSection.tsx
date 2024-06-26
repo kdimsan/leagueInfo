@@ -25,7 +25,7 @@ export default function AllChampionsSection({
         })
       : data;
   return (
-    <div className="flex flex-col justify-center items-center default-bg py-5">
+    <section className="flex flex-col justify-center items-center default-bg py-5">
       <TitleConfig
         className={"text-2xl tracking-wider md:text-3xl"}
         title={"League of Legends Champions"}
@@ -38,6 +38,6 @@ export default function AllChampionsSection({
           return <ChampionSquareCard key={index} data={champion} />;
         })}
       </div>
-    </div>
+    </section>
   );
 }

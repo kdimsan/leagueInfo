@@ -1,4 +1,5 @@
 import { SummonerLatestMatchesProps } from "@/app/utils/@types/summonerMatches";
+import getImageSquareCrop from "@/app/utils/functions/imageSquareCropFn";
 import TitleConfig from "@/components/titleConfig";
 import useUserData from "@/hooks/useUserData";
 import Image from "next/image";
@@ -47,16 +48,18 @@ export default function LatestChampions() {
   };
 
   const initializer = counter(lastChampions).map((champion, index) => {
+    const imageSrc = getImageSquareCrop(champion.champion);
     return (
       <div key={index} className="flex items-center gap-1 w-fit">
-        <div className="champion image w-11 h-11">
+        <div className="champion image w-11 h-11 shadow shadow-black">
           <Image
-            src={`https://ddragon.leagueoflegends.com/cdn/14.11.1/img/champion/${champion.champion}.png`}
+            src={imageSrc}
             alt="Champion Image"
             width={120}
             height={120}
             style={{ width: "100%", height: "auto", borderRadius: "12%" }}
             unoptimized
+            className=""
           />
         </div>
         <div className="champion info flex flex-col text-xs">

@@ -1,3 +1,4 @@
+import getImageSquareCrop from "@/app/utils/functions/imageSquareCropFn";
 import { patch } from "@/app/utils/patch";
 import Image from "next/image";
 import React from "react";
@@ -9,11 +10,12 @@ type ChampionMasteryImgProps = {
 export default function ChampionMasteryImg({
   championName,
 }: ChampionMasteryImgProps) {
+  const imageSrc = getImageSquareCrop(championName);
   return (
-    <div className="flex items-center w-20 h-fit">
+    <div className="flex items-center w-20 h-fit shadow shadow-black">
       <Image
         className="rounded-md"
-        src={`https://ddragon.leagueoflegends.com/cdn/${patch}/img/champion/${championName}.png`}
+        src={imageSrc}
         alt="Champion image"
         width={70}
         height={70}

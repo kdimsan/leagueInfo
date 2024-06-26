@@ -17,7 +17,7 @@ interface ChampionPageProps {
 
 export default function ChampionPage({ championInfo }: ChampionPageProps) {
   return (
-    <div className="w-full p-4 md:px-8 md:py-5 sm:w-5/6 md:w-3/4 default-bg">
+    <section className="w-full p-4 md:px-8 md:py-5 sm:w-5/6 md:w-3/4 default-bg">
       <BackButton />
       {championInfo.championData &&
         Object.values(championInfo.championData).map(
@@ -63,6 +63,6 @@ export default function ChampionPage({ championInfo }: ChampionPageProps) {
             </div>
           )
         )}
-    </div>
+    </section>
   );
 }

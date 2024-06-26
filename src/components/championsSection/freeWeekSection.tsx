@@ -25,7 +25,7 @@ export default function FreeWeekSection({ data }: FreeWeekSectionProps) {
       : data;
 
   return (
-    <div className="flex flex-col justify-center items-center default-bg py-5">
+    <section className="flex flex-col justify-center items-center default-bg py-5">
       <TitleConfig
         className={"text-2xl tracking-wider md:text-3xl"}
         title={"Free Week Rotation"}
@@ -39,6 +39,6 @@ export default function FreeWeekSection({ data }: FreeWeekSectionProps) {
           return <ChampionSquareCard key={index} data={champion} />;
         })}
       </div>
-    </div>
+    </section>
   );
 }

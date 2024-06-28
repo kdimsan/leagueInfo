@@ -1,19 +1,53 @@
 import React from "react";
+import SubTitle from "../subTitle/subTitle";
 
 interface ChampionLoreProps {
   championLore: string;
+  championAllyTips: string[];
+  championEnemyTips: string[];
 }
 
-export default function ChampionLore({ championLore }: ChampionLoreProps) {
-  return (
+const ChampionText = ({
+  championText,
+  title,
+  championTextArray,
+}: {
+  championText?: string;
+  title: string;
+  championTextArray?: string[];
+}) => (
+  <div>
     <div>
-      <div className="my-4 border-1 border-neutral-900 py-2 px-3 rounded-md shadow-[1px_1px_6px_3px_rgba(0,0,0,0.2)]">
-        <div>
-          <span className="mt-3 font-semibold text-lg lg:text-xl">Lore:</span>
-        </div>
-        <div className="px-1">
-          <p className="text-base text-justify">{championLore}</p>
-        </div>
+      <SubTitle subTitle={title} className="text-xl" />
+    </div>
+    <div className="px-1">
+      {championText ? (
+        <p className="text-sm text-justify">{championText}</p>
+      ) : (
+        championTextArray?.map((text, i) => (
+          <p className="text-sm text-justify my-1" key={i}>
+            {text}
+          </p>
+        ))
+      )}
+    </div>
+  </div>
+);
+
+export default function ChampionLore({
+  championLore,
+  championAllyTips,
+  championEnemyTips,
+}: ChampionLoreProps) {
+  return (
+    <div className="w-full">
+      <div className="border-1 flex flex-col justify-between h-full border-neutral-900 py-1 px-3 rounded-md shadow-[1px_1px_6px_3px_rgba(0,0,0,0.2)]">
+        <ChampionText championText={championLore} title="LORE" />
+        <ChampionText championTextArray={championAllyTips} title="ALLY TIPS" />
+        <ChampionText
+          championTextArray={championEnemyTips}
+          title="ENEMY TIPS"
+        />
       </div>
     </div>
   );

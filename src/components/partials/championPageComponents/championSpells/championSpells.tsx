@@ -1,21 +1,30 @@
 "use client";
-import { ChampionPassive, SpellsProps } from "@/app/utils/@types/champions";
+import {
+  ChampionPassive,
+  SpellsProps,
+  SpellsPropsWithButton,
+} from "@/app/utils/@types/champions";
 import Image from "next/image";
 import React, { useState } from "react";
 import SpellDescription from "./spellDescription";
+import ChampionVideo from "../../championVideo/championVideo";
+import { patch } from "@/app/utils/patch";
+import SubTitle from "../../subTitle/subTitle";
 
 interface ChampionSpellsProps {
   championSpells: SpellsProps[];
   championPassive: ChampionPassive;
+  championKey: string;
 }
 
 export default function ChampionSpells({
   championSpells,
   championPassive,
+  championKey,
 }: ChampionSpellsProps) {
-  const [isHovered, setIsHovered] = useState<string | null>(null);
+  const [selectedSpell, setSelectedSpell] = useState<SpellsPropsWithButton>();
 
-  const spellsCommands = ["Q", "W", "E", "R"];
+  const spellsCommands = ["P", "Q", "W", "E", "R"];
 
   const mapSpellsWithButtons = (spells: SpellsProps[]) => {
     return spells.map((spell, index) => {
@@ -26,62 +35,68 @@ export default function ChampionSpells({
   };
   const mappedSpellsWithCommands = mapSpellsWithButtons(championSpells);
 
-  return (
-    <div className="flex flex-col items-center">
-      <div className="font-semibold lg: text-lg">
-        <h3>Spells</h3>
-      </div>
-      <div className="flex gap-1">
-        <div className="passive">
-          <div
-            className="relative"
-            onMouseEnter={() => setIsHovered(championPassive.name)}
-            onMouseLeave={() => setIsHovered(null)}
-          >
-            <Image
-              width={40}
-              height={40}
-              src={`https://ddragon.leagueoflegends.com/cdn/14.10.1/img/passive/${championPassive.image.full}`}
-              alt={`champion passive`}
-              unoptimized
-            />
-            <div className="absolute left-0 top-0 rounded-full bg-custom-blue-950 w-4 h-4 border border-custom-pallete-cyan-700">
-              <div className="flex items-center justify-center text-[10px]">
-                P
-              </div>
-            </div>
-            {isHovered && isHovered === championPassive.name && (
-              <SpellDescription passive={championPassive} />
-            )}
+  const SpellSquare = ({
+    key,
+    spell,
+    group,
+  }: {
+    key?: number;
+    spell?: SpellsPropsWithButton;
+    group: string;
+  }) => (
+    <div
+      className={`flex flex-col z-10 relative cursor-pointer ${
+        selectedSpell?.name === spell?.name
+          ? "after:content[''] after:absolute after:-bottom-1 after:right-0 after:-translate-x-1/2 after:w-6 after:h-6 after:rounded-[2px] after:bg-custom-pallete-cyan-600 after:rotate-45 after:-z-10"
+          : ""
+      }
+    `}
+    >
+      <div
+        key={key}
+        className="spell-square relative"
+        onClick={() => setSelectedSpell(spell)}
+      >
+        <Image
+          width={50}
+          height={50}
+          src={`https://ddragon.leagueoflegends.com/cdn/${patch}/img/${group}/${spell?.image.full}`}
+          alt={`champion skill`}
+          unoptimized
+        />
+        <div className="cast-button absolute top-0 left-0 rounded-full border border-custom-pallete-cyan-700 bg-custom-blue-950 w-4 h-4">
+          <div className="flex items-center justify-center text-[10px]">
+            {spell?.button}
           </div>
         </div>
+      </div>
+    </div>
+  );
 
-        <div className="spells flex gap-1">
-          {mappedSpellsWithCommands.map((spell, index) => (
-            <div
-              key={index}
-              className="relative"
-              onMouseEnter={() => setIsHovered(spell.id)}
-              onMouseLeave={() => setIsHovered(null)}
-            >
-              <Image
-                width={40}
-                height={40}
-                src={`https://ddragon.leagueoflegends.com/cdn/14.10.1/img/spell/${spell.image.full}`}
-                alt={`champion skill`}
-                unoptimized
+  return (
+    <div className="flex flex-col items-center gap-3 w-full">
+      <div className="">
+        <SubTitle subTitle="SPELLS" className="text-2xl" />
+      </div>
+      <div className="flex flex-col gap-1 w-full">
+        <div className="skills w-full flex items-center justify-center">
+          <div className="spells flex gap-1">
+            {mappedSpellsWithCommands.map((spell, index) => (
+              <SpellSquare
+                spell={spell}
+                key={index}
+                group={spell.image.group}
               />
-              <div className="cast-button absolute top-0 left-0 rounded-full border border-custom-pallete-cyan-700 bg-custom-blue-950 w-4 h-4">
-                <div className="flex items-center justify-center text-[10px]">
-                  {spell.button}
-                </div>
-              </div>
-              {isHovered && isHovered === spell.id && (
-                <SpellDescription spell={spell} />
-              )}
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+        {selectedSpell && (
+          <SpellDescription
+            spell={selectedSpell}
+            championKey={championKey}
+            button={selectedSpell.button}
+          />
+        )}
       </div>
     </div>
   );

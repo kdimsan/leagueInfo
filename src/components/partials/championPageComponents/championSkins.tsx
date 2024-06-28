@@ -6,6 +6,7 @@ import React, { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Next from "@/images/next";
 import Previous from "@/images/previous";
+import SubTitle from "../subTitle/subTitle";
 
 interface ChampionSkinsData {
   championSkins: SkinsProps[];
@@ -26,7 +27,7 @@ export default function ChampionSkins({
   }, [emblaApi]);
   return (
     <div className="w-full flex flex-col gap-3">
-      <h3 className="mt-3 font-semibold text-lg">SKINS</h3>
+      <SubTitle subTitle="SKINS" className="text-2xl" />
       <div className="embla  relative" ref={emblaRef}>
         <div className="embla__container">
           {championSkins.map((skins) => (
@@ -47,7 +48,7 @@ export default function ChampionSkins({
                   height: "auto",
                 }}
               />
-              <h4 className="font-semibold w-full text-lg px-4 z-50">
+              <h4 className="font-semibold w-full px-4 z-50 font-title tracking-wide text-xl">
                 {capitalizeFirstLetter(skins.name)}
               </h4>
             </div>

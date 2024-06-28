@@ -38,6 +38,8 @@ export interface ChampionData {
   stats: ChampionStats;
   spells: SpellsProps[];
   passive: ChampionPassive;
+  allytips: string[];
+  enemytips: string[];
 }
 
 export interface ChampionPassive {
@@ -73,6 +75,10 @@ export interface SpellsProps {
   rangeBurn: string;
   image: ChampionImages;
   resource: string;
+}
+
+export interface SpellsPropsWithButton extends SpellsProps {
+  button: string;
 }
 
 export interface Leveltip {

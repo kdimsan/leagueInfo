@@ -37,8 +37,8 @@ export default function SpellDescription({
 }: SpellDescriptionProps) {
   return (
     <div
-      className={`flex flex-col w-full gap-3 bg-neutral-900 border border-custom-pallete-cyan-700 z-[10000] p-2 mt-2 text-white 
-        rounded-md text-sm
+      className={`flex flex-col w-full gap-3  bg-neutral-900 border border-custom-pallete-cyan-700 z-[10000] p-2 mt-2 text-white 
+        rounded-md text-sm shadow-[0px_1px_6px_4px_rgba(0,0,0,0.6)]
     `}
     >
       {spell && (

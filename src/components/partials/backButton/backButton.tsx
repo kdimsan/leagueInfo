@@ -8,7 +8,7 @@ function BackButton() {
   const router = useRouter();
   return (
     <button
-      className="flex items-center justify-center pt-6 pb-4 hover:animate-pulse"
+      className="flex items-center justify-center pb-4 hover:animate-pulse"
       onClick={() => router.back()}
     >
       <LeftArrow height={20} width={20} />

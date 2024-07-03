@@ -5,8 +5,8 @@ export default function Loading() {
   const skeletonArrayMastery = new Array(10).fill({});
   const skeletonArrayMatches = new Array(20).fill({});
   return (
-    <div className="flex flex-col px-3 bg-neutral-800 xl:p-5 xl:rounded-lg xl:flex-row xl:justify-center xl:gap-6">
-      <div className="user-area flex flex-col h-full flex-1">
+    <div className="flex flex-col m-auto w-full px-3 default-bg md:w-9/12 xl:p-5 xl:flex-row xl:justify-center xl:gap-9">
+      <div className="user-area flex flex-col h-full w-fit flex-1">
         <div
           className="summoner-info flex m-auto flex-col items-center justify-center w-full gap-5 bg-neutral-600 py-4 rounded-md mt-8
           lg:flex-row lg:px-5 lg:w-96 lg:items-center lg:justify-between"
@@ -32,28 +32,26 @@ export default function Loading() {
             className={"mt-9 -mb-1 text-xl lg:text-2xl"}
             title="Top 10 Champions by Mastery"
           />
-          <div>
+          <div className="maestry-content">
             <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-x-4">
               {skeletonArrayMastery.map((data, i) => (
                 <div key={i} className="">
                   <div className="flex flex-col items-center mt-4">
                     <div className="w-full max-w-xs flex gap-3 bg-neutral-700 rounded-md py-2 px-3 lg:max-w-sm">
-                      <div className="animate-colorSkeleton bg-linear-skeleton bg-skeleton-size w-20 h-20 rounded-md"></div>
-                      <div className="">
+                      <div className="animate-colorSkeleton bg-linear-skeleton bg-skeleton-size w-20 h-20 m-auto rounded-md"></div>
+                      <div className="flex flex-col gap-1 w-3/4 text-[12px]">
                         <div className="flex items-center justify-center w-full border-b mb-2 border-zinc-900">
                           <div className="animate-colorSkeleton bg-linear-skeleton bg-skeleton-size h-4 w-1/2 mb-2"></div>
                         </div>
-                        <div className="flex gap-2 items-center justify-between text-xs">
-                          <div className="flex gap-1 items-center">
-                            <p className="whitespace-nowrap">Mastery Level:</p>
-                            <div className="animate-colorSkeleton bg-linear-skeleton bg-skeleton-size h-3 w-12"></div>
-                          </div>
-                          <div className="flex gap-1 items-center">
-                            <p>Points:</p>
-                            <div className="animate-colorSkeleton bg-linear-skeleton bg-skeleton-size h-3 w-12"></div>
-                          </div>
+                        <div className="mastery-lvl flex gap-1 items-center">
+                          <p className="whitespace-nowrap">Mastery Level:</p>
+                          <div className="animate-colorSkeleton bg-linear-skeleton bg-skeleton-size h-3 w-12"></div>
                         </div>
-                        <div className="flex gap-1 items-center justify-between mt-1 text-xs">
+                        <div className="mastery-points flex gap-1 items-center">
+                          <p>Points:</p>
+                          <div className="animate-colorSkeleton bg-linear-skeleton bg-skeleton-size h-3 w-12"></div>
+                        </div>
+                        <div className="mastery-played flex gap-1 items-center">
                           <p>Last played: </p>
                           <div className="animate-colorSkeleton bg-linear-skeleton bg-skeleton-size h-3 w-16"></div>
                         </div>
@@ -63,6 +61,15 @@ export default function Loading() {
                 </div>
               ))}
             </div>
+          </div>
+          <div className="last-champions-container">
+            <div>
+              <TitleConfig
+                className={"mt-9 -mb-1 text-xl lg:text-2xl"}
+                title="Top 10 Champions by Mastery"
+              />
+            </div>
+            <div className="last-champions-content rounded-md w-full h-64 animate-colorSkeleton bg-linear-skeleton bg-skeleton-size"></div>
           </div>
         </div>
       </div>

@@ -12,7 +12,6 @@ export default function ChampionVideo({
   return (
     <div className="">
       <video
-        autoPlay
         controls
         className="rounded-md m-auto lg:h-96"
         src={`https://d28xe8vt774jo5.cloudfront.net/champion-abilities/${championKey.padStart(

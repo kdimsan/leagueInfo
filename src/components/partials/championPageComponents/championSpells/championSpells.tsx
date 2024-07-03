@@ -13,19 +13,14 @@ import SubTitle from "../../subTitle/subTitle";
 
 interface ChampionSpellsProps {
   championSpells: SpellsProps[];
-  championPassive: ChampionPassive;
   championKey: string;
 }
 
 export default function ChampionSpells({
   championSpells,
-  championPassive,
   championKey,
 }: ChampionSpellsProps) {
-  const [selectedSpell, setSelectedSpell] = useState<SpellsPropsWithButton>();
-
   const spellsCommands = ["P", "Q", "W", "E", "R"];
-
   const mapSpellsWithButtons = (spells: SpellsProps[]) => {
     return spells.map((spell, index) => {
       const button = spellsCommands[index];
@@ -34,6 +29,9 @@ export default function ChampionSpells({
     });
   };
   const mappedSpellsWithCommands = mapSpellsWithButtons(championSpells);
+  const [selectedSpell, setSelectedSpell] = useState<SpellsPropsWithButton>(
+    mappedSpellsWithCommands[1]
+  );
 
   const SpellSquare = ({
     key,
@@ -55,7 +53,7 @@ export default function ChampionSpells({
       <div
         key={key}
         className="spell-square relative"
-        onClick={() => setSelectedSpell(spell)}
+        onClick={() => setSelectedSpell(spell!)}
       >
         <Image
           width={50}
@@ -63,6 +61,7 @@ export default function ChampionSpells({
           src={`https://ddragon.leagueoflegends.com/cdn/${patch}/img/${group}/${spell?.image.full}`}
           alt={`champion skill`}
           unoptimized
+          className="rounded shadow-[0px_1px_3px_2px_rgba(0,0,0,0.6)]"
         />
         <div className="cast-button absolute top-0 left-0 rounded-full border border-custom-pallete-cyan-700 bg-custom-blue-950 w-4 h-4">
           <div className="flex items-center justify-center text-[10px]">
@@ -76,7 +75,7 @@ export default function ChampionSpells({
   return (
     <div className="flex flex-col items-center gap-3 w-full">
       <div className="">
-        <SubTitle subTitle="SPELLS" className="text-2xl" />
+        <SubTitle subTitle="SPELLS" className="text-2xl mt-0" />
       </div>
       <div className="flex flex-col gap-1 w-full">
         <div className="skills w-full flex items-center justify-center">

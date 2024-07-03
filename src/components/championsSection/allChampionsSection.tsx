@@ -9,9 +9,10 @@ interface AllChampionsSectionProps {
   data: ChampionsProps[];
 }
 
-export default function AllChampionsSection({
-  data,
-}: AllChampionsSectionProps) {
+export const ChampionSectionDefault = (
+  data: ChampionsProps[],
+  title: string
+) => {
   const { championTagFilter } = useChampionTagFilter();
 
   const filteredChampions =
@@ -25,13 +26,13 @@ export default function AllChampionsSection({
         })
       : data;
   return (
-    <section className="flex flex-col justify-center items-center default-bg py-5">
+    <section className="flex flex-col justify-center items-center gap-10 default-bg py-5">
       <TitleConfig
         className={"text-2xl tracking-wider md:text-3xl"}
-        title={"League of Legends Champions"}
+        title={title}
       />
       <div
-        className="grid grid-cols-3 justify-center items-center gap-4 mt-5 xs:px-4 xs:grid-cols-4
+        className="grid grid-cols-3 justify-center items-center gap-4 xs:px-4 xs:grid-cols-4
       sm:grid-cols-5 sm:gap-8 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-9 xl:gap-x-5 2xl:grid-cols-11"
       >
         {filteredChampions.map((champion, index) => {
@@ -40,4 +41,10 @@ export default function AllChampionsSection({
       </div>
     </section>
   );
+};
+
+export default function AllChampionsSection({
+  data,
+}: AllChampionsSectionProps) {
+  return ChampionSectionDefault(data, "League Of Legends Champions");
 }

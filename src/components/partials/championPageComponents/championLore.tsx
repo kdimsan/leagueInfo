@@ -23,12 +23,14 @@ const ChampionText = ({
     <div className="px-1">
       {championText ? (
         <p className="text-sm text-justify">{championText}</p>
-      ) : (
+      ) : championTextArray?.length ? (
         championTextArray?.map((text, i) => (
           <p className="text-sm text-justify my-1" key={i}>
             {text}
           </p>
         ))
+      ) : (
+        <p className="text-sm text-justify my-1">-</p>
       )}
     </div>
   </div>

@@ -39,20 +39,20 @@ export default function WinRate({
     );
   };
   const initializer = counter(data).map((matchData, i) => (
-    <div className="w-fit h-fit" key={i}>
+    <div className="w-24 h-24 relative" key={i}>
       <WinRateGraphicsRender matchData={matchData} />
       <div className="flex flex-col items-center justify-center text-xs">
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1 font-semibold">
           {matchData.matchesArr}{" "}
           <p
             className={`${
               matchData.winRate < 50 ? "text-red-500" : "text-green-500"
-            }`}
+            } absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-medium`}
           >
             {matchData.winRate.toFixed(0)}%
           </p>
         </div>
-        <div className="flex flex-items gap-1">
+        <div className="flex flex-items gap-1 text-gray-200">
           Total: {matchData.quantity}{" "}
           <p
             className={`${
@@ -69,7 +69,7 @@ export default function WinRate({
   ));
 
   return (
-    <div className="flex flex-wrap items-center justify-center gap-5 py-3">
+    <div className="flex flex-wrap items-center justify-center gap-6 mb-8">
       {initializer}
     </div>
   );

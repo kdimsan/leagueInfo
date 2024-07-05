@@ -23,7 +23,7 @@ export interface SummonerRankedProps {
 }
 
 export interface SummonerMasteryChampionsProps {
-  championId: number;
+  championId: string;
   championName: string;
   championLevel: number;
   championPoints: number;

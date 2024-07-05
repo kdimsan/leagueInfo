@@ -7,7 +7,7 @@ const ChampionMasteryRender = () => {
   const { userData } = useUserData();
 
   return (
-    <div className="flex flex-col gap-3 w-fit sm:grid sm:grid-cols-2 sm:gap-x-4 sm:gap-y-2">
+    <div className="flex flex-wrap items-center justify-center gap-3 w-fit">
       {userData &&
         userData.summonerMasteryChampionsData.map((champion, index) => (
           <div key={index}>
@@ -20,9 +20,9 @@ const ChampionMasteryRender = () => {
 
 export default function ChampionMastery() {
   return (
-    <div className="w-full flex flex-col place-items-center">
+    <div className="w-full flex flex-col gap-4 place-items-center bg-[#262A3B] shadow-[0px_0px_5px_1px_rgba(17,17,17,1)] rounded-md px-2 py-4">
       <TitleConfig
-        className={"mt-9 tracking-wider text-xl lg:text-2xl"}
+        className={"tracking-wider text-xl lg:text-2xl"}
         title="Top 10 Champions by Mastery"
       />
       <ChampionMasteryRender />

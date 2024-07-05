@@ -44,7 +44,7 @@ export default function LatestChampions() {
         losses: losses,
         winRate: (wins / count) * 100,
       }))
-      .sort((a, b) => b.winRate - a.winRate);
+      .sort((a, b) => b.quantity - a.quantity);
   };
 
   const initializer = counter(lastChampions).map((champion, index) => {
@@ -83,14 +83,14 @@ export default function LatestChampions() {
   });
 
   return (
-    <div className="w-full">
+    <div className="w-full flex flex-col gap-4 bg-[#262A3B] p-3 rounded-md shadow-[0px_0px_5px_1px_rgba(17,17,17,1)]">
       <TitleConfig
         title="Last Champions Played"
         className={"tracking-wider text-xl lg:text-2xl"}
       />
       <div
         className="grid grid-flow-row-dense auto-cols-min auto-rows-min gap-2 items-center justify-center w-full 
-      bg-[#262A3B] p-3 rounded-md shadow-[0px_0px_5px_1px_rgba(17,17,17,1)]
+      
       grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"
       >
         {initializer}

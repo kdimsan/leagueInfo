@@ -13,9 +13,15 @@ export interface MatchInfo {
   gameId: number;
   gameType: string;
   participantsData: Participant[];
-  queueId: number;
+  queueType: QueueFormatedProps;
   teams: Team[];
   searchSummonerData: SearchSummonerData;
+}
+
+export interface QueueFormatedProps {
+  queueDescription: string;
+  map: string;
+  notes: string;
 }
 
 export interface Participant {

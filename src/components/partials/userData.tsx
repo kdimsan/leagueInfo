@@ -7,7 +7,7 @@ const UserDataRender = () => {
   const { userData } = useUserData();
 
   return (
-    <div className="w-full max-w-lg lg:px-0">
+    <div className="w-full lg:px-0">
       <div
         className="flex flex-col items-center justify-center w-full gap-4 bg-[#262A3B] shadow-[0px_0px_5px_1px_rgba(17,17,17,1)] py-4 px-5 rounded-md
         lg:flex-row lg:px-5"

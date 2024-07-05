@@ -5,22 +5,21 @@ import MatchSummonerInfos from "./matchSummonerInfos";
 import MatchPlayers from "./matchPlayers";
 import MatchDetailsCard from "./matchDetails";
 import MatchSummonerExtraData from "./matchSummonerExtraData";
+import { findSummoner } from "@/app/utils/functions/findSummoner";
 
 interface MatchCardData {
   matchData: SummonerLatestMatchesProps;
-  searchUserPuiid: string;
+  searchUserPuuid: string;
 }
 
 export default function MatchesCard({
   matchData,
-  searchUserPuiid,
+  searchUserPuuid,
 }: MatchCardData) {
   const participantsArray = matchData.matchInfo.participantsData;
   const [matchDetailsStatus, setMatchDetailsStatus] = useState(false);
 
-  const userDataByMatch = participantsArray.filter(
-    (userPuiid) => userPuiid.puuid === searchUserPuiid
-  )[0];
+  const userDataByMatch = findSummoner(participantsArray, searchUserPuuid);
 
   return (
     <div>

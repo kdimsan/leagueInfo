@@ -18,7 +18,7 @@ export default function UserInfo({ summonerData }: UserInfoProps) {
 
   return (
     <div className="flex flex-col w-full px-3 default-bg md:w-9/12 xl:p-5 xl:flex-row xl:justify-center xl:gap-9">
-      <section className="flex flex-col items-center mt-8 gap-3 lg:mt-1 xl:w-1/2 2xl:w-2/5">
+      <section className="flex flex-col items-center mt-8 gap-12 lg:mt-1 xl:w-1/2 2xl:w-2/5">
         <UserData />
 
         <ChampionMastery />

@@ -25,7 +25,7 @@ export default function WinRateGraphicsRender({ matchData }: matchDataProps) {
         <Pie
           dataKey="value"
           data={data}
-          innerRadius={0}
+          innerRadius={20}
           outerRadius={40}
           fill="#82ca9d"
         >

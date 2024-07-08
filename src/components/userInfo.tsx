@@ -17,14 +17,14 @@ export default function UserInfo({ summonerData }: UserInfoProps) {
   setUserData(summonerData);
 
   return (
-    <div className="flex flex-col w-full px-3 default-bg md:w-9/12 xl:p-5 xl:flex-row xl:justify-center xl:gap-9">
-      <section className="flex flex-col items-center mt-8 gap-12 lg:mt-1 xl:w-1/2 2xl:w-2/5">
+    <div className="flex flex-col w-full p-3 gap-7 default-bg md:w-9/12 xl:p-5 xl:flex-row xl:justify-center xl:gap-9">
+      <section className="flex flex-col items-center gap-12 xl:w-1/2 2xl:w-2/5">
         <UserData />
 
         <ChampionMastery />
         <LatestChampions />
       </section>
-      <section className="m-auto w-full xl:m-0 xl:w-1/2">
+      <section className="m-auto w-full xl:m-0 xl:w-1/2 ">
         <SummonerLatestMatches />
       </section>
     </div>

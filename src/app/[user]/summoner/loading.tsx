@@ -6,7 +6,7 @@ export default function Loading() {
   const skeletonArrayMatches = new Array(20).fill({});
   return (
     <div className="flex flex-col m-auto w-full px-3 default-bg md:w-9/12 xl:p-5 xl:flex-row xl:justify-center xl:gap-9">
-      <div className="user-area flex flex-col h-full w-fit flex-1">
+      <div className="user-area flex flex-col h-full items-center mx-auto w-fit flex-1">
         <div
           className="summoner-info flex m-auto flex-col items-center justify-center w-full gap-5 bg-neutral-600 py-4 rounded-md mt-8
           lg:flex-row lg:px-5 lg:w-96 lg:items-center lg:justify-between"
@@ -32,7 +32,7 @@ export default function Loading() {
             className={"mt-9 -mb-1 text-xl lg:text-2xl"}
             title="Top 10 Champions by Mastery"
           />
-          <div className="maestry-content">
+          <div className="mastery-content">
             <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-x-4">
               {skeletonArrayMastery.map((data, i) => (
                 <div key={i} className="">
@@ -74,7 +74,16 @@ export default function Loading() {
         </div>
       </div>
       <div className="match-area m-auto w-full py-2 xl:m-0 xl:w-1/2">
-        <div className="w-full">
+        <div className="w-full flex flex-col gap-5">
+          <div className=" flex flex-col items-center gap-5">
+            <TitleConfig
+              className={"mt-9 -mb-1 text-xl lg:text-2xl"}
+              title="Latest 20 matches"
+            />
+            <div>
+              <div className="w-24 h-24 rounded-full animate-colorSkeleton bg-linear-skeleton bg-skeleton-size"></div>
+            </div>
+          </div>
           {skeletonArrayMatches.map((data, i) => (
             <div
               className={`card-container flex justify-between gap-4 mb-2 px-4 py-3 rounded-lg h-36 

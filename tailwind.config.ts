@@ -52,7 +52,7 @@ const config: Config = {
       },
       fontFamily: {
         title: ["var(--font-title)"],
-        main: ["var(--font-main)"],
+        montserrat: ["var(--font-montserrat)"],
       },
       fontSize: {
         "2xs": "10px",

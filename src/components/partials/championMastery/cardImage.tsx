@@ -14,7 +14,7 @@ export default function ChampionMasteryImg({
 }: ChampionMasteryImgProps) {
   const imageSrc = getImageSquareCrop(champion.championId);
   return (
-    <div className="flex flex-col items-center gap-1 shadow-[0px_0px_3px_1px_rgba(0,0,0,1)]  rounded-md py-2 px-3 relative">
+    <div className="card-container max-w-[92px] flex flex-col items-center gap-1 shadow-[0px_0px_3px_1px_rgba(0,0,0,1)] rounded-md py-2 px-3 relative">
       <div className="relative">
         <Image
           className="rounded-md shadow shadow-black"
@@ -31,7 +31,7 @@ export default function ChampionMasteryImg({
           <span>{champion.championLevel}</span>
         </div>
       </div>
-      <div className="mt-1">
+      <div className="mastery-image mt-1">
         <Image
           src={
             champion.championLevel < 4

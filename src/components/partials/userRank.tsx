@@ -16,14 +16,14 @@ export default function UserRank({ rankedsData }: UserRankProps) {
   return (
     <div className="flex flex-col first:border-b-2 border-neutral-800">
       <div className="flex items-center justify-center">
-        <h4 className="font-bold">
+        <h4 className="font-bold font-montserrat">
           {rankedsData.queueType === "RANKED_FLEX_SR"
             ? "Ranked Flex"
             : "Ranked Solo"}
         </h4>
       </div>
-      <div className="flex items-center gap-5 justify-center">
-        <div className="flex items-center justify-center">
+      <div className="flex items-center gap-5 justify-center mb-2">
+        <div className="flex flex-col items-center justify-center">
           <Image
             className="h-14 w-14 lg:h-20 lg:w-20"
             src={`/rankedEmblems/${rankedsData.tier.toLowerCase()}.png`}
@@ -32,7 +32,9 @@ export default function UserRank({ rankedsData }: UserRankProps) {
             unoptimized
             alt="summoner rank"
           />
-          <span className="font-title tracking-wide">{rankedsData.rank}</span>
+          <span className="font-montserrat text-xs font-semibold -mt-2">
+            {rankedsData.tier} {rankedsData.rank}
+          </span>
         </div>
         <div className="flex items-center gap-2 text-sm">
           <span>

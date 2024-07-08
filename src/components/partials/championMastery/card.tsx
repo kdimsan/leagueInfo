@@ -9,9 +9,5 @@ interface ChampionMasteryCardProps {
 export default function ChampionMasteryCard({
   champion,
 }: ChampionMasteryCardProps) {
-  return (
-    <div className="">
-      <ChampionMasteryImg champion={champion} />
-    </div>
-  );
+  return <ChampionMasteryImg champion={champion} />;
 }

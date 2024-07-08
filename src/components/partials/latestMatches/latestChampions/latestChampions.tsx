@@ -5,11 +5,6 @@ import useUserData from "@/hooks/useUserData";
 import Image from "next/image";
 import React from "react";
 
-interface LatestChampionsProps {
-  champion: string;
-  win: boolean;
-}
-
 export default function LatestChampions() {
   const { userData } = useUserData();
 
@@ -44,7 +39,12 @@ export default function LatestChampions() {
         losses: losses,
         winRate: (wins / count) * 100,
       }))
-      .sort((a, b) => b.quantity - a.quantity);
+      .sort((a, b) => {
+        if (b.quantity === a.quantity) {
+          return b.winRate - a.winRate;
+        }
+        return b.quantity - a.quantity;
+      });
   };
 
   const initializer = counter(lastChampions).map((champion, index) => {

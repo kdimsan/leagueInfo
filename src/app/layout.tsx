@@ -12,10 +12,10 @@ const titleFont = Acme({
   weight: ["400"],
 });
 
-const mainFontFamily = Montserrat({
+const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-main",
+  variable: "--font-montserrat",
 });
 
 export const metadata: Metadata = {
@@ -28,10 +28,7 @@ export default function RootLayout(props: {
   parallel: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${titleFont.variable} ${mainFontFamily.variable}`}
-    >
+    <html lang="en" className={`${titleFont.variable} ${montserrat.variable}`}>
       <meta
         name="google-adsense-account"
         content="ca-pub-6752140548955710"
@@ -57,7 +54,7 @@ export default function RootLayout(props: {
           crossOrigin="anonymous"
         ></script>
       </Head>
-      <body className="bg-[#131418] text-zinc-100 px-1 py-4 w-full font-main">
+      <body className="bg-[#131418] text-zinc-100 px-1 py-4 w-full font-montserrat">
         <Providers>
           <Header />
           {props.children}

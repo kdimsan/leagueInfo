@@ -7,7 +7,7 @@ const ChampionMasteryRender = () => {
   const { userData } = useUserData();
 
   return (
-    <div className="flex flex-wrap items-center justify-center gap-3 w-fit">
+    <div className="flex flex-wrap items-center justify-center gap-y-5 gap-x-3 w-fit">
       {userData &&
         userData.summonerMasteryChampionsData.map((champion, index) => (
           <div key={index}>

@@ -24,7 +24,7 @@ const InfosRender = ({ textToShow, dataToShow }: InfosRenderProps) => {
 export default function CardInfo({ champion }: CardInfoProps) {
   return (
     <div className="w-full -mt-2.5">
-      <h4 className="m-auto text-center text-sm font-semibold border-b border-[#1b1d25]">
+      <h4 className="m-auto text-center text-sm font-semibold border-b border-[#1b1d25] overflow-hidden text-nowrap text-ellipsis">
         {champion.championName}
       </h4>
       <div className="flex flex-col gap-1 mt-1">

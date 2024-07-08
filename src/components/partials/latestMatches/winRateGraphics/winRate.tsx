@@ -2,6 +2,7 @@ import { SummonerLatestMatchesProps } from "@/app/utils/@types/summonerMatches";
 import { findSummoner } from "@/app/utils/functions/findSummoner";
 import React from "react";
 import WinRateGraphicsRender from "./winRateGraphicsRender";
+import TitleConfig from "@/components/titleConfig";
 
 export default function WinRate({
   data,
@@ -39,19 +40,20 @@ export default function WinRate({
     );
   };
   const initializer = counter(data).map((matchData, i) => (
-    <div className="w-24 h-24 relative" key={i}>
-      <WinRateGraphicsRender matchData={matchData} />
+    <div className="container w-fit flex flex-col items-center" key={i}>
+      <div className="m-auto text-sm font-semibold">{matchData.matchesArr}</div>
+      <div className="w-24 h-24 relative">
+        <WinRateGraphicsRender matchData={matchData} />
+        <p
+          className={`${
+            matchData.winRate < 50 ? "text-red-500" : "text-green-500"
+          } absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-medium text-xs`}
+        >
+          {matchData.winRate.toFixed(0)}%
+        </p>
+      </div>
       <div className="flex flex-col items-center justify-center text-xs">
-        <div className="flex items-center gap-1 font-semibold">
-          {matchData.matchesArr}{" "}
-          <p
-            className={`${
-              matchData.winRate < 50 ? "text-red-500" : "text-green-500"
-            } absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-medium`}
-          >
-            {matchData.winRate.toFixed(0)}%
-          </p>
-        </div>
+        <div className="flex items-center gap-1 font-semibold"></div>
         <div className="flex flex-items gap-1 text-gray-200">
           Total: {matchData.quantity}{" "}
           <p
@@ -69,8 +71,14 @@ export default function WinRate({
   ));
 
   return (
-    <div className="flex flex-wrap items-center justify-center gap-6 mb-8">
-      {initializer}
+    <div className="flex flex-col gap-3 xl:gap-5">
+      <TitleConfig
+        className="tracking-wider text-xl lg:text-2xl mb-0"
+        title="Latest 20 Matches"
+      />
+      <div className="flex flex-wrap items-center justify-center gap-6">
+        {initializer}
+      </div>
     </div>
   );
 }

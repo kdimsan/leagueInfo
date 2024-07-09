@@ -14,10 +14,11 @@ const customStyles: StylesConfig<ChampionRolesOption, false> = {
     backgroundColor: "transparent",
     backgroundImage: "linear-gradient(25deg, #00ADB5, #71C9CE)",
     color: "white",
-    fontSize: "14px",
+    fontSize: "12px",
     minHeight: "40px",
-    borderColor: "#6a6b70",
+    border: "none",
     cursor: "pointer",
+    borderRadius: "4px",
   }),
   option: (provided, state) => ({
     ...provided,
@@ -29,6 +30,7 @@ const customStyles: StylesConfig<ChampionRolesOption, false> = {
     color: state.isFocused ? "white" : state.isSelected ? "#282c34" : "white",
     padding: 5,
     fontWeight: "500",
+    fontSize: "14px",
     cursor: "pointer",
   }),
   singleValue: (provided) => ({
@@ -56,8 +58,10 @@ export default function ChampionTagFilter() {
   };
 
   return (
-    <>
+    <div className="flex flex-col gap-1">
       <Select<ChampionRolesOption>
+        id="tag"
+        name="tag"
         className="w-52 cursor-pointer"
         defaultValue={championRolesOptions[0]}
         onChange={handleChange}
@@ -65,6 +69,6 @@ export default function ChampionTagFilter() {
         styles={customStyles}
         placeholder={"Text"}
       />
-    </>
+    </div>
   );
 }

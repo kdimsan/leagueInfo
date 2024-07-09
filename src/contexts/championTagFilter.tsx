@@ -2,7 +2,9 @@ import { createContext, useState } from "react";
 
 interface ChampionTagFilterContextProps {
   championTagFilter: string;
+  championNameFilter: string;
   setChampionTagFilter: React.Dispatch<React.SetStateAction<string>>;
+  setChampionNameFilter: React.Dispatch<React.SetStateAction<string>>;
 }
 
 interface ChampionTagFilterProviderProps {
@@ -11,17 +13,25 @@ interface ChampionTagFilterProviderProps {
 
 export const ChampionTagFilter = createContext<ChampionTagFilterContextProps>({
   championTagFilter: "",
+  championNameFilter: "",
   setChampionTagFilter: () => {},
+  setChampionNameFilter: () => {},
 });
 
 export function ChampionTagFilterProvider({
   children,
 }: ChampionTagFilterProviderProps) {
   const [championTagFilter, setChampionTagFilter] = useState<string>("All");
+  const [championNameFilter, setChampionNameFilter] = useState("");
 
   return (
     <ChampionTagFilter.Provider
-      value={{ championTagFilter, setChampionTagFilter }}
+      value={{
+        championTagFilter,
+        championNameFilter,
+        setChampionNameFilter,
+        setChampionTagFilter,
+      }}
     >
       {children}
     </ChampionTagFilter.Provider>

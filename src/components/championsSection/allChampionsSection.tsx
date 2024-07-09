@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import ChampionSquareCard from "../championSquareCard";
 import TitleConfig from "../titleConfig";
 import useChampionTagFilter from "@/hooks/useChampionTagFilter";
+import SubTitle from "../partials/subTitle/subTitle";
 
 interface AllChampionsSectionProps {
   data: ChampionsProps[];
@@ -13,31 +14,40 @@ export const ChampionSectionDefault = (
   data: ChampionsProps[],
   title: string
 ) => {
-  const { championTagFilter } = useChampionTagFilter();
+  const { championTagFilter, championNameFilter } = useChampionTagFilter();
 
-  const filteredChampions =
-    championTagFilter !== "All"
-      ? data.filter((c) => {
-          const var1 = c.tags.filter((tag) => {
-            return tag === championTagFilter;
-          });
+  const filteredChampions = data.filter((champion) => {
+    const filterByName = champion.id
+      .toLowerCase()
+      .includes(championNameFilter.toLowerCase());
 
-          return var1.length > 0;
-        })
-      : data;
+    const filterByTag =
+      championTagFilter === "All" || champion.tags.includes(championTagFilter);
+
+    return filterByName && filterByTag;
+  });
+
   return (
-    <section className="flex flex-col justify-center items-center gap-10 default-bg py-5">
+    <section className="flex flex-col justify-center items-center w-full gap-10 default-bg py-5">
       <TitleConfig
         className={"text-2xl tracking-wider md:text-3xl"}
         title={title}
       />
-      <div
-        className="grid grid-cols-3 justify-center items-center gap-4 xs:px-4 xs:grid-cols-4
-      sm:grid-cols-5 sm:gap-8 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-9 xl:gap-x-5 2xl:grid-cols-11"
-      >
-        {filteredChampions.map((champion, index) => {
-          return <ChampionSquareCard key={index} data={champion} />;
-        })}
+      <div className="flex px-2 md:px-6 w-full">
+        <ul className="flex items-center justify-center w-full flex-wrap gap-5 md:gap-x-7 md:gap-y-8">
+          {filteredChampions.length == 0 ? (
+            <div>
+              <SubTitle
+                subTitle="No Champion Found :("
+                className="text-xl !font-montserrat py-4"
+              />
+            </div>
+          ) : (
+            filteredChampions.map((champion, index) => {
+              return <ChampionSquareCard key={index} data={champion} />;
+            })
+          )}
+        </ul>
       </div>
     </section>
   );

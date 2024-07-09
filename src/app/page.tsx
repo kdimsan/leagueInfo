@@ -19,7 +19,7 @@ const FreeWeek = async () => {
 
 const Component = () => {
   return (
-    <main className="flex items-center justify-center w-full md:py-6">
+    <main className="flex items-center justify-center m-auto w-[95%] md:py-6 md:w-3/4">
       <FreeWeek />
     </main>
   );

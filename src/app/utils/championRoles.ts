@@ -4,7 +4,7 @@ export interface ChampionRolesOption {
 }
 
 export const championRolesOptions: readonly ChampionRolesOption[] = [
-  { value: "All", label: "All" },
+  { value: "All", label: "All Roles" },
   { value: "Assassin", label: "Assassin" },
   { value: "Fighter", label: "Fighter" },
   { value: "Mage", label: "Mage" },

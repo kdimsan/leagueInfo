@@ -28,22 +28,24 @@ export default function ChampionSquareCard({ data }: ChampionSquareCardProps) {
     };
   }, []);
   return (
-    <Link
-      href={`/champions/${data.id}`}
-      className="flex flex-col items-center justify-center cursor-pointer tracking-wide gap-0.5
+    <li className="list-none w-16 md:w-20">
+      <Link
+        href={`/champions/${data.id}`}
+        className="flex flex-col items-center justify-center cursor-pointer tracking-wide gap-0.5
       hover:-translate-x-1 hover:-translate-y-1 transition-all hover:drop-shadow-custom1 hover:brightness-125"
-    >
-      <Image
-        className="rounded-md shadow-[0px_0px_6px_2px_rgba(0,0,0,0.4)]"
-        src={`https://ddragon.leagueoflegends.com/cdn/${patch}/img/champion/${data.id}.png`}
-        alt="Free week champion image"
-        width={imageSize.width}
-        height={imageSize.height}
-        unoptimized
-      />
-      <span className="font-medium text-[10px] sm:text-xs whitespace-nowrap w-fit text-shadow-custom-shadow-small">
-        {data.name}
-      </span>
-    </Link>
+      >
+        <Image
+          className="rounded-md shadow-[0px_0px_6px_2px_rgba(0,0,0,0.4)]"
+          src={`https://ddragon.leagueoflegends.com/cdn/${patch}/img/champion/${data.id}.png`}
+          alt="Free week champion image"
+          width={imageSize.width}
+          height={imageSize.height}
+          unoptimized
+        />
+        <span className="font-medium text-[10px] sm:text-xs whitespace-nowrap w-fit text-shadow-custom-shadow-small">
+          {data.name}
+        </span>
+      </Link>
+    </li>
   );
 }

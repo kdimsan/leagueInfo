@@ -9,14 +9,22 @@ type CardInfoProps = {
 
 type InfosRenderProps = {
   textToShow: string;
-  dataToShow: number | string;
+  dataNumber?: number;
+  dataText?: string;
 };
 
-const InfosRender = ({ textToShow, dataToShow }: InfosRenderProps) => {
+const InfosRender = ({
+  textToShow,
+  dataNumber,
+  dataText,
+}: InfosRenderProps) => {
+  let numStr = dataNumber?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
   return (
-    <div className="flex flex-col items-center text-xs">
+    <div className="flex flex-col items-center text-xs font-montserrat ">
       <span className="text-nowrap text-gray-300">{textToShow}</span>
-      <span className="font-semibold">{dataToShow}</span>
+      <span className="font-semibold text-gray-200 tracking-wide">
+        {dataText || numStr}
+      </span>
     </div>
   );
 };
@@ -24,16 +32,16 @@ const InfosRender = ({ textToShow, dataToShow }: InfosRenderProps) => {
 export default function CardInfo({ champion }: CardInfoProps) {
   return (
     <div className="w-full -mt-2.5">
-      <h4 className="m-auto text-center text-sm font-semibold border-b border-[#1b1d25] overflow-hidden text-nowrap text-ellipsis">
+      <h4 className="m-auto text-center text-xs font-semibold text-gray-200 border-b border-[#1b1d25] overflow-hidden text-nowrap text-ellipsis">
         {champion.championName}
       </h4>
       <div className="flex flex-col gap-1 mt-1">
         <InfosRender
-          dataToShow={champion.championPoints}
+          dataNumber={champion.championPoints}
           textToShow="Points:"
         />
         <InfosRender
-          dataToShow={lastTimePlayedConverter(champion.lastPlayTime)}
+          dataText={lastTimePlayedConverter(champion.lastPlayTime)}
           textToShow="Last played:"
         />
       </div>

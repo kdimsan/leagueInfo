@@ -86,7 +86,7 @@ export default function LatestChampions() {
     <div className="w-full flex flex-col gap-4 bg-[#262A3B] p-3 rounded-md shadow-[0px_0px_5px_1px_rgba(17,17,17,1)]">
       <TitleConfig
         title="Last Champions Played"
-        className={"tracking-wider text-xl lg:text-2xl"}
+        className={"tracking-wider text-xl"}
       />
       <div
         className="grid grid-flow-row-dense auto-cols-min auto-rows-min gap-2 items-center justify-center w-full 

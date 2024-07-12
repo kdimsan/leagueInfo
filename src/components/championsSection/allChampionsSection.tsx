@@ -29,10 +29,7 @@ export const ChampionSectionDefault = (
 
   return (
     <section className="flex flex-col justify-center items-center w-full gap-10 default-bg py-5">
-      <TitleConfig
-        className={"text-2xl tracking-wider md:text-3xl"}
-        title={title}
-      />
+      <TitleConfig className={"text-2xl tracking-wider"} title={title} />
       <div className="flex px-2 md:px-6 w-full">
         <ul className="flex items-center justify-center w-full flex-wrap gap-5 md:gap-x-7 md:gap-y-8">
           {filteredChampions.length == 0 ? (

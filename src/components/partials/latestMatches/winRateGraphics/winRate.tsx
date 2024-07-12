@@ -11,7 +11,11 @@ export default function WinRate({
 }) {
   const counter = (matchesArr: SummonerLatestMatchesProps[]) => {
     const countMap: {
-      [key: string]: { count: number; wins: number; losses: number };
+      [key: string]: {
+        count: number;
+        wins: number;
+        losses: number;
+      };
     } = Object.create(null);
 
     for (const element of matchesArr) {
@@ -40,8 +44,8 @@ export default function WinRate({
     );
   };
   const initializer = counter(data).map((matchData, i) => (
-    <div className="container w-fit flex flex-col items-center" key={i}>
-      <div className="m-auto text-sm font-semibold">{matchData.matchesArr}</div>
+    <div className="w-fit flex flex-col items-center" key={i}>
+      <div className="m-auto text-xs font-semibold">{matchData.matchesArr}</div>
       <div className="w-24 h-24 relative">
         <WinRateGraphicsRender matchData={matchData} />
         <p
@@ -71,12 +75,12 @@ export default function WinRate({
   ));
 
   return (
-    <div className="flex flex-col gap-3 xl:gap-5">
+    <div className="flex flex-col items-center gap-3 bg-[#262A3B] shadow-[0px_0px_5px_1px_rgba(17,17,17,1)] rounded-md py-4 px-2">
       <TitleConfig
-        className="tracking-wider text-xl lg:text-2xl mb-0"
-        title="Latest 20 Matches"
+        className="tracking-wider text-xl mb-0"
+        title="Last 20 Matches"
       />
-      <div className="flex flex-wrap items-center justify-center gap-6">
+      <div className="flex flex-wrap items-center justify-center gap-6 w-fit default-bg p-1 shadow-[0px_0px_5px_1px_rgba(17,17,17,1)]">
         {initializer}
       </div>
     </div>

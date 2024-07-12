@@ -36,9 +36,9 @@ export default function UserRank({ rankedsData }: UserRankProps) {
             {rankedsData.tier} {rankedsData.rank}
           </span>
         </div>
-        <div className="flex items-center gap-2 text-sm">
+        <div className="flex items-center gap-2 font-montserrat text-sm">
           <span>
-            {rankedsData.wins}W/{rankedsData.losses}L
+            {rankedsData.wins} W / {rankedsData.losses} L
           </span>
           <span className={`${winrateClass} font-semibold`}>
             {currentWinrate}%

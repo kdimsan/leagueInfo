@@ -22,7 +22,7 @@ export default function MatchesCard({
   const userDataByMatch = findSummoner(participantsArray, searchUserPuuid);
 
   return (
-    <div>
+    <div className="w-full">
       <div
         onClick={() => setMatchDetailsStatus(!matchDetailsStatus)}
         className={`card-container p-0.5 rounded-3xl 
@@ -45,11 +45,8 @@ export default function MatchesCard({
             userDataByMatch={userDataByMatch}
             matchInfo={matchData.matchInfo}
           />
-          <div
-            className="flex flex-wrap items-start justify-center w-full gap-4 lg:flex-nowrap lg:gap-0 xl:flex-wrap 
-          2xl:flex-nowrap 2xl:justify-start"
-          >
-            <div className="flex flex-col items-center sm:flex-row sm:items-start justify-around w-full">
+          <div className="flex flex-wrap items-start justify-center w-full gap-4">
+            <div className="flex flex-col items-center sm:flex-row sm:items-start justify-around w-full lg:w-2/3">
               <MatchSummonerInfos matchUserInfo={userDataByMatch} />
               <MatchSummonerExtraData
                 className="w-full lg:w-1/2 items-center"

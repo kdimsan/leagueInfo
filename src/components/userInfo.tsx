@@ -19,7 +19,7 @@ export default function UserInfo({ summonerData }: UserInfoProps) {
 
   return (
     <div className="flex flex-col w-full p-3 gap-7 default-bg md:w-9/12 xl:p-5">
-      <section className="flex flex-col gap-11 xl:flex-row">
+      <section className="flex flex-col gap-5 xl:flex-row">
         <div className="w-full flex flex-col gap-4">
           <UserData />
           <ChampionMastery />

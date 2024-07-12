@@ -22,9 +22,7 @@ const InfosRender = ({
   return (
     <div className="flex flex-col items-center text-xs font-montserrat ">
       <span className="text-nowrap text-gray-300">{textToShow}</span>
-      <span className="font-semibold text-gray-200 tracking-wide">
-        {dataText || numStr}
-      </span>
+      <span className="font-medium  tracking-wide">{dataText || numStr}</span>
     </div>
   );
 };
@@ -32,7 +30,7 @@ const InfosRender = ({
 export default function CardInfo({ champion }: CardInfoProps) {
   return (
     <div className="w-full -mt-2.5">
-      <h4 className="m-auto text-center text-xs font-semibold text-gray-200 border-b border-[#1b1d25] overflow-hidden text-nowrap text-ellipsis">
+      <h4 className="m-auto text-center text-xs font-medium tracking-wide  border-b border-[#1b1d25] overflow-hidden text-nowrap text-ellipsis">
         {champion.championName}
       </h4>
       <div className="flex flex-col gap-1 mt-1">

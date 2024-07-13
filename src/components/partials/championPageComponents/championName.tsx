@@ -14,7 +14,7 @@ export default function ChampionName({
 }: ChampionsProps) {
   return (
     <div className="w-full flex flex-col items-center justify-center">
-      <h3 className="text-xl font-title tracking-wide font-semibold lg:text-3xl">
+      <h3 className="text-base font-montserrat tracking-wide font-semibold lg:text-xl">
         {championName}, {championTitle}
       </h3>
       <div className="mt-3 flex items-center gap-2">

@@ -20,7 +20,7 @@ const InputText = ({
 
 export default function FormFooter() {
   return (
-    <div className="flex flex-col gap-3 items-center md:flex-row md:items-start md:justify-center md:gap-5 max-w-xs md:max-w-none">
+    <div className="flex flex-wrap gap-3 items-center py-1 md:gap-5 max-w-xs md:max-w-none">
       <Contact />
       <form
         action={"mailto: league.of.finder@gmail.com"}

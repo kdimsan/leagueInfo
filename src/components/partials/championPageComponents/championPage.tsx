@@ -24,7 +24,7 @@ export default function ChampionPage({ championInfo }: ChampionPageProps) {
           key={championInfo.championData.id}
           className="flex flex-col items-center gap-5 lg:gap-8"
         >
-          <div className="flex flex-col items-center gap-2 w-full lg:flex-row lg:items-start lg:justify-center">
+          <div className="flex flex-col items-center gap-6 w-full lg:flex-row lg:items-start lg:justify-center">
             <div className="w-full flex flex-col gap-2 lg:w-1/2 lg:gap-3">
               <Image
                 className="rounded-md shadow-[1px_2px_10px_4px_rgba(0,0,0,0.6)]"

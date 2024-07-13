@@ -12,7 +12,7 @@ function BackButton() {
       onClick={() => router.back()}
     >
       <LeftArrow height={20} width={20} />
-      <span className="font-medium xl:text-xl">Previous</span>
+      <span className="font-medium text-xl">Previous</span>
     </button>
   );
 }

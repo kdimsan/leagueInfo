@@ -30,7 +30,7 @@ export const ChampionSectionDefault = (
   return (
     <section className="flex flex-col justify-center items-center w-full gap-10 default-bg py-5">
       <TitleConfig
-        className={"text-2xl tracking-wider md:text-3xl"}
+        className={"!text-base lg:!text-xl tracking-wider"}
         title={title}
       />
       <div className="flex px-2 md:px-6 w-full">

@@ -27,7 +27,7 @@ export default function ChampionSkins({
   }, [emblaApi]);
   return (
     <div className="w-full flex flex-col gap-3">
-      <SubTitle subTitle="SKINS" className="text-2xl" />
+      <SubTitle subTitle="SKINS" className="text-lg" />
       <div className="embla  relative" ref={emblaRef}>
         <div className="embla__container">
           {championSkins.map((skins) => (

@@ -18,7 +18,7 @@ const ChampionText = ({
 }) => (
   <div>
     <div>
-      <SubTitle subTitle={title} className="text-xl" />
+      <SubTitle subTitle={title} className="text-base mb-2" />
     </div>
     <div className="px-1">
       {championText ? (

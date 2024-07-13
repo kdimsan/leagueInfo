@@ -65,7 +65,7 @@ export default function Loading() {
           <div className="last-champions-container">
             <div>
               <TitleConfig
-                className={"mt-9 -mb-1 text-xl lg:text-2xl"}
+                className={"mt-9 -mb-1 text-xl"}
                 title="Top 10 Champions by Mastery"
               />
             </div>
@@ -77,7 +77,7 @@ export default function Loading() {
         <div className="w-full flex flex-col gap-5">
           <div className=" flex flex-col items-center gap-5">
             <TitleConfig
-              className={"mt-9 -mb-1 text-xl lg:text-2xl"}
+              className={"mt-9 -mb-1 text-xl"}
               title="Latest 20 matches"
             />
             <div>

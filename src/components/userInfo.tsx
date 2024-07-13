@@ -6,6 +6,7 @@ import SummonerLatestMatches from "./summonerLatestMatches";
 import { SummonerProps } from "@/app/utils/@types/summonerInfo";
 import useUserData from "@/hooks/useUserData";
 import LatestChampions from "./partials/latestMatches/latestChampions/latestChampions";
+import LatestMatchesContainer from "./partials/latestMatches/latestMatchesContainer";
 
 interface UserInfoProps {
   summonerData: SummonerProps;
@@ -17,15 +18,19 @@ export default function UserInfo({ summonerData }: UserInfoProps) {
   setUserData(summonerData);
 
   return (
-    <div className="flex flex-col w-full p-3 gap-7 default-bg md:w-9/12 xl:p-5 xl:flex-row xl:justify-center xl:gap-9">
-      <section className="flex flex-col items-center gap-12 xl:w-1/2 2xl:w-2/5">
-        <UserData />
-
-        <ChampionMastery />
-        <LatestChampions />
+    <div className="flex flex-col w-full p-3 gap-7 default-bg md:w-9/12 xl:p-5">
+      <section className="flex flex-col gap-5 xl:flex-row">
+        <div className="w-full flex flex-col gap-6">
+          <UserData />
+          <ChampionMastery />
+        </div>
+        <div className="w-full flex flex-col gap-6">
+          <SummonerLatestMatches />
+          <LatestChampions />
+        </div>
       </section>
-      <section className="m-auto w-full xl:m-0 xl:w-1/2 ">
-        <SummonerLatestMatches />
+      <section className="m-auto w-full">
+        <LatestMatchesContainer />
       </section>
     </div>
   );

@@ -111,4 +111,5 @@ export interface SearchSummonerData {
   win: boolean;
   lane: string;
   role: string;
+  teamId: string;
 }

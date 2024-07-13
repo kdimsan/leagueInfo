@@ -8,7 +8,9 @@ export default function SubTitle({
   className?: string;
 }) {
   return (
-    <h5 className={`mt-3 font-semibold font-title tracking-wide ${className}`}>
+    <h5
+      className={`mt-3 font-semibold font-montserrat tracking-wide ${className}`}
+    >
       {subTitle}
     </h5>
   );

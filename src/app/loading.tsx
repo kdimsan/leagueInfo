@@ -8,7 +8,7 @@ export default function loading() {
     <main className="w-full flex flex-col items-center mt-36 gap-12 justify-center lg:gap-16">
       <section className="fw default-bg m-auto flex flex-col items-center py-3">
         <TitleConfig
-          className={"text-2xl tracking-wider md:text-3xl"}
+          className={"text-xl tracking-wider"}
           title={"Free Week Rotation"}
         />
         <div className="grid grid-cols-3 items-center justify-center gap-4 rounded-md xl:py-6 xl:px-20 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-9 2xl:grid-cols-11">
@@ -25,7 +25,7 @@ export default function loading() {
       </section>
       <section className="champions default-bg m-auto flex flex-col items-center">
         <TitleConfig
-          className={"text-2xl tracking-wider md:text-3xl"}
+          className={"text-xl tracking-wider"}
           title={"Free Week Rotation"}
         />
         <div className="grid grid-cols-3 items-center justify-center gap-3 rounded-md xl:py-6 xl:px-20 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-9 2xl:grid-cols-11">

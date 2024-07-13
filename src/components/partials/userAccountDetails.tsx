@@ -26,13 +26,13 @@ export default function UserAccountDetails() {
               />
             </div>
 
-            <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 text-sm p-custom-icon-padding rounded-full font-semibold bg-gradient-to-b from-custom-pallete-cyan-500 to-cyan-700">
+            <span className="absolute text -bottom-3 left-1/2 -translate-x-1/2 text-sm p-custom-icon-padding rounded-full font-semibold bg-gradient-to-b from-custom-pallete-cyan-500 to-cyan-700">
               {accountInfo.summonerLevel}
             </span>
           </div>
-          <div className="flex flex-col items-center lg:flex-row">
-            <h4 className="text-lg font-bold">{accountInfo.gameName}</h4>
-            <h4 className="text-lg font-bold italic text-neutral-400">
+          <div className="flex flex-col items-center lg:flex-row lg:gap-1 text-lg">
+            <h4 className=" font-bold">{accountInfo.gameName}</h4>
+            <h4 className=" font-bold italic text-neutral-400">
               #{accountInfo.tagLine}
             </h4>
           </div>

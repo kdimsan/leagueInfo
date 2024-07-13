@@ -75,7 +75,7 @@ export default function ChampionSpells({
   return (
     <div className="flex flex-col items-center gap-3 w-full">
       <div className="">
-        <SubTitle subTitle="SPELLS" className="text-2xl mt-0" />
+        <SubTitle subTitle="SPELLS" className="text-lg mt-0" />
       </div>
       <div className="flex flex-col gap-1 w-full">
         <div className="skills w-full flex items-center justify-center">

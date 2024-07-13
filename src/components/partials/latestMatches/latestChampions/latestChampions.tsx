@@ -83,7 +83,7 @@ export default function LatestChampions() {
   });
 
   return (
-    <div className="w-full flex flex-col gap-4 bg-[#262A3B] p-3 rounded-md shadow-[0px_0px_5px_1px_rgba(17,17,17,1)]">
+    <div className="w-full h-full flex-1 flex flex-col flex-grow items-start justify-start gap-4 bg-[#262A3B] p-3 rounded-md shadow-[0px_0px_5px_1px_rgba(17,17,17,1)]">
       <TitleConfig
         title="Last Champions Played"
         className={"tracking-wider text-xl"}

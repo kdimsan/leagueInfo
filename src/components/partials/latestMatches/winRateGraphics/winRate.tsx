@@ -75,7 +75,7 @@ export default function WinRate({
   ));
 
   return (
-    <div className="flex flex-col items-center gap-3 bg-[#262A3B] shadow-[0px_0px_5px_1px_rgba(17,17,17,1)] rounded-md py-4 px-2">
+    <div className="flex flex-col h-full flex-1 flex-grow items-center gap-3 bg-[#262A3B] shadow-[0px_0px_5px_1px_rgba(17,17,17,1)] rounded-md py-4 px-2">
       <TitleConfig
         className="tracking-wider text-xl mb-0"
         title="Last 20 Matches"

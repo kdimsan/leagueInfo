@@ -42,7 +42,7 @@ export default function MatchPlayers({
   );
 
   return (
-    <div className={`playersHolder flex gap-4 justify-center xl:mt-3 2xl:mt-0`}>
+    <div className={`players-holder flex gap-4 justify-center`}>
       <div className="flex flex-col  gap-1 text-ellipsis overflow-hidden whitespace-nowrap">
         {participantsByMatchInfo
           .filter((participant) => participant.teamId === 100)

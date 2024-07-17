@@ -32,7 +32,7 @@ export default function UserRank({ rankedsData }: UserRankProps) {
             unoptimized
             alt="summoner rank"
           />
-          <span className="font-montserrat text-xs font-semibold -mt-2">
+          <span className="font-montserrat text-xs font-semibold text-nowrap -mt-2">
             {rankedsData.tier} {rankedsData.rank}
           </span>
         </div>

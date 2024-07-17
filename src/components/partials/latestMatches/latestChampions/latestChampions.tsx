@@ -50,16 +50,16 @@ export default function LatestChampions() {
   const initializer = counter(lastChampions).map((champion, index) => {
     const imageSrc = getImageSquareCrop(champion.champion);
     return (
-      <div key={index} className="flex items-center gap-1 w-fit">
+      <div key={index} className="flex items-center gap-1 rounded-md w-28">
         <div className="champion image w-11 h-11 shadow shadow-black">
           <Image
             src={imageSrc}
             alt="Champion Image"
             width={120}
             height={120}
-            style={{ width: "100%", height: "auto", borderRadius: "12%" }}
+            style={{ width: "100%", height: "auto" }}
             unoptimized
-            className=""
+            className="rounded-md"
           />
         </div>
         <div className="champion info flex flex-col text-xs">
@@ -83,16 +83,12 @@ export default function LatestChampions() {
   });
 
   return (
-    <div className="w-full flex flex-col gap-4 bg-[#262A3B] p-3 rounded-md shadow-[0px_0px_5px_1px_rgba(17,17,17,1)]">
+    <div className="w-full h-full flex-1 flex flex-col flex-grow items-start justify-start gap-4 bg-[#262A3B] p-3 rounded-md shadow-[0px_0px_5px_1px_rgba(17,17,17,1)]">
       <TitleConfig
         title="Last Champions Played"
-        className={"tracking-wider text-xl"}
+        className={"tracking-wider text-xl max-h-28"}
       />
-      <div
-        className="grid grid-flow-row-dense auto-cols-min auto-rows-min gap-2 items-center justify-center w-full 
-      
-      grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"
-      >
+      <div className="w-full flex flex-wrap gap-x-3 gap-y-3 m-auto justify-center xs:justify-start">
         {initializer}
       </div>
     </div>

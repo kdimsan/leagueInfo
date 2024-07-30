@@ -1,6 +1,6 @@
 import { api } from "@/app/utils/api/api";
 import useUserData from "@/hooks/useUserData";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { ErrorMessage } from "@hookform/error-message";
@@ -9,6 +9,7 @@ import Search from "../icons/search";
 import { regions } from "@/app/utils/regions";
 import useOutsideClick from "@/hooks/useOutsideClick";
 import Image from "next/image";
+import axios from "axios";
 
 interface Inputs {
   riotId: string;
@@ -28,7 +29,7 @@ export default function FindSummonerInput() {
   const ref = useRef<HTMLLIElement | null>(null);
 
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedRegion, setSelectedRegion] = useState("br1");
+  const [selectedRegion, setSelectedRegion] = useState("euw1");
 
   const handleSelectRegionState = () => {
     setIsOpen(!isOpen);
@@ -49,6 +50,20 @@ export default function FindSummonerInput() {
     router.push(`/${gameName}-${tagLine}-${accountRegion}/summoner`);
     resetField("riotId");
   };
+
+  const fetchData = async () => {
+    try {
+      const response: string = (await axios.get(`/api/region`)).data;
+      setSelectedRegion(response);
+      console.log(response);
+    } catch (error) {
+      console.error("Error fetching region:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <div className=" z-[99999]">

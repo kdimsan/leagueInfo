@@ -22,7 +22,7 @@ export function ChampionTagFilterProvider({
   children,
 }: ChampionTagFilterProviderProps) {
   const [championTagFilter, setChampionTagFilter] = useState<string>("All");
-  const [championNameFilter, setChampionNameFilter] = useState("");
+  const [championNameFilter, setChampionNameFilter] = useState<string>("");
 
   return (
     <ChampionTagFilter.Provider

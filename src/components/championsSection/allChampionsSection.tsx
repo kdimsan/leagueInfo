@@ -1,6 +1,6 @@
 "use client";
 import { ChampionsProps } from "@/app/utils/@types/champions";
-import React, { useState } from "react";
+import React from "react";
 import ChampionSquareCard from "../championSquareCard";
 import TitleConfig from "../titleConfig";
 import useChampionTagFilter from "@/hooks/useChampionTagFilter";
@@ -16,13 +16,20 @@ export const ChampionSectionDefault = (
 ) => {
   const { championTagFilter, championNameFilter } = useChampionTagFilter();
 
+  console.log(championNameFilter);
+  console.log(championTagFilter);
+
   const filteredChampions = data.filter((champion) => {
     const filterByName = champion.id
-      .toLowerCase()
-      .includes(championNameFilter.toLowerCase());
+      ? champion.id
+          .toLowerCase()
+          .includes(championNameFilter?.toLowerCase() || "")
+      : false;
 
     const filterByTag =
-      championTagFilter === "All" || champion.tags.includes(championTagFilter);
+      championTagFilter === "All" ||
+      (Array.isArray(champion.tags) &&
+        champion.tags.includes(championTagFilter));
 
     return filterByName && filterByTag;
   });

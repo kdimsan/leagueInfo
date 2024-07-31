@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import FindSummonerInput from "./partials/findSummonerInput";
 import Link from "next/link";

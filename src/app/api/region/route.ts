@@ -110,7 +110,7 @@ const regionMapping: Record<Region, string[]> = {
   sg2: ["Singapore"],
   tw2: ["Taiwan"],
   th2: ["Thailand"],
-  tr1: ["Turkey"],
+  tr1: ["Türkiye"],
   vn2: ["Vietnam"],
 };
 
@@ -122,7 +122,6 @@ interface GeoResponse {
   region: string;
   region_code: string;
   country: string;
-  country_name: string;
   country_code: string;
   country_code_iso3: string;
   country_capital: string;
@@ -154,17 +153,13 @@ const getRegionByCountry = (country: string) => {
 };
 
 export async function GET(req: NextRequest) {
-  const ipApiUrl = "https://ipapi.co/json/";
-
+  const ipApiUrl = "http://ip-api.com/json";
   try {
     const response: Promise<GeoResponse> = (await axios.get(ipApiUrl)).data;
-    console.log(response);
 
-    const countryName = (await response).country_name;
-    console.log(countryName);
+    const countryName = (await response).country;
 
     const region = getRegionByCountry(countryName);
-    console.log(region);
 
     return new Response(region);
   } catch (err) {

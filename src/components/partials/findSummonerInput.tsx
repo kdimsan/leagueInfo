@@ -54,6 +54,7 @@ export default function FindSummonerInput() {
     try {
       const response: string = (await axios.get(`/api/region`)).data;
       setSelectedRegion(response);
+      setValue("region", response);
     } catch (error) {
       console.error("Error fetching region:", error);
     }

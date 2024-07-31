@@ -158,10 +158,13 @@ export async function GET(req: NextRequest) {
 
   try {
     const response: Promise<GeoResponse> = (await axios.get(ipApiUrl)).data;
+    console.log(response);
 
     const countryName = (await response).country_name;
+    console.log(countryName);
 
     const region = getRegionByCountry(countryName);
+    console.log(region);
 
     return new Response(region);
   } catch (err) {

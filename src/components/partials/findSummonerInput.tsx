@@ -208,7 +208,7 @@ export default function FindSummonerInput() {
   };
 
   const fetchLocationData = async () => {
-    const ipApiUrl = "http://ipapi.co/json/";
+    const ipApiUrl = "https://ipapi.co/json/";
 
     try {
       const response: Promise<GeoResponse> = (await axios.get(ipApiUrl)).data;

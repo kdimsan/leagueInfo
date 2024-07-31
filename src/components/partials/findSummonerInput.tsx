@@ -1,3 +1,4 @@
+"use client";
 import useUserData from "@/hooks/useUserData";
 import React, { useEffect, useRef, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -27,7 +28,7 @@ export default function FindSummonerInput() {
   const ref = useRef<HTMLLIElement | null>(null);
 
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedRegion, setSelectedRegion] = useState("euw1");
+  const [selectedRegion, setSelectedRegion] = useState("br1");
 
   const handleSelectRegionState = () => {
     setIsOpen(!isOpen);
@@ -54,7 +55,6 @@ export default function FindSummonerInput() {
     try {
       const response: string = (await axios.get(`/api/region`)).data;
       setSelectedRegion(response);
-      setValue("region", response);
     } catch (error) {
       console.error("Error fetching region:", error);
     }

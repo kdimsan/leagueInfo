@@ -1,9 +1,7 @@
-import { api } from "@/app/utils/api/api";
 import useUserData from "@/hooks/useUserData";
 import React, { useEffect, useRef, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useRouter } from "next/navigation";
-import { ErrorMessage } from "@hookform/error-message";
 
 import Search from "../icons/search";
 import { regions } from "@/app/utils/regions";
@@ -34,6 +32,7 @@ export default function FindSummonerInput() {
   const handleSelectRegionState = () => {
     setIsOpen(!isOpen);
   };
+
   useOutsideClick(ref, handleSelectRegionState);
 
   const handleValue = (value: string) => {
@@ -51,18 +50,17 @@ export default function FindSummonerInput() {
     resetField("riotId");
   };
 
-  const fetchData = async () => {
+  const fetchLocationData = async () => {
     try {
       const response: string = (await axios.get(`/api/region`)).data;
       setSelectedRegion(response);
-      console.log(response);
     } catch (error) {
       console.error("Error fetching region:", error);
     }
   };
 
   useEffect(() => {
-    fetchData();
+    fetchLocationData();
   }, []);
 
   return (
@@ -78,7 +76,7 @@ export default function FindSummonerInput() {
           text-neutral-600 font-semibold text-ellipsis whitespace-nowrap
           after:content[''] after:absolute after:w-px after:h-3 after:bg-black after:top-1/2 after:right-0 after:-mt-1.5"
           {...register("region")}
-          value={"br1"}
+          value={selectedRegion}
         >
           <div className="flex items-center justify-center gap-1">
             <Image

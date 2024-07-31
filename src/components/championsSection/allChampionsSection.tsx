@@ -16,9 +16,6 @@ export const ChampionSectionDefault = (
 ) => {
   const { championTagFilter, championNameFilter } = useChampionTagFilter();
 
-  console.log(championNameFilter);
-  console.log(championTagFilter);
-
   const filteredChampions = data.filter((champion) => {
     const filterByName = champion.id
       ? champion.id
